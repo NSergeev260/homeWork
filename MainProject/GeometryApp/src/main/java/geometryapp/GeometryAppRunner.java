@@ -1,12 +1,12 @@
 package geometryapp;
 
-import com.example.Cube;
+import com.example.demensionalshapes.Cube;
 import com.example.FigureGenerator;
-import com.example.Sphere;
-import com.example.Tetrahedron;
-import geometryLibrary.geometricfigure.Circle;
-import geometryLibrary.geometricfigure.Rectangle;
-import geometryLibrary.geometricfigure.Triangle;
+import com.example.demensionalshapes.Sphere;
+import com.example.demensionalshapes.Tetrahedron;
+import com.example.geometricfigure.Circle;
+import com.example.geometricfigure.Rectangle;
+import com.example.geometricfigure.Triangle;
 
 public class GeometryAppRunner {
     public static void main(String[] args) {

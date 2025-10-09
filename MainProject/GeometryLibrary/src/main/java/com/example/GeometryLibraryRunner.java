@@ -1,4 +1,4 @@
-package geometryLibrary;
+package com.example;
 
 public class GeometryLibraryRunner {
     public static void main(String[] args) {

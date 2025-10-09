@@ -1,7 +1,7 @@
 package com.example;
 
-import geometryLibrary.geometricfigure.Circle;
-import geometryLibrary.geometricfigure.Rectangle;
+import com.example.geometricfigure.Circle;
+import com.example.geometricfigure.Rectangle;
 
 import java.util.Random;
 

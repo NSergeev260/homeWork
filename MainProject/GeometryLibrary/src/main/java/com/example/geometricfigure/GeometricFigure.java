@@ -1,4 +1,4 @@
-package geometryLibrary.geometricfigure;
+package com.example.geometricfigure;
 
 import java.math.BigDecimal;
 
