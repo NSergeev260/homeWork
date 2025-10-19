@@ -10,7 +10,7 @@ public record UserResponseDto(UUID userId,
                               String userName,
                               String userSurname,
                               String userEmail,
-                              List<Order> orderList) {
+                              List<OrderResponseDto> orderResponseDtoList) {
 }
 
 // имя, адрес электронной почты, идентификатор и т.д.

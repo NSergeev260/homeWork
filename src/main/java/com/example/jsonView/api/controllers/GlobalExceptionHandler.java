@@ -1,8 +1,8 @@
 package com.example.jsonView.api.controllers;
 
-import com.example.jsonView.api.exeption.UserBadRequestException;
-import com.example.jsonView.api.exeption.UserNoContentException;
-import com.example.jsonView.api.exeption.UserNotFoundException;
+import com.example.jsonView.api.exeption.BadRequestException;
+import com.example.jsonView.api.exeption.NoContentException;
+import com.example.jsonView.api.exeption.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -12,24 +12,24 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(UserBadRequestException.class)
+    @ExceptionHandler(BadRequestException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ErrorResponse handleWalletBadRequestException(UserBadRequestException exception) {
+    public ErrorResponse handleBadRequestException(BadRequestException exception) {
         return new ErrorResponse(
                 HttpStatus.BAD_REQUEST.value(),
                 exception.getMessage());
     }
 
-    @ExceptionHandler(UserNotFoundException.class)
+    @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ErrorResponse handleWalletNotFoundException(UserNotFoundException exception) {
+    public ErrorResponse handleNotFoundException(NotFoundException exception) {
         return new ErrorResponse(HttpStatus.NOT_FOUND.value()
                 ,exception.getMessage());
     }
 
-    @ExceptionHandler(UserNoContentException.class)
+    @ExceptionHandler(NoContentException.class)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ErrorResponse handleWalletNoContentException(UserNoContentException exception) {
+    public ErrorResponse handleNoContentException(NoContentException exception) {
         return new ErrorResponse(
                 HttpStatus.NO_CONTENT.value(),
                 exception.getMessage());

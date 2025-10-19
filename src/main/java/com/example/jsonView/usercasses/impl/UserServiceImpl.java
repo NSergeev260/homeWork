@@ -1,13 +1,12 @@
 package com.example.jsonView.usercasses.impl;
 
-import com.example.jsonView.api.exeption.UserBadRequestException;
+import com.example.jsonView.api.exeption.BadRequestException;
 import com.example.jsonView.persistence.model.UserEntity;
 import com.example.jsonView.persistence.repository.UserRepository;
 import com.example.jsonView.usercasses.UserService;
 import com.example.jsonView.usercasses.dto.UserRequestDto;
 import com.example.jsonView.usercasses.dto.UserResponseDto;
 import com.example.jsonView.usercasses.mapper.UserMapper;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -17,7 +16,6 @@ import java.util.List;
 import java.util.UUID;
 
 @Slf4j
-@AllArgsConstructor
 @RequiredArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
@@ -37,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
         if (userRepo.findById(newUserId).isPresent()) {
             log.info("User with id {} already exists. FAIL! Time: {}", newUserId, LocalDateTime.now());
-            throw new UserBadRequestException("User already exists. FAIL!");
+            throw new BadRequestException("User already exists. FAIL!");
         }
 
         UserEntity userEntity = userMapper.fromDtoToEntity(user);
@@ -66,15 +64,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDto updateUserById(UUID userId, String userName, String userSurname, String userEmail) {
-        UserEntity userEntity = getUserRepoByID(userId);
-        userEntity.builder().
+        UserEntity userEntityUpdated = getUserRepoByID(userId);
+        userEntityUpdated.builder().
                 withUserName(userName).
                 withUserSurname(userSurname).
                 withUserEmail(userEmail).
                 build();
-        userRepo.save(userEntity);
+        userRepo.save(userEntityUpdated);
 
-        return userMapper.fromEntityToDto(userEntity);
+        return userMapper.fromEntityToDto(userEntityUpdated);
     }
 
 
@@ -88,7 +86,8 @@ public class UserServiceImpl implements UserService {
 
     private UserEntity getUserRepoByID(UUID userId) {
         UserEntity userEntity = userRepo.findById(userId)
-                .orElseThrow(() -> new UserBadRequestException("User not exists. FAIL! ID: " + userId));
+                .orElseThrow(() ->
+                        new BadRequestException("User not exists. FAIL! ID: " + userId));
         return userEntity;
     }
 }

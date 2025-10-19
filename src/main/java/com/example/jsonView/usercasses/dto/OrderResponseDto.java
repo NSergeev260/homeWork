@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.UUID;
 
 @Builder(setterPrefix = "with")
-public record Order(UUID orderId,
-                    List<Product> productInfo,
-                    BigDecimal orderAmount,
-                    OrderStatus statusOrder) {
+public record OrderResponseDto(UUID orderId,
+                               List<Product> productInfo,
+                               BigDecimal orderAmount,
+                               OrderStatus statusOrder) {
 }
 
 // заказ пользователя и содержит информацию о товарах, сумме заказа и статусе.

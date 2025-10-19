@@ -1,6 +1,6 @@
 package com.example.jsonView.persistence.model;
 
-import com.example.jsonView.usercasses.dto.Order;
+import com.example.jsonView.usercasses.dto.OrderRequestDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,5 +30,5 @@ public class UserEntity {
     private String userEmail;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Order> orderList;
+    private List<OrderRequestDto> orderList;
 }

@@ -10,5 +10,5 @@ public record UserRequestDto(UUID userId,
                              String userName,
                              String userSurname,
                              String userEmail,
-                             List<Order> orderList) {
+                             List<OrderRequestDto> orderRequestDtoList) {
 }
