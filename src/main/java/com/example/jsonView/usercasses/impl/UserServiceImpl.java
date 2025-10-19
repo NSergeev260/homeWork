@@ -26,17 +26,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponseDto addUser(String userName, String userSurname, String userEmail) {
         UUID newUserId = UUID.randomUUID();
+
+        if (userRepo.findById(newUserId).isPresent()) {
+            log.info("User with id {} already exists. FAIL! Time: {}", newUserId, LocalDateTime.now());
+            throw new BadRequestException("User already exists. FAIL!");
+        }
+
         UserRequestDto user = UserRequestDto.builder().
                 withUserId(newUserId).
                 withUserName(userName).
                 withUserSurname(userSurname).
                 withUserEmail(userEmail).
                 build();
-
-        if (userRepo.findById(newUserId).isPresent()) {
-            log.info("User with id {} already exists. FAIL! Time: {}", newUserId, LocalDateTime.now());
-            throw new BadRequestException("User already exists. FAIL!");
-        }
 
         UserEntity userEntity = userMapper.fromDtoToEntity(user);
         userRepo.save(userEntity);
@@ -50,13 +51,13 @@ public class UserServiceImpl implements UserService {
     public UserResponseDto getUserById(UUID userId) {
         UserEntity userEntity = getUserRepoByID(userId);
 
-        log.info("User with id {} not exists. FAIL! Time: {}", userId, LocalDateTime.now());
+        log.info("User with id {} was found. Time: {}", userId, LocalDateTime.now());
 
         return userMapper.fromEntityToDto(userEntity);
     }
 
     @Override
-    public List<UserResponseDto> getAllUser() {
+    public List<UserResponseDto> getAllUsers() {
         List<UserEntity> userEntities = userRepo.findAll();
 
         return userMapper.fromEntityListToDtoList(userEntities);
@@ -71,6 +72,8 @@ public class UserServiceImpl implements UserService {
                 withUserEmail(userEmail).
                 build();
         userRepo.save(userEntityUpdated);
+
+        log.info("User with id {} was UPDATE, Date: {}", userId, LocalDateTime.now());
 
         return userMapper.fromEntityToDto(userEntityUpdated);
     }

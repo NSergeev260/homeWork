@@ -1,10 +1,10 @@
 package com.example.jsonView.api.controllers;
 
 import com.example.jsonView.api.exeption.BadRequestException;
+import com.example.jsonView.api.exeption.ErrorResponse;
 import com.example.jsonView.api.exeption.NoContentException;
 import com.example.jsonView.api.exeption.NotFoundException;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

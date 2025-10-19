@@ -13,10 +13,11 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class UserEntity {
 
     @Id
+    @GeneratedValue
     @Column(name = "user_id", nullable = false)
     private UUID userId;
 
@@ -29,6 +30,7 @@ public class UserEntity {
     @Column(name= "email", nullable = false)
     private String userEmail;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<OrderRequestDto> orderList;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    private List<OrderEntity> orderList;
 }

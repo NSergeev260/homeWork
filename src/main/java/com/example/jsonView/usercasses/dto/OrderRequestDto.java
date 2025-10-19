@@ -8,9 +8,10 @@ import java.util.UUID;
 
 @Builder(setterPrefix = "with")
 public record OrderRequestDto(UUID orderId,
-                              List<Product> productInfo,
+                              List<Product> productProduct,
                               BigDecimal orderAmount,
-                              OrderStatus statusOrder) {
+                              OrderStatus statusOrder,
+                              UUID userId) {
 }
 
 // заказ пользователя и содержит информацию о товарах, сумме заказа и статусе.

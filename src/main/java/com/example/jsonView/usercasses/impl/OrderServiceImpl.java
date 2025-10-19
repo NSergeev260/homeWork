@@ -2,15 +2,18 @@ package com.example.jsonView.usercasses.impl;
 
 import com.example.jsonView.api.exeption.BadRequestException;
 import com.example.jsonView.persistence.model.OrderEntity;
+import com.example.jsonView.persistence.model.UserEntity;
 import com.example.jsonView.persistence.repository.OrderRepository;
 import com.example.jsonView.usercasses.OrderService;
-import com.example.jsonView.usercasses.dto.OrderStatus;
-import com.example.jsonView.usercasses.dto.Product;
+import com.example.jsonView.usercasses.dto.*;
+import com.example.jsonView.usercasses.mapper.OrderMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,28 +23,63 @@ import java.util.UUID;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepo;
+    private final OrderMapper orderMapper;
 
-        @Override
-    public OrderService insertOrder(UUID orderId, List<Product> productInfo, OrderStatus statusOrder) {
-        return null;
+    @Override
+    public OrderResponseDto addOrder(UUID orderId, List<Product> productInfo) {
+        UUID newOrderId = UUID.randomUUID();
+
+        if (orderRepo.findById(newOrderId).isPresent()) {
+            log.info("Order with id {} already exists. FAIL! Time: {}", newOrderId, LocalDateTime.now());
+            throw new BadRequestException("Order already exists. FAIL!");
+        }
+
+        BigDecimal orderAmount = productInfo.stream()
+                .map(Product::cost)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        OrderRequestDto orderDto = OrderRequestDto.builder().
+                withOrderId(newOrderId).
+                withProductProduct(productInfo).
+                withOrderAmount(orderAmount).
+                withStatusOrder(OrderStatus.PENDING).
+                build();
+
+        OrderEntity orderEntity = orderMapper.fromDtoToEntity(orderDto);
+        orderRepo.save(orderEntity);
+
+        log.info("New order with id {} was INSERT, Time: {}", orderEntity.getOrderId(), LocalDateTime.now());
+
+        return orderMapper.fromEntityToDto(orderEntity);
     }
 
     @Override
-    public OrderService getOrder(UUID orderId) {
-        return null;
+    public OrderResponseDto getOrderById(UUID orderId) {
+        OrderEntity orderEntity = getOrderRepoByID(orderId);
+
+        log.info("Order with id {} was found. Time: {}", orderId, LocalDateTime.now());
+
+        return orderMapper.fromEntityToDto(orderEntity);
     }
 
     @Override
-    public OrderService updateOrder(UUID orderId) {
-        return null;
+    public OrderResponseDto updateOrderStatusById(UUID orderId, OrderStatus orderStatus) {
+        OrderEntity orderEntity = getOrderRepoByID(orderId);
+        orderEntity.setOrderStatus(orderStatus);
+        orderRepo.save(orderEntity);
+
+        log.info("Order with id {} was UPDATED to status {}, Time: {}",
+                orderId, orderStatus, LocalDateTime.now());
+
+        return orderMapper.fromEntityToDto(orderEntity);
     }
 
     @Override
-    public void deleteOrder(UUID orderId) {
+    public void deleteOrderById(UUID orderId) {
         OrderEntity orderEntity = getOrderRepoByID(orderId);
         orderRepo.delete(orderEntity);
 
-        log.info("User with id {} was DELETE, Date: {}", orderId, LocalDateTime.now());
+        log.info("Order with id {} was DELETE, Date: {}", orderId, LocalDateTime.now());
     }
 
     private OrderEntity getOrderRepoByID(UUID orderId) {
