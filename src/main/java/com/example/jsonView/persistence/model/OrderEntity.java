@@ -14,8 +14,8 @@ import java.util.UUID;
 @Setter
 @Getter
 @Entity
-//@NoArgsConstructor
-//@AllArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "orders")
 public class OrderEntity {
 
@@ -27,8 +27,7 @@ public class OrderEntity {
     @ElementCollection
     @CollectionTable(name = "order_products",
             joinColumns = @JoinColumn(name = "order_id"))
-//    @Column(name = "product_info")
-    private List<Product> productInfo;
+    private List<ProductEntity> productList;
 
     @Column(name = "order_amount")
     private BigDecimal orderAmount;

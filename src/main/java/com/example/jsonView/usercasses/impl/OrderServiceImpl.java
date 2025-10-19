@@ -4,6 +4,7 @@ import com.example.jsonView.api.exeption.BadRequestException;
 import com.example.jsonView.persistence.model.OrderEntity;
 import com.example.jsonView.persistence.model.UserEntity;
 import com.example.jsonView.persistence.repository.OrderRepository;
+import com.example.jsonView.persistence.repository.UserRepository;
 import com.example.jsonView.usercasses.OrderService;
 import com.example.jsonView.usercasses.dto.*;
 import com.example.jsonView.usercasses.mapper.OrderMapper;
@@ -24,9 +25,10 @@ public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepo;
     private final OrderMapper orderMapper;
+    private final UserRepository userRepo;
 
     @Override
-    public OrderResponseDto addOrder(UUID orderId, List<Product> productInfo) {
+    public OrderResponseDto addOrder(UUID orderId, List<Product> productList) {
         UUID newOrderId = UUID.randomUUID();
 
         if (orderRepo.findById(newOrderId).isPresent()) {
@@ -34,13 +36,13 @@ public class OrderServiceImpl implements OrderService {
             throw new BadRequestException("Order already exists. FAIL!");
         }
 
-        BigDecimal orderAmount = productInfo.stream()
+        BigDecimal orderAmount = productList.stream()
                 .map(Product::cost)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         OrderRequestDto orderDto = OrderRequestDto.builder().
                 withOrderId(newOrderId).
-                withProductProduct(productInfo).
+                withProductProduct(productList).
                 withOrderAmount(orderAmount).
                 withStatusOrder(OrderStatus.PENDING).
                 build();
@@ -60,6 +62,15 @@ public class OrderServiceImpl implements OrderService {
         log.info("Order with id {} was found. Time: {}", orderId, LocalDateTime.now());
 
         return orderMapper.fromEntityToDto(orderEntity);
+    }
+
+    @Override
+    public List<OrderResponseDto> getOrdersByUserId(UUID userId) {
+        UserEntity userEntity = userRepo.findById(userId)
+                .orElseThrow(() ->
+                        new BadRequestException("User not exists. FAIL! ID: " + userId));
+        List<OrderEntity> orders = orderRepo.findByUserId(userId);
+        return orderMapper.fromEntityListToDtoList(orders);
     }
 
     @Override

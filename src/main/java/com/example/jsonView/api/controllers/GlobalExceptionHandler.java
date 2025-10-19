@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -20,12 +21,12 @@ public class GlobalExceptionHandler {
                 exception.getMessage());
     }
 
-    @ExceptionHandler(NotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ErrorResponse handleNotFoundException(NotFoundException exception) {
-        return new ErrorResponse(HttpStatus.NOT_FOUND.value()
-                ,exception.getMessage());
-    }
+//    @ExceptionHandler(NotFoundException.class)
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    public ErrorResponse handleNotFoundException(NotFoundException exception) {
+//        return new ErrorResponse(HttpStatus.NOT_FOUND.value()
+//                ,exception.getMessage());
+//    }
 
     @ExceptionHandler(NoContentException.class)
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -33,5 +34,19 @@ public class GlobalExceptionHandler {
         return new ErrorResponse(
                 HttpStatus.NO_CONTENT.value(),
                 exception.getMessage());
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ModelAndView handleException(Exception ex) {
+        ModelAndView modelAndView = new ModelAndView("error");
+        modelAndView.addObject("errorMessage", "Произошла ошибка: " + ex.getMessage());
+        return modelAndView;
+    }
+
+    @ExceptionHandler(NotFoundException.class)
+    public ModelAndView handleNotFoundException(NotFoundException ex) {
+        ModelAndView modelAndView = new ModelAndView("not-found");
+        modelAndView.addObject("errorMessage", "Страница не найдена: " + ex.getMessage());
+        return modelAndView;
     }
 }
