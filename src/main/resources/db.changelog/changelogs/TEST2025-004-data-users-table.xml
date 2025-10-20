@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="TEST2025-004-data-users-table" author="nsergeev">
+        <insert tableName="users">
+            <column name="user_id" value="a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"/>
+            <column name="user_name" value="Deep"/>
+            <column name="user_surname" value="Seek"/>
+            <column name="user_email" value="deep.seek@gmail.com"/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="user_id" value="b1ffcc99-9c0b-4ef8-bb6d-6bb9bd380a12"/>
+            <column name="user_name" value="Julia"/>
+            <column name="user_surname" value="Sidirova"/>
+            <column name="user_email" value="julia.sidorova@mail.com"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

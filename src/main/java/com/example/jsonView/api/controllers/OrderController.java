@@ -2,11 +2,13 @@ package com.example.jsonView.api.controllers;
 
 import com.example.jsonView.api.view.Views;
 import com.example.jsonView.usercasses.OrderService;
+import com.example.jsonView.usercasses.dto.OrderRequestDto;
 import com.example.jsonView.usercasses.dto.OrderResponseDto;
 import com.example.jsonView.usercasses.dto.OrderStatus;
 import com.example.jsonView.usercasses.dto.Product;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,30 +21,32 @@ public class OrderController {
 
     private final OrderService orderService;
 
-    @PostMapping("/{orderId}")
-    public OrderResponseDto addOrder(UUID orderId, List<Product> productList) {
-        return orderService.addOrder(orderId, productList);
+    @ResponseStatus(HttpStatus.CREATED)
+//    @PostMapping("/{orderId}")
+    public OrderResponseDto addOrder(@RequestBody OrderRequestDto orderRequestDto) {
+        return orderService.addOrder(orderRequestDto);
     }
 
-    @JsonView(Views.OrderSummary.class)
-    @GetMapping
-    public OrderResponseDto getOrder(UUID orderId) {
+    @JsonView(Views.OrderDetails.class)
+    @GetMapping("/{orderId}")
+    public OrderResponseDto getOrder(@PathVariable UUID orderId) {
         return orderService.getOrderById(orderId);
     }
 
     @JsonView(Views.OrderSummary.class)
-    @GetMapping
-    public List<OrderResponseDto> getOrdersByUser(UUID userId) {
-      return orderService.getOrdersByUserId(userId);
+    @GetMapping("/user/{userId}")
+    public List<OrderResponseDto> getOrdersByUser(@PathVariable UUID userId) {
+        return orderService.getOrdersByUserId(userId);
     }
 
-    @PutMapping("/{orderId}")
-    public OrderResponseDto updateOrderStatus(UUID orderId, OrderStatus orderStatus) {
+    @PutMapping("/{orderId}/status")
+    public OrderResponseDto updateOrderStatus(@PathVariable UUID orderId,
+                                              @RequestParam OrderStatus orderStatus) {
         return orderService.updateOrderStatusById(orderId, orderStatus);
     }
 
     @DeleteMapping("/{orderId}")
-    public void deleteOrder(UUID orderId) {
+    public void deleteOrder(@PathVariable UUID orderId) {
         orderService.deleteOrderById(orderId);
     }
 }

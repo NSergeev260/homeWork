@@ -22,7 +22,7 @@ public record UserResponseDto(
         String userEmail,
 
         @JsonView(Views.UserDetails.class)
-        List<OrderResponseDto> orderResponseDtoList) {
+        List<OrderResponseDto> ordersList) {
 }
 
 // имя, адрес электронной почты, идентификатор и т.д.

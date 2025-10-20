@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="TEST2025-002-init-orders-table" author="nsergeev">
+        <createTable tableName="orders">
+            <column name="order_id" type="UUID">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+
+            <column name="order_amount" type="NUMERIC(19,2)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="order_status" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="user_id" type="UUID">
+                <constraints nullable="false"
+                             foreignKeyName="fk_orders_user_id"
+                             references="users(user_id)"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

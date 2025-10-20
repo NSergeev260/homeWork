@@ -25,26 +25,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDto addUser(String userName, String userSurname, String userEmail) {
-        UUID newUserId = UUID.randomUUID();
 
-        if (userRepo.findById(newUserId).isPresent()) {
-            log.info("User with id {} already exists. FAIL! Time: {}", newUserId, LocalDateTime.now());
-            throw new BadRequestException("User already exists. FAIL!");
+        if (userRepo.findByUserEmail(userEmail).isPresent()) {
+            log.info("User with email {} already exists. FAIL! Time: {}", userEmail, LocalDateTime.now());
+            throw new BadRequestException("User with this email already exists. FAIL!");
         }
 
-        UserRequestDto user = UserRequestDto.builder().
-                withUserId(newUserId).
+        UserRequestDto userRequestDto = UserRequestDto.builder().
                 withUserName(userName).
                 withUserSurname(userSurname).
                 withUserEmail(userEmail).
                 build();
 
-        UserEntity userEntity = userMapper.fromDtoToEntity(user);
-        userRepo.save(userEntity);
+        UserEntity userEntity = userMapper.fromDtoToEntity(userRequestDto);
+        UserEntity savedUser = userRepo.save(userEntity);
 
-        log.info("New user with id {} was INSERT, Time: {}", userEntity.getUserId(), LocalDateTime.now());
+        log.info("New user with id {} was INSERT, Time: {}", savedUser.getUserId(), LocalDateTime.now());
 
-        return userMapper.fromEntityToDto(userEntity);
+        return userMapper.fromEntityToDto(savedUser);
     }
 
     @Override
@@ -66,16 +64,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponseDto updateUserById(UUID userId, String userName, String userSurname, String userEmail) {
         UserEntity userEntityUpdated = getUserRepoByID(userId);
-        userEntityUpdated.builder().
-                withUserName(userName).
-                withUserSurname(userSurname).
-                withUserEmail(userEmail).
-                build();
-        userRepo.save(userEntityUpdated);
+        userEntityUpdated.setUserName(userName);
+        userEntityUpdated.setUserSurname(userSurname);
+        userEntityUpdated.setUserEmail(userEmail);
+
+        UserEntity updatedUser = userRepo.save(userEntityUpdated);
 
         log.info("User with id {} was UPDATE, Date: {}", userId, LocalDateTime.now());
 
-        return userMapper.fromEntityToDto(userEntityUpdated);
+        return userMapper.fromEntityToDto(updatedUser);
     }
 
 
@@ -88,9 +85,8 @@ public class UserServiceImpl implements UserService {
     }
 
     private UserEntity getUserRepoByID(UUID userId) {
-        UserEntity userEntity = userRepo.findById(userId)
+        return userRepo.findById(userId)
                 .orElseThrow(() ->
                         new BadRequestException("User not exists. FAIL! ID: " + userId));
-        return userEntity;
     }
 }

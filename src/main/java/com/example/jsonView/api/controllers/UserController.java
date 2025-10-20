@@ -7,6 +7,7 @@ import com.example.jsonView.usercasses.dto.UserRequestDto;
 import com.example.jsonView.usercasses.dto.UserResponseDto;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,14 +21,23 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping("/{userId}")
-    public UserResponseDto addUser(String name, String surname, String email) {
+//    @PostMapping("/{userId}")
+//    public UserResponseDto addUser(String name, String surname, String email) {
+//        return userService.addUser(name, surname, email);
+//    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserResponseDto addUser(
+            @RequestParam String name,
+            @RequestParam String surname,
+            @RequestParam String email) {
         return userService.addUser(name, surname, email);
     }
 
     @JsonView(Views.UserDetails.class)
-    @GetMapping
-    public UserResponseDto getUser(UUID userId) {
+    @GetMapping("/{userId}")
+    public UserResponseDto getUser(@PathVariable UUID userId) {
         return userService.getUserById(userId);
     }
 
@@ -38,12 +48,16 @@ public class UserController {
     }
 
     @PutMapping("/{userId}")
-    public UserResponseDto updateUser(UUID userId, String name, String surname, String email) {
+    public UserResponseDto updateUser(@PathVariable UUID userId,
+                                      @RequestPart String name,
+                                      @RequestPart String surname,
+                                      @RequestPart String email) {
         return userService.updateUserById(userId, name, surname, email);
     }
 
     @DeleteMapping("/{userId}")
-    public void deleteUser(UUID userId) {
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteUser(@PathVariable UUID userId) {
         userService.deleteUserById(userId);
     }
 

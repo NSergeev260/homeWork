@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <include file="changelogs/TEST2025-001-init-user-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/TEST2025-002-init-order-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/TEST2025-003-init-order-products-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/TEST2025-004-data-user-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/TEST2025-005-data-order-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelogs/TEST2025-006-data-order-products-table.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

@@ -5,6 +5,7 @@ import com.example.jsonView.usercasses.dto.OrderRequestDto;
 import com.example.jsonView.usercasses.dto.OrderResponseDto;
 import org.mapstruct.Builder;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
 
 import java.util.List;
@@ -13,6 +14,10 @@ import java.util.List;
         builder = @Builder(disableBuilder = true))
 public interface OrderMapper {
 
+    @Mapping(target = "orderId", ignore = true)
+    @Mapping(target = "user", ignore = true)
+    @Mapping(target = "orderAmount", ignore = true)
+    @Mapping(target = "orderStatus", ignore = true)
     OrderEntity fromDtoToEntity(OrderRequestDto OrderRequestDto);
 
     OrderResponseDto fromEntityToDto(OrderEntity OrderEntity);

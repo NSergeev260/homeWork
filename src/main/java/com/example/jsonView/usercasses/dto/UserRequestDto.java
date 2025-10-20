@@ -10,14 +10,14 @@ import java.util.UUID;
 
 @Builder(setterPrefix = "with")
 public record UserRequestDto(
-        @NotEmpty(message = "UUID cannot be empty or null ")
-        UUID userId,
+
         @NotBlank(message = "Name cannot be empty or null")
         String userName,
+
         @NotBlank(message = "Surname cannot be empty or null")
         String userSurname,
-        @Email(message = "Email must be valid email address")
-        String userEmail,
 
-        List<OrderRequestDto> orderRequestDtoList) {
+        @NotBlank(message = "Email cannot be empty or null")
+        @Email(message = "Email must be valid email address")
+        String userEmail) {
 }

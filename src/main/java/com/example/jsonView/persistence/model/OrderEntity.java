@@ -7,6 +7,7 @@ import lombok.*;
 import org.apache.catalina.User;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -25,18 +26,19 @@ public class OrderEntity {
     private UUID orderId;
 
     @ElementCollection
-    @CollectionTable(name = "order_products",
+    @CollectionTable(
+            name = "order_products",
             joinColumns = @JoinColumn(name = "order_id"))
-    private List<ProductEntity> productList;
+    private List<ProductEntity> productsList = new ArrayList<>();
 
-    @Column(name = "order_amount")
+    @Column(name = "order_amount", precision = 19, scale = 2)
     private BigDecimal orderAmount;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status_order")
+    @Column(name = "order_status")
     private OrderStatus orderStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private UserEntity userEntity;
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserEntity user;
 }

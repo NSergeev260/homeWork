@@ -1,10 +1,12 @@
 package com.example.jsonView.persistence.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+import java.util.UUID;
+
+@Embeddable
 @Builder(setterPrefix = "with")
 @Setter
 @Getter
@@ -14,9 +16,12 @@ import lombok.*;
 @Table(name = "products")
 public class ProductEntity {
 
-    @Column(name = "name_product")
-    String name;
+    @Column(name = "product_id")
+    private UUID productId;
 
-    @Column(name = "cost_product")
-    String cost;
+    @Column(name = "product_name")
+    String productName;
+
+    @Column(name = "product_cost", precision = 19, scale = 2)
+    BigDecimal productCost;
 }

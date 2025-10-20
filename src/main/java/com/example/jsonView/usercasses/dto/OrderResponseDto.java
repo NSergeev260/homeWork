@@ -10,16 +10,16 @@ import java.util.UUID;
 
 @Builder(setterPrefix = "with")
 public record OrderResponseDto(
-        @JsonView(Views.OrderSummary.class)
+        @JsonView({Views.OrderSummary.class, Views.UserDetails.class})
         UUID orderId,
 
         @JsonView(Views.OrderDetails.class)
-        List<Product> productProduct,
+        List<Product> productsList,
 
-        @JsonView(Views.OrderSummary.class)
+        @JsonView({Views.OrderSummary.class, Views.UserDetails.class})
         BigDecimal orderAmount,
 
-        @JsonView(Views.OrderSummary.class)
+        @JsonView({Views.OrderSummary.class, Views.UserDetails.class})
         OrderStatus statusOrder) {
 }
 

@@ -5,6 +5,7 @@ import com.example.jsonView.usercasses.dto.UserRequestDto;
 import com.example.jsonView.usercasses.dto.UserResponseDto;
 import org.mapstruct.Builder;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
 
 import java.util.List;
@@ -13,6 +14,8 @@ import java.util.List;
         builder = @Builder(disableBuilder = true))
 public interface UserMapper {
 
+    @Mapping(target = "userId", ignore = true) // ID генерируется БД
+    @Mapping(target = "ordersList", ignore = true)
     UserEntity fromDtoToEntity(UserRequestDto userRequestDto);
 
     UserResponseDto fromEntityToDto(UserEntity userEntity);

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="TEST2025-003-init-order-products-table" author="nsergeev">
+        <createTable tableName="order_products">
+            <column name="order_product_id" type="UUID">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+
+            <column name="order_id" type="UUID">
+                <constraints nullable="false"
+                             foreignKeyName="fk_order_products_order_id"
+                             references="orders(order_id)"/>
+            </column>
+
+            <column name="product_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="product_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="product_cost" type="NUMERIC(19,2)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

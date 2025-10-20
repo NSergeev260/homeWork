@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="TEST2025-005-data-orders-table" author="nsergeev">
+        <insert tableName="orders">
+            <column name="order_id" value="c2eebc99-9c0b-4ef8-bb6d-6bb9bd380a13"/>
+            <column name="order_amount" value="150.00"/>
+            <column name="order_status" value="PENDING"/>
+            <column name="user_id" value="a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"/>
+        </insert>
+
+        <insert tableName="orders">
+            <column name="order_id" value="d3ffcc99-9c0b-4ef8-bb6d-6bb9bd380a14"/>
+            <column name="order_amount" value="300.00"/>
+            <column name="order_status" value="DELIVERED"/>
+            <column name="user_id" value="a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"/>
+        </insert>
+
+        <insert tableName="orders">
+            <column name="order_id" value="e4aacc99-9c0b-4ef8-bb6d-6bb9bd380a15"/>
+            <column name="order_amount" value="50.00"/>
+            <column name="order_status" value="PAYMENT_RECEIVED"/>
+            <column name="user_id" value="b1ffcc99-9c0b-4ef8-bb6d-6bb9bd380a12"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
