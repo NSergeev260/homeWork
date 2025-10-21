@@ -1,6 +1,7 @@
 package com.example.jsonView.usercasses.impl;
 
 import com.example.jsonView.api.exeption.BadRequestException;
+import com.example.jsonView.api.exeption.NotFoundException;
 import com.example.jsonView.persistence.model.UserEntity;
 import com.example.jsonView.persistence.repository.UserRepository;
 import com.example.jsonView.usercasses.UserService;
@@ -26,16 +27,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponseDto addUser(UserRequestDto userRequestDto) {
 
-        if (userRepo.findByUserEmail(userEmail).isPresent()) {
-            log.info("User with email {} already exists. FAIL! Time: {}", userEmail, LocalDateTime.now());
+        if (userRepo.findByUserEmail(userRequestDto.userEmail()).isPresent()) {
+            log.info("User with email {} already exists. FAIL! Time: {}", userRequestDto.userEmail(), LocalDateTime.now());
             throw new BadRequestException("User with this email already exists. FAIL!");
         }
-
-        UserRequestDto userRequestDto = UserRequestDto.builder().
-                withUserName(userName).
-                withUserSurname(userSurname).
-                withUserEmail(userEmail).
-                build();
 
         UserEntity userEntity = userMapper.fromDtoToEntity(userRequestDto);
         UserEntity savedUser = userRepo.save(userEntity);
@@ -64,9 +59,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponseDto updateUserById(UUID userId, UserRequestDto userRequestDto) {
         UserEntity userEntityUpdated = getUserRepoByID(userId);
-        userEntityUpdated.setUserName(userName);
-        userEntityUpdated.setUserSurname(userSurname);
-        userEntityUpdated.setUserEmail(userEmail);
+        userEntityUpdated.setUserName(userRequestDto.userName());
+        userEntityUpdated.setUserSurname(userRequestDto.userSurname());
+        userEntityUpdated.setUserEmail(userRequestDto.userEmail());
 
         UserEntity updatedUser = userRepo.save(userEntityUpdated);
 
@@ -87,6 +82,6 @@ public class UserServiceImpl implements UserService {
     private UserEntity getUserRepoByID(UUID userId) {
         return userRepo.findById(userId)
                 .orElseThrow(() ->
-                        new BadRequestException("User not exists. FAIL! ID: " + userId));
+                        new NotFoundException("User not exists. FAIL! ID: " + userId));
     }
 }

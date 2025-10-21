@@ -11,11 +11,13 @@ import org.mapstruct.MappingConstants;
 import java.util.List;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING,
-        builder = @Builder(disableBuilder = true))
+        builder = @Builder(disableBuilder = true),
+        uses = {ProductMapper.class})
 public interface OrderMapper {
 
     @Mapping(target = "orderId", ignore = true)
     @Mapping(target = "user", ignore = true)
+    @Mapping(target = "productsList", source = "productsList")
     OrderEntity fromDtoToEntity(OrderRequestDto OrderRequestDto);
 
     OrderResponseDto fromEntityToDto(OrderEntity OrderEntity);

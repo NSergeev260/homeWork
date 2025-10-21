@@ -1,7 +1,9 @@
 package com.example.jsonView.usercasses.impl;
 
+import com.example.jsonView.api.exeption.BadRequestException;
 import com.example.jsonView.api.exeption.NotFoundException;
 import com.example.jsonView.persistence.model.OrderEntity;
+import com.example.jsonView.persistence.model.Product;
 import com.example.jsonView.persistence.model.UserEntity;
 import com.example.jsonView.persistence.repository.OrderRepository;
 import com.example.jsonView.persistence.repository.UserRepository;
@@ -27,26 +29,23 @@ public class OrderServiceImpl implements OrderService {
     private final OrderMapper orderMapper;
     private final UserRepository userRepo;
 
-    @Override
     @Transactional
+    @Override
     public OrderResponseDto addOrder(OrderRequestDto orderRequestDto) {
         UserEntity user = userRepo.findById(orderRequestDto.userId())
                 .orElseThrow(() ->
-                        new NotFoundException("User not found with id: " + orderRequestDto.userId()));
-
+                        new NotFoundException("User NOT found with id: " + orderRequestDto.userId()));
         BigDecimal orderAmount = orderRequestDto.productsList().stream()
-                .map(ProductResponseDto::productCost)
+                .map(Product::getProductCost)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
-
         OrderEntity orderEntity = orderMapper.fromDtoToEntity(orderRequestDto);
         orderEntity.setUser(user);
         orderEntity.setOrderAmount(orderAmount);
         orderEntity.setOrderStatus(OrderStatus.PENDING);
-
         OrderEntity savedOrder = orderRepo.save(orderEntity);
 
-        log.info("New order with id {} was INSERT for user {}, Time: {}", 
-                savedOrder.getOrderId(), user.getUserId(), LocalDateTime.now());
+        log.info("New order with id {} was INSERT, User: {} ,Time: {}",
+                orderEntity.getOrderId(), user.getUserId(), LocalDateTime.now());
 
         return orderMapper.fromEntityToDto(savedOrder);
     }
@@ -54,22 +53,23 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public OrderResponseDto getOrderById(UUID orderId) {
         OrderEntity orderEntity = getOrderRepoByID(orderId);
+
         log.info("Order with id {} was found. Time: {}", orderId, LocalDateTime.now());
+
         return orderMapper.fromEntityToDto(orderEntity);
     }
 
     @Override
     public List<OrderResponseDto> getOrdersByUserId(UUID userId) {
-        if (!userRepo.existsById(userId)) {
-            throw new NotFoundException("User not found with id: " + userId);
-        }
-        
-        List<OrderEntity> orders = orderRepo.findByUserId(userId);
+        userRepo.findById(userId)
+                .orElseThrow(() ->
+                        new BadRequestException("User not exists. FAIL! ID: " + userId));
+        List<OrderEntity> orders = orderRepo.findByUserUserId(userId);
         return orderMapper.fromEntityListToDtoList(orders);
     }
 
-    @Override
     @Transactional
+    @Override
     public OrderResponseDto updateOrderStatusById(UUID orderId, OrderStatus orderStatus) {
         OrderEntity orderEntity = getOrderRepoByID(orderId);
         orderEntity.setOrderStatus(orderStatus);
@@ -81,16 +81,19 @@ public class OrderServiceImpl implements OrderService {
         return orderMapper.fromEntityToDto(updatedOrder);
     }
 
-    @Override
     @Transactional
+    @Override
     public void deleteOrderById(UUID orderId) {
         OrderEntity orderEntity = getOrderRepoByID(orderId);
         orderRepo.delete(orderEntity);
+
         log.info("Order with id {} was DELETE, Date: {}", orderId, LocalDateTime.now());
     }
 
     private OrderEntity getOrderRepoByID(UUID orderId) {
-        return orderRepo.findById(orderId)
-                .orElseThrow(() -> new NotFoundException("Order not found with id: " + orderId));
+        OrderEntity orderEntity = orderRepo.findById(orderId)
+                .orElseThrow(() ->
+                        new NotFoundException("Order not exists. FAIL! ID: " + orderId));
+        return orderEntity;
     }
 }

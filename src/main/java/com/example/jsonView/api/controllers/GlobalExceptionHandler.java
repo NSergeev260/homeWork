@@ -21,12 +21,12 @@ public class GlobalExceptionHandler {
                 exception.getMessage());
     }
 
-//    @ExceptionHandler(NotFoundException.class)
-//    @ResponseStatus(HttpStatus.NOT_FOUND)
-//    public ErrorResponse handleNotFoundException(NotFoundException exception) {
-//        return new ErrorResponse(HttpStatus.NOT_FOUND.value()
-//                ,exception.getMessage());
-//    }
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleNotFoundException(NotFoundException exception) {
+        return new ErrorResponse(HttpStatus.NOT_FOUND.value()
+                ,exception.getMessage());
+    }
 
     @ExceptionHandler(NoContentException.class)
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -40,13 +40,6 @@ public class GlobalExceptionHandler {
     public ModelAndView handleException(Exception ex) {
         ModelAndView modelAndView = new ModelAndView("error");
         modelAndView.addObject("errorMessage", "Произошла ошибка: " + ex.getMessage());
-        return modelAndView;
-    }
-
-    @ExceptionHandler(NotFoundException.class)
-    public ModelAndView handleNotFoundException(NotFoundException ex) {
-        ModelAndView modelAndView = new ModelAndView("not-found");
-        modelAndView.addObject("errorMessage", "Страница не найдена: " + ex.getMessage());
         return modelAndView;
     }
 }

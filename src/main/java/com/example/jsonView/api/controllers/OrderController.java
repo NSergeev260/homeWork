@@ -21,7 +21,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/{orderId}")
+    @PostMapping()
     public OrderResponseDto addOrder(@RequestBody OrderRequestDto orderRequestDto) {
         return orderService.addOrder(orderRequestDto);
     }

@@ -12,7 +12,6 @@ import java.util.UUID;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "products")
 public class Product {
 
     @Column(name = "product_id")

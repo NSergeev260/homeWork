@@ -1,5 +1,6 @@
 package com.example.jsonView.usercasses.dto;
 
+import com.example.jsonView.persistence.model.Product;
 import lombok.Builder;
 
 import java.math.BigDecimal;
@@ -8,7 +9,7 @@ import java.util.UUID;
 
 @Builder(setterPrefix = "with")
 public record OrderRequestDto(
-        List<ProductResponseDto> productsList,
+        List<Product> productsList,
         BigDecimal orderAmount,
         OrderStatus orderStatus,
         UUID userId) {
