@@ -10,11 +10,10 @@ import java.util.UUID;
 @Builder(setterPrefix = "with")
 @Setter
 @Getter
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "products")
-public class ProductEntity {
+public class Product {
 
     @Column(name = "product_id")
     private UUID productId;

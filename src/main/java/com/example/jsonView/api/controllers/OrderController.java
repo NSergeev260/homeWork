@@ -5,7 +5,6 @@ import com.example.jsonView.usercasses.OrderService;
 import com.example.jsonView.usercasses.dto.OrderRequestDto;
 import com.example.jsonView.usercasses.dto.OrderResponseDto;
 import com.example.jsonView.usercasses.dto.OrderStatus;
-import com.example.jsonView.usercasses.dto.Product;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,7 +21,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @ResponseStatus(HttpStatus.CREATED)
-//    @PostMapping("/{orderId}")
+    @PostMapping("/{orderId}")
     public OrderResponseDto addOrder(@RequestBody OrderRequestDto orderRequestDto) {
         return orderService.addOrder(orderRequestDto);
     }

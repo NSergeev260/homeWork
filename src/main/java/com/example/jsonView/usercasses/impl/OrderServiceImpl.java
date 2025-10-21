@@ -1,6 +1,5 @@
 package com.example.jsonView.usercasses.impl;
 
-import com.example.jsonView.api.exeption.BadRequestException;
 import com.example.jsonView.api.exeption.NotFoundException;
 import com.example.jsonView.persistence.model.OrderEntity;
 import com.example.jsonView.persistence.model.UserEntity;
@@ -36,7 +35,7 @@ public class OrderServiceImpl implements OrderService {
                         new NotFoundException("User not found with id: " + orderRequestDto.userId()));
 
         BigDecimal orderAmount = orderRequestDto.productsList().stream()
-                .map(Product::productCost)
+                .map(ProductResponseDto::productCost)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         OrderEntity orderEntity = orderMapper.fromDtoToEntity(orderRequestDto);

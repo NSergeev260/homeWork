@@ -8,5 +8,5 @@ RUN mvn package -DskipTests
 # Run stage
 FROM openjdk:17-alpine
 ARG JAR_FILE=/build/target/*.jar
-COPY --from=build $JAR_FILE /opt/wallet/app.jar
-ENTRYPOINT ["java", "-jar", "/opt/wallet/app.jar"]
+COPY --from=build $JAR_FILE /opt/jsonview/app.jar
+ENTRYPOINT ["java", "-jar", "/opt/jsonview/app.jar"]

@@ -14,13 +14,13 @@ public record OrderResponseDto(
         UUID orderId,
 
         @JsonView(Views.OrderDetails.class)
-        List<Product> productsList,
+        List<ProductResponseDto> productsList,
 
         @JsonView({Views.OrderSummary.class, Views.UserDetails.class})
         BigDecimal orderAmount,
 
         @JsonView({Views.OrderSummary.class, Views.UserDetails.class})
-        OrderStatus statusOrder) {
+        OrderStatus orderStatus) {
 }
 
 // заказ пользователя и содержит информацию о товарах, сумме заказа и статусе.

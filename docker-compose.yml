@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: user-db
+    container_name: jsonview-db
     restart: always
     environment:
       POSTGRES_USER: ${DATABASE_USERNAME}
@@ -27,5 +27,5 @@ services:
       - "8080:${SERVER_PORT}"
 
 volumes:
-  wallet-data:
+  postgres-data:
     driver: local

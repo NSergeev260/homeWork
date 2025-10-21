@@ -3,7 +3,6 @@ package com.example.jsonView.usercasses;
 import com.example.jsonView.usercasses.dto.OrderRequestDto;
 import com.example.jsonView.usercasses.dto.OrderResponseDto;
 import com.example.jsonView.usercasses.dto.OrderStatus;
-import com.example.jsonView.usercasses.dto.Product;
 
 import java.util.List;
 import java.util.UUID;

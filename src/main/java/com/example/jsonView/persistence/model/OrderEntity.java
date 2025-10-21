@@ -1,10 +1,9 @@
 package com.example.jsonView.persistence.model;
 
 import com.example.jsonView.usercasses.dto.OrderStatus;
-import com.example.jsonView.usercasses.dto.Product;
+import com.example.jsonView.usercasses.dto.ProductResponseDto;
 import jakarta.persistence.*;
 import lombok.*;
-import org.apache.catalina.User;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -26,10 +25,9 @@ public class OrderEntity {
     private UUID orderId;
 
     @ElementCollection
-    @CollectionTable(
-            name = "order_products",
-            joinColumns = @JoinColumn(name = "order_id"))
-    private List<ProductEntity> productsList = new ArrayList<>();
+    @CollectionTable(name = "order_products", joinColumns = @JoinColumn(name = "order_id"))
+    @Builder.Default
+    private List<Product> productsList = new ArrayList<>();
 
     @Column(name = "order_amount", precision = 19, scale = 2)
     private BigDecimal orderAmount;

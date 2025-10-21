@@ -1,5 +1,6 @@
 package com.example.jsonView.usercasses;
 
+import com.example.jsonView.usercasses.dto.UserRequestDto;
 import com.example.jsonView.usercasses.dto.UserResponseDto;
 
 import java.util.List;
@@ -7,13 +8,13 @@ import java.util.UUID;
 
 public interface UserService {
 
-    UserResponseDto addUser(String userName, String userSurname, String userEmail);
+    UserResponseDto addUser(UserRequestDto userRequestDto);
 
     UserResponseDto getUserById(UUID userId);
 
     List<UserResponseDto> getAllUsers();
 
-    UserResponseDto updateUserById(UUID userId, String userName, String userSurname, String userEmail);
+    UserResponseDto updateUserById(UUID userId, UserRequestDto userRequestDto);
 
     void deleteUserById(UUID userId);
 }

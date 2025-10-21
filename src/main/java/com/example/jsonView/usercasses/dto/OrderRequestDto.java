@@ -8,8 +8,9 @@ import java.util.UUID;
 
 @Builder(setterPrefix = "with")
 public record OrderRequestDto(
-        List<Product> productsList,
-        OrderStatus statusOrder,
+        List<ProductResponseDto> productsList,
+        BigDecimal orderAmount,
+        OrderStatus orderStatus,
         UUID userId) {
 }
 

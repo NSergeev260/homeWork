@@ -28,10 +28,10 @@ public class UserEntity {
     @Column(name = "user_surname", nullable = false)
     private String userSurname;
 
-    @Column(name= "user_email", nullable = false, unique = true)
+    @Column(name = "user_email", nullable = false, unique = true)
     private String userEmail;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Builder.Default
     private List<OrderEntity> ordersList = new ArrayList<>();
 }

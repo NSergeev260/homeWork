@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
 
     @Override
-    public UserResponseDto addUser(String userName, String userSurname, String userEmail) {
+    public UserResponseDto addUser(UserRequestDto userRequestDto) {
 
         if (userRepo.findByUserEmail(userEmail).isPresent()) {
             log.info("User with email {} already exists. FAIL! Time: {}", userEmail, LocalDateTime.now());
@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponseDto updateUserById(UUID userId, String userName, String userSurname, String userEmail) {
+    public UserResponseDto updateUserById(UUID userId, UserRequestDto userRequestDto) {
         UserEntity userEntityUpdated = getUserRepoByID(userId);
         userEntityUpdated.setUserName(userName);
         userEntityUpdated.setUserSurname(userSurname);

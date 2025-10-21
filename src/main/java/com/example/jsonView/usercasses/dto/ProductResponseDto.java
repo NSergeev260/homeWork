@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-public record Product(
+public record ProductResponseDto(
         @JsonView(Views.OrderDetails.class)
         UUID productId,
 

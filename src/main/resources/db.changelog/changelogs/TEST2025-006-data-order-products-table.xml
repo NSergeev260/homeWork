@@ -22,7 +22,7 @@
         </insert>
 
         <insert tableName="order_products">
-            <column name="order_product_id" value="g7ddee99-9c0b-4ef8-bb6d-6bb9bd380a18"/>
+            <column name="order_product_id" value="f7ddee99-9c0b-4ef8-bb6d-6bb9bd380a18"/>
             <column name="order_id" value="d3ffcc99-9c0b-4ef8-bb6d-6bb9bd380a14"/>
             <column name="product_id" value="33333333-3333-3333-3333-333333333333"/>
             <column name="product_name" value="TV"/>
@@ -30,7 +30,7 @@
         </insert>
 
         <insert tableName="order_products">
-            <column name="order_product_id" value="h8eeff99-9c0b-4ef8-bb6d-6bb9bd380a19"/>
+            <column name="order_product_id" value="f8eeff99-9c0b-4ef8-bb6d-6bb9bd380a19"/>
             <column name="order_id" value="e4aacc99-9c0b-4ef8-bb6d-6bb9bd380a15"/>
             <column name="product_id" value="44444444-4444-4444-4444-444444444444"/>
             <column name="product_name" value="Book"/>
@@ -38,7 +38,7 @@
         </insert>
 
         <insert tableName="order_products">
-            <column name="order_product_id" value="i9ffaa99-9c0b-4ef8-bb6d-6bb9bd380a20"/>
+            <column name="order_product_id" value="f9ffaa99-9c0b-4ef8-bb6d-6bb9bd380a20"/>
             <column name="order_id" value="e4aacc99-9c0b-4ef8-bb6d-6bb9bd380a15"/>
             <column name="product_id" value="55555555-5555-5555-5555-555555555555"/>
             <column name="product_name" value="Mouse"/>

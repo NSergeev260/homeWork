@@ -28,11 +28,8 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public UserResponseDto addUser(
-            @RequestParam String name,
-            @RequestParam String surname,
-            @RequestParam String email) {
-        return userService.addUser(name, surname, email);
+    public UserResponseDto addUser(@RequestBody UserRequestDto userRequestDto) {
+        return userService.addUser(userRequestDto);
     }
 
     @JsonView(Views.UserDetails.class)
@@ -49,10 +46,8 @@ public class UserController {
 
     @PutMapping("/{userId}")
     public UserResponseDto updateUser(@PathVariable UUID userId,
-                                      @RequestPart String name,
-                                      @RequestPart String surname,
-                                      @RequestPart String email) {
-        return userService.updateUserById(userId, name, surname, email);
+                                      @RequestBody UserRequestDto userRequestDto) {
+        return userService.updateUserById(userId, userRequestDto);
     }
 
     @DeleteMapping("/{userId}")

@@ -16,8 +16,6 @@ public interface OrderMapper {
 
     @Mapping(target = "orderId", ignore = true)
     @Mapping(target = "user", ignore = true)
-    @Mapping(target = "orderAmount", ignore = true)
-    @Mapping(target = "orderStatus", ignore = true)
     OrderEntity fromDtoToEntity(OrderRequestDto OrderRequestDto);
 
     OrderResponseDto fromEntityToDto(OrderEntity OrderEntity);
