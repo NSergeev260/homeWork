@@ -98,7 +98,7 @@ class OrderServiceImplTest {
 
         Mockito.when(userRepository.findById(OrderTestData.USER_ID)).
                 thenReturn(Optional.of(userEntity));
-        Mockito.when(orderRepository.findByUserUserId(OrderTestData.USER_ID))
+        Mockito.when(orderRepository.findByUserEntityUserId(OrderTestData.USER_ID))
                 .thenReturn(orderList);
         Mockito.when(orderMapper.fromEntityListToDtoList(orderList))
                 .thenReturn(responseList);

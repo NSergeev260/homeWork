@@ -21,11 +21,6 @@ public class UserController {
 
     private final UserService userService;
 
-//    @PostMapping("/{userId}")
-//    public UserResponseDto addUser(String name, String surname, String email) {
-//        return userService.addUser(name, surname, email);
-//    }
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserResponseDto addUser(@RequestBody UserRequestDto userRequestDto) {

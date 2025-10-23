@@ -1,8 +1,13 @@
 package com.example.jsonView.api.controllers;
 
+import com.example.jsonView.api.PostgresTestContainerExtension;
+import com.example.jsonView.usercasses.dto.UserRequestDto;
+import com.example.jsonView.usercasses.dto.UserResponseDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -11,172 +16,137 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 
-import java.time.YearMonth;
-import java.util.List;
 import java.util.UUID;
 
-@IntegrationTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ExtendWith(PostgresTestContainerExtension.class)
 public class UserControllerIntegrationTest {
-
-    private static final String CV_UUID = "123e4567-e89b-12d3-a456-426614174001";
-    private static final String URL = "/api/v1/cvs/" + CV_UUID + "/additional-information";
 
     @Autowired
     private TestRestTemplate restTemplate;
 
+    private static final UUID EXISTING_USER_ID =
+            UUID.fromString("550e8400-e29b-41d4-a716-446655440001");
+    private static final String USERS_URL = "/api/users";
+    private static final String USER_BY_ID_URL_TEMPLATE = USERS_URL + "/{userId}";
+
     @SqlGroup({
-        @Sql(scripts = "classpath:testdata/clear_additional_information_test_data.sql",
-            executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)})
+        @Sql(scripts = "classpath:testdata/add_json_view_test_data.sql",
+                executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD),
+        @Sql(scripts = "classpath:testdata/clear_json_view_test_data.sql",
+                executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+    })
     @Test
-    void methodShouldInsertAddInfoTest() {
+    void methodShouldReturn200AndJsonUserResponseDtoWhenGetUserTest() {
+        ResponseEntity<UserResponseDto> response = restTemplate.exchange(
+            USER_BY_ID_URL_TEMPLATE,
+            HttpMethod.GET,
+            null,
+            UserResponseDto.class,
+            EXISTING_USER_ID
+        );
 
-        AwardDto awardDto = AwardDto.builder().
-            withTitle("Title example").
-            withDate(YearMonth.of(2020, 2)).
-            withIssuer("Issuer example").
-            withDescription("Description example").
-            withLink("https://javaguru.by/").
-            build();
-
-        AdditionalInformationRequestDto addInfoRequestDto = new AdditionalInformationRequestDto(
-            "Male",
-            "Beard",
-            List.of(awardDto));
-
-        HttpEntity<AdditionalInformationRequestDto> addInfoRequestDtoHttpEntity = new HttpEntity<>(addInfoRequestDto);
-        ResponseEntity<AdditionalInformationResponseDto> responseEntity =
-            restTemplate.exchange(URL,
-                HttpMethod.POST,
-                addInfoRequestDtoHttpEntity,
-                AdditionalInformationResponseDto.class);
-
-        Assertions.assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
-        AdditionalInformationResponseDto addInfoResponseDto = responseEntity.getBody();
-        Assertions.assertNotNull(addInfoResponseDto);
-
-        Assertions.assertEquals(addInfoRequestDto.additionalInfo(), addInfoResponseDto.additionalInfo());
-        Assertions.assertEquals(addInfoRequestDto.hobby(), addInfoResponseDto.hobby());
-        Assertions.assertEquals(addInfoRequestDto.awards().size(), addInfoResponseDto.awards().size());
-
-        Assertions.assertArrayEquals(addInfoRequestDto.awards().toArray(),
-            addInfoResponseDto.awards().toArray());
+        Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
+        Assertions.assertNotNull(response.getBody());
     }
 
     @SqlGroup({
-        @Sql(scripts = "classpath:testdata/additional_information_test_data.sql",
-            executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD),
-        @Sql(scripts = "classpath:testdata/clear_additional_information_test_data.sql",
-            executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)})
+        @Sql(scripts = "classpath:testdata/add_json_view_test_data.sql",
+                executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD),
+        @Sql(scripts = "classpath:testdata/clear_json_view_test_data.sql",
+                executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+    })
     @Test
-    void methodShouldGetAddInfoTest() {
-        AwardDto awardDtoExpected = AwardDto.builder().
-            withTitle("Title example").
-            withDate(YearMonth.of(2020, 2)).
-            withIssuer("Issuer example").
-            withDescription("Description example").
-            withLink("https://javaguru.by/").
-            build();
+    void methodShouldReturn200AndJsonUserResponseDtoListWhenGetAllUsersTest() {
+        ResponseEntity<UserResponseDto[]> response = restTemplate.exchange(
+            USERS_URL,
+            HttpMethod.GET,
+            null,
+            UserResponseDto[].class
+        );
 
-        AdditionalInformationRequestDto addInfoDtoExpected = new AdditionalInformationRequestDto(
-            "Female",
-            "Prison",
-            List.of(awardDtoExpected));
-
-        ResponseEntity<AdditionalInformationResponseDto> responseEntity =
-            restTemplate.exchange(URL,
-                HttpMethod.GET,
-                null,
-                AdditionalInformationResponseDto.class);
-
-        AdditionalInformationResponseDto addInfoResponseDto = responseEntity.getBody();
-        Assertions.assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-        Assertions.assertNotNull(addInfoResponseDto);
-        Assertions.assertEquals(addInfoDtoExpected.additionalInfo(), addInfoResponseDto.additionalInfo());
-        Assertions.assertEquals(addInfoDtoExpected.hobby(), addInfoResponseDto.hobby());
-
-        Assertions.assertArrayEquals(addInfoDtoExpected.awards().toArray(),
-            addInfoResponseDto.awards().toArray());
-    }
-
-    @Test
-    void getShouldReturnNotFound() {
-        String uuid = (UUID.randomUUID()).toString();
-
-        ResponseEntity<String> responseEntity =
-            restTemplate.exchange("/api/v1/cvs/" + uuid + "/additional-information",
-                HttpMethod.GET,
-                null,
-                String.class);
-
-        Assertions.assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
+        Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
+        Assertions.assertNotNull(response.getBody());
     }
 
     @SqlGroup({
-        @Sql(scripts = "classpath:testdata/additional_information_test_data.sql",
-            executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD),
-        @Sql(scripts = "classpath:testdata/clear_additional_information_test_data.sql",
-            executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)})
+        @Sql(scripts = "classpath:testdata/add_json_view_test_data.sql",
+                executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD),
+        @Sql(scripts = "classpath:testdata/clear_json_view_test_data.sql",
+                executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+    })
     @Test
-    void methodShouldUpdateAddInfoTest() {
+    void methodShouldReturn204WhenDeleteUserTest() {
+        ResponseEntity<Void> response = restTemplate.exchange(
+            USER_BY_ID_URL_TEMPLATE,
+            HttpMethod.DELETE,
+            null,
+            Void.class,
+            EXISTING_USER_ID
+        );
 
-        AwardDto awardDto = AwardDto.builder()
-            .withTitle("Updated Title")
-            .withDate(YearMonth.of(2021, 3))
-            .withIssuer("Updated Issuer")
-            .withDescription("Updated Description")
-            .withLink("https://updatedExample.com/")
+        Assertions.assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+    }
+
+    @SqlGroup({
+        @Sql(scripts = "classpath:testdata/add_json_view_test_data.sql",
+                executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD),
+        @Sql(scripts = "classpath:testdata/clear_json_view_test_data.sql",
+                executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+    })
+    @Test
+    void methodShouldReturn200AndJsonUserResponseDtoWhenUpdateUserTest() {
+        UserRequestDto userRequestDto = UserRequestDto.builder()
+            .withUserName("ИванОбновленный")
+            .withUserSurname("Иванов")
+            .withUserEmail("ivan.updated@example.com")
             .build();
+        HttpEntity<UserRequestDto> request = new HttpEntity<>(userRequestDto);
 
-        AdditionalInformationRequestDto updateRequestDto = new AdditionalInformationRequestDto(
-            "Updated Female",
-            "Cat",
-            List.of(awardDto));
+        ResponseEntity<UserResponseDto> response = restTemplate.exchange(
+            USER_BY_ID_URL_TEMPLATE,
+            HttpMethod.PUT,
+            request,
+            UserResponseDto.class,
+            EXISTING_USER_ID
+        );
 
-        HttpEntity<AdditionalInformationRequestDto> addInfoRequestDtoHttpEntity = new HttpEntity<>(updateRequestDto);
-        ResponseEntity<AdditionalInformationResponseDto> responseEntity =
-            restTemplate.exchange(URL,
-                HttpMethod.PUT,
-                addInfoRequestDtoHttpEntity,
-                AdditionalInformationResponseDto.class);
-
-        AdditionalInformationResponseDto addInfoResponseDto = responseEntity.getBody();
-        Assertions.assertEquals(HttpStatus.CREATED, responseEntity.getStatusCode());
-        Assertions.assertNotNull(addInfoResponseDto);
-        Assertions.assertEquals(updateRequestDto.additionalInfo(), addInfoResponseDto.additionalInfo());
-        Assertions.assertEquals(updateRequestDto.hobby(), addInfoResponseDto.hobby());
-        Assertions.assertEquals(updateRequestDto.awards().size(), addInfoResponseDto.awards().size());
-
-        Assertions.assertArrayEquals(addInfoResponseDto.awards().toArray(),
-            updateRequestDto.awards().toArray());
-    }
-
-    @SqlGroup({
-        @Sql(scripts = "classpath:testdata/additional_information_test_data.sql",
-            executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD),
-        @Sql(scripts = "classpath:testdata/clear_additional_information_test_data.sql",
-            executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)})
-    @Test
-    void methodShouldDeleteAddInfoTest() {
-
-        ResponseEntity<Void> responseEntity =
-            restTemplate.exchange(URL,
-                HttpMethod.DELETE,
-                null,
-                Void.class);
-
-        Assertions.assertEquals(HttpStatus.NO_CONTENT, responseEntity.getStatusCode());
+        Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
+        Assertions.assertNotNull(response.getBody());
     }
 
     @Test
-    void deleteShouldReturnNotFound() {
-        String uuid = (UUID.randomUUID()).toString();
+    void methodShouldReturn201AndJsonUserResponseDtoWhenSaveUserTest() {
+        UserRequestDto userRequestDto = UserRequestDto.builder()
+            .withUserName("Анна")
+            .withUserSurname("Тестова")
+            .withUserEmail("anna.test@example.com")
+            .build();
+        HttpEntity<UserRequestDto> request = new HttpEntity<>(userRequestDto);
 
-        ResponseEntity<Void> responseEntity =
-            restTemplate.exchange("/api/v1/cvs/" + uuid + "/additional-information",
-                HttpMethod.DELETE,
-                null,
-                Void.class);
+        ResponseEntity<UserResponseDto> response = restTemplate.exchange(
+            USERS_URL,
+            HttpMethod.POST,
+            request,
+            UserResponseDto.class
+        );
 
-        Assertions.assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
+        Assertions.assertEquals(HttpStatus.CREATED, response.getStatusCode());
+        Assertions.assertNotNull(response.getBody());
+    }
+
+    @Test
+    void methodShouldReturn404WhenGetNonExistentUserTest() {
+        UUID nonExistentUserId = UUID.randomUUID();
+        
+        ResponseEntity<String> response = restTemplate.exchange(
+            USER_BY_ID_URL_TEMPLATE,
+            HttpMethod.GET,
+            null,
+            String.class,
+            nonExistentUserId
+        );
+
+        Assertions.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
 }

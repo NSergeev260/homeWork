@@ -64,7 +64,7 @@ public class OrderServiceImpl implements OrderService {
         userRepo.findById(userId)
                 .orElseThrow(() ->
                         new BadRequestException("User not exists. FAIL! ID: " + userId));
-        List<OrderEntity> orders = orderRepo.findByUserUserId(userId);
+        List<OrderEntity> orders = orderRepo.findByUserEntityUserId(userId);
         return orderMapper.fromEntityListToDtoList(orders);
     }
 

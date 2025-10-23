@@ -1,5 +1,30 @@
-client.url: http://localhost:3000
+client:
+  url: http://localhost:3000
 
 server:
   port: 0
 
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+      jdbc:
+        lob:
+          non_contextual_creation: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    com.example.jsonView: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.testcontainers: INFO

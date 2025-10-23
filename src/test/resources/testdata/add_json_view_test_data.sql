@@ -8,5 +8,8 @@ VALUES
 
 INSERT INTO order_products (order_id, product_id, product_name, product_cost)
 VALUES
-('660e8400-e29b-41d4-a716-446655440001', '770e8400-e29b-41d4-a716-446655440001', 'Keyboard', 1000.00),
-('660e8400-e29b-41d4-a716-446655440001', '770e8400-e29b-41d4-a716-446655440002', 'Mouse', 500.00),
+('660e8400-e29b-41d4-a716-446655440001', '770e8400-e29b-41d4-a716-446655440001', 'Keyboard', 1000.00);
+
+INSERT INTO order_products (order_id, product_id, product_name, product_cost)
+VALUES
+('660e8400-e29b-41d4-a716-446655440001', '770e8400-e29b-41d4-a716-446655440002', 'Mouse', 500.00);
