@@ -1,7 +1,6 @@
 package com.example.jsonView.persistence.model;
 
 import com.example.jsonView.usercasses.dto.OrderStatus;
-import com.example.jsonView.usercasses.dto.ProductResponseDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -38,5 +37,5 @@ public class OrderEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
-    private UserEntity user;
+    private UserEntity userEntity;
 }

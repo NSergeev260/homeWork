@@ -14,7 +14,7 @@ import java.util.List;
         builder = @Builder(disableBuilder = true))
 public interface UserMapper {
 
-    @Mapping(target = "userId", ignore = true) // ID генерируется БД
+    @Mapping(target = "userId", ignore = true)
     @Mapping(target = "ordersList", ignore = true)
     UserEntity fromDtoToEntity(UserRequestDto userRequestDto);
 

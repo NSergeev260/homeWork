@@ -31,7 +31,7 @@ public class UserEntity {
     @Column(name = "user_email", nullable = false, unique = true)
     private String userEmail;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @Builder.Default
     private List<OrderEntity> ordersList = new ArrayList<>();
 }

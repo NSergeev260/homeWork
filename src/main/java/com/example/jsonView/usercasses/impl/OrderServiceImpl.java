@@ -39,7 +39,7 @@ public class OrderServiceImpl implements OrderService {
                 .map(Product::getProductCost)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
         OrderEntity orderEntity = orderMapper.fromDtoToEntity(orderRequestDto);
-        orderEntity.setUser(user);
+        orderEntity.setUserEntity(user);
         orderEntity.setOrderAmount(orderAmount);
         orderEntity.setOrderStatus(OrderStatus.PENDING);
         OrderEntity savedOrder = orderRepo.save(orderEntity);

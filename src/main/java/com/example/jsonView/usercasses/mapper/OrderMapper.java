@@ -16,7 +16,7 @@ import java.util.List;
 public interface OrderMapper {
 
     @Mapping(target = "orderId", ignore = true)
-    @Mapping(target = "user", ignore = true)
+//    @Mapping(target = "user", ignore = true)
     @Mapping(target = "productsList", source = "productsList")
     OrderEntity fromDtoToEntity(OrderRequestDto OrderRequestDto);
 
