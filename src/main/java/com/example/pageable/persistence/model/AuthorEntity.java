@@ -29,7 +29,7 @@ public class AuthorEntity {
     private String authorSurname;
 
     @OneToMany(mappedBy = "authorEntity", cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY, orphanRemoval = true)
+            orphanRemoval = true, fetch = FetchType.LAZY)
     @Builder.Default
     private List<BookEntity> bookEntityList = new ArrayList<>();
 }

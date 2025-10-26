@@ -51,7 +51,7 @@ public class BookServiceImpl implements BookService {
 
         AuthorResponseDto authorResponseDto = authorService.getAuthorById(bookRequestDto.authorId());
 
-        AuthorEntity author = authorMapper.fromDtoToEntity(authorResponseDto);
+        AuthorEntity author = AuthorMapper.);
         AuthorEntity author = authorService.getAuthorById(bookRequestDto.authorId());
         BookEntity bookEntity = bookMapper.fromDtoToEntity(bookRequestDto);
         bookEntity.setAuthorEntity(author);
@@ -113,6 +113,7 @@ public class BookServiceImpl implements BookService {
 
         AuthorEntity author = authorServiceImpl
                 .getAuthorById(bookRequestDto.authorId());
+        bookEntity.setAuthorEntity(author);
 
         BookEntity updatedBookEntity = bookRepo.save(bookEntity);
         log.info("The book with the id {} has been UPDATED, Date {}", bookId, LocalDateTime.now());
