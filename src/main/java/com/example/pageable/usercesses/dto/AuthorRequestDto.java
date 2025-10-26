@@ -8,7 +8,6 @@ import java.util.UUID;
 @Builder(setterPrefix = "with")
 public record AuthorRequestDto(
         String name,
-        String surname,
-        List<BookResponseDto> bookResponseDtoList
+        String surname
 ) {
 }

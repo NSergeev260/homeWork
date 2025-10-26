@@ -9,6 +9,7 @@ import java.util.UUID;
 public record BookRequestDto(
         String bookTitle,
         Long sizeInPages,
-        LocalDate dateOfPublishing
+        LocalDate dateOfPublishing,
+        UUID authorId
 ) {
 }

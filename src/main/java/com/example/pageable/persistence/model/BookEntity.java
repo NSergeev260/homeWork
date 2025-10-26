@@ -1,9 +1,7 @@
 package com.example.pageable.persistence.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -11,6 +9,8 @@ import java.util.UUID;
 @Builder(setterPrefix = "with")
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 @Entity
 @Table(name = "books")
 public class BookEntity {
@@ -18,14 +18,18 @@ public class BookEntity {
     @Id
     @GeneratedValue
     @Column(name = "book_id")
-    UUID bookId;
+    private UUID bookId;
 
-    @Column(name = "book_name")
-    String bookName;
+    @Column(name = "book_title", nullable = false)
+    private String bookTitle;
 
     @Column(name = "size_in_pages")
-    Long sizeInPages;
+    private Long sizeInPages;
 
-    @Column(name = "data_of_publishing")
-    LocalDate dateOfPublishing;
+    @Column(name = "date_of_publishing")
+    private LocalDate dateOfPublishing;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "author_id")
+    private AuthorEntity authorEntity;
 }
