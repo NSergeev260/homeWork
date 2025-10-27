@@ -3,7 +3,6 @@ package com.example.pageable.usercesses.impl;
 import com.example.pageable.api.exeption.BadRequestException;
 import com.example.pageable.api.exeption.NotFoundException;
 import com.example.pageable.persistence.model.AuthorEntity;
-import com.example.pageable.persistence.model.BookEntity;
 import com.example.pageable.persistence.repository.AuthorRepository;
 import com.example.pageable.usercesses.AuthorService;
 import com.example.pageable.usercesses.dto.AuthorRequestDto;
@@ -100,6 +99,7 @@ public class AuthorServiceImpl implements AuthorService {
         AuthorEntity authorEntity = authorRepo.findById(authorId)
                 .orElseThrow(() ->
                         new NotFoundException("Author not found. FAIL! ID: " + authorId));
+
         return authorEntity;
     }
 }

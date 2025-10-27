@@ -4,13 +4,11 @@ import com.example.pageable.api.exeption.BadRequestException;
 import com.example.pageable.api.exeption.NotFoundException;
 import com.example.pageable.persistence.model.AuthorEntity;
 import com.example.pageable.persistence.model.BookEntity;
+import com.example.pageable.persistence.repository.AuthorRepository;
 import com.example.pageable.persistence.repository.BookRepository;
-import com.example.pageable.usercesses.AuthorService;
 import com.example.pageable.usercesses.BookService;
-import com.example.pageable.usercesses.dto.AuthorResponseDto;
 import com.example.pageable.usercesses.dto.BookRequestDto;
 import com.example.pageable.usercesses.dto.BookResponseDto;
-import com.example.pageable.usercesses.mapper.AuthorMapper;
 import com.example.pageable.usercesses.mapper.BookMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,9 +28,7 @@ public class BookServiceImpl implements BookService {
 
     private final BookMapper bookMapper;
     private final BookRepository bookRepo;
-    private final AuthorService authorService;
-    private final AuthorMapper authorMapper;
-    private final AuthorServiceImpl authorServiceImpl;
+    private final AuthorRepository authorRepo;
 
     @Transactional
     @Override
@@ -40,21 +36,19 @@ public class BookServiceImpl implements BookService {
 
         Optional<BookEntity> bookExists =
                 bookRepo.findByBookTitleAndAuthorEntityAuthorIdAndDateOfPublishing(
-                bookRequestDto.bookTitle(),
-                bookRequestDto.authorId(),
-                bookRequestDto.dateOfPublishing()
-        );
+                        bookRequestDto.bookTitle(),
+                        bookRequestDto.authorId(),
+                        bookRequestDto.dateOfPublishing()
+                );
 
         if (bookExists.isPresent()) {
             throw new BadRequestException("This book already exists. FAIL!");
         }
 
-        AuthorResponseDto authorResponseDto = authorService.getAuthorById(bookRequestDto.authorId());
+        AuthorEntity authorEntity = getAuthorEntity(bookRequestDto);
 
-        AuthorEntity author = AuthorMapper.);
-        AuthorEntity author = authorService.getAuthorById(bookRequestDto.authorId());
         BookEntity bookEntity = bookMapper.fromDtoToEntity(bookRequestDto);
-        bookEntity.setAuthorEntity(author);
+        bookEntity.setAuthorEntity(authorEntity);
         BookEntity savedBookEntity = bookRepo.save(bookEntity);
 
         log.info("The book with the id {} has been ADDED. Time: {}",
@@ -68,7 +62,8 @@ public class BookServiceImpl implements BookService {
     public BookResponseDto getBookById(UUID bookId) {
         BookEntity bookEntity = getBookRepoByID(bookId);
 
-        log.info("The book with the id {} FOUND. Time: {}", bookId, LocalDateTime.now());
+        log.info("The book with the id {} FOUND. Time: {}"
+                , bookId, LocalDateTime.now());
 
         return bookMapper.fromEntityToDto(bookEntity);
     }
@@ -111,12 +106,14 @@ public class BookServiceImpl implements BookService {
         bookEntity.setSizeInPages(bookRequestDto.sizeInPages());
         bookEntity.setDateOfPublishing(bookRequestDto.dateOfPublishing());
 
-        AuthorEntity author = authorServiceImpl
-                .getAuthorById(bookRequestDto.authorId());
-        bookEntity.setAuthorEntity(author);
+        AuthorEntity author = getAuthorEntity(bookRequestDto);
 
+        bookEntity.setAuthorEntity(author);
         BookEntity updatedBookEntity = bookRepo.save(bookEntity);
-        log.info("The book with the id {} has been UPDATED, Date {}", bookId, LocalDateTime.now());
+
+        log.info("The book with the id {} has been UPDATED, Date {}"
+                , bookId, LocalDateTime.now());
+
         return bookMapper.fromEntityToDto(updatedBookEntity);
 
     }
@@ -127,7 +124,8 @@ public class BookServiceImpl implements BookService {
         BookEntity bookEntity = getBookRepoByID(bookId);
         bookRepo.delete(bookEntity);
 
-        log.info("The book with the id {} has been DELETED, Date {}", bookId, LocalDateTime.now());
+        log.info("The book with the id {} has been DELETED, Date {}"
+                , bookId, LocalDateTime.now());
     }
 
     private BookEntity getBookRepoByID(UUID bookId) {
@@ -135,5 +133,14 @@ public class BookServiceImpl implements BookService {
                 .orElseThrow(() ->
                         new NotFoundException("Book not found. FAIL! ID: " + bookId));
         return bookEntity;
+    }
+
+    private AuthorEntity getAuthorEntity(BookRequestDto bookRequestDto) {
+        AuthorEntity authorEntity = authorRepo.findById(bookRequestDto.authorId())
+                .orElseThrow(() ->
+                        new NotFoundException("Author not found. FAIL! ID: "
+                                + bookRequestDto.authorId()));
+
+        return authorEntity;
     }
 }

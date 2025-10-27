@@ -1,12 +1,10 @@
 package com.example.pageable.usercesses;
 
-import com.example.pageable.usercesses.dto.AuthorResponseDto;
 import com.example.pageable.usercesses.dto.BookRequestDto;
 import com.example.pageable.usercesses.dto.BookResponseDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 import java.util.UUID;
 
 public interface BookService {
