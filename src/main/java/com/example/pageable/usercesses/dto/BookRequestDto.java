@@ -1,9 +1,6 @@
 package com.example.pageable.usercesses.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.*;
 import lombok.Builder;
 
 import java.time.LocalDate;
@@ -16,7 +13,8 @@ public record BookRequestDto(
         String bookTitle,
         @Positive(message = "The size of pages cannot be empty or null")
         Long sizeInPages,
-        @Past(message = "The date of publishing cannot be empty or null")
+        @Min(value = 1000, message = "Year must be reasonable")
+        @Max(value = 2100, message = "Year must be reasonable")
         Integer yearOfPublishing,
         @NotNull(message = "The author id cannot be empty or null")
         UUID authorId
