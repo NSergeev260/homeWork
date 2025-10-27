@@ -26,7 +26,7 @@ public record BookResponseDto(
 
         @JsonView({Views.BookPublic.class, Views.BookDetails.class,
                 Views.BookWithAuthor.class,})
-        LocalDate dateOfPublishing,
+        Integer yearOfPublishing,
 
         @JsonView({Views.BookDetails.class, Views.BookWithAuthor.class})
         @JsonManagedReference("book-author")

@@ -15,10 +15,10 @@ import java.util.UUID;
 @Repository
 public interface BookRepository extends JpaRepository<BookEntity, UUID> {
 
-    Optional<BookEntity> findByBookTitleAndAuthorEntityAuthorIdAndDateOfPublishing(
+    Optional<BookEntity> findByBookTitleAndAuthorEntityAuthorIdAndYearOfPublishing(
             String bookTitle,
             UUID authorId,
-            LocalDate dateOfPublishing);
+            Integer yearOfPublishing);
 
     @Query("SELECT a FROM BookEntity a WHERE a.authorEntity.authorId = :authorId")
     Page<BookEntity> findByAuthorId(@Param("authorId") UUID authorId, Pageable pageable);

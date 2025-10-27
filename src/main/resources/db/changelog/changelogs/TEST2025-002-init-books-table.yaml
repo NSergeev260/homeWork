@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-002-init-books-table
+      author: your_name
+      changes:
+        - createTable:
+            tableName: books
+            columns:
+              - column:
+                  name: book_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  defaultValueComputed: gen_random_uuid()
+              - column:
+                  name: book_title
+                  type: VARCHAR(500)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: size_in_pages
+                  type: BIGINT
+              - column:
+                  name: year_of_publishing
+                  type: INTEGER
+              - column:
+                  name: author_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_books_author_id
+                    references: authors(author_id)

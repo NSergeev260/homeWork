@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-001-init-authors-table
+      author: your_name
+      changes:
+        - createTable:
+            tableName: authors
+            columns:
+              - column:
+                  name: author_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  defaultValueComputed: gen_random_uuid()
+              - column:
+                  name: author_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: author_surname
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false

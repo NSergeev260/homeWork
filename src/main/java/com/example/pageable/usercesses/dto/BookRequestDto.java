@@ -17,7 +17,7 @@ public record BookRequestDto(
         @Positive(message = "The size of pages cannot be empty or null")
         Long sizeInPages,
         @Past(message = "The date of publishing cannot be empty or null")
-        LocalDate dateOfPublishing,
+        Integer yearOfPublishing,
         @NotNull(message = "The author id cannot be empty or null")
         UUID authorId
 ) {

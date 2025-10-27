@@ -35,10 +35,10 @@ public class BookServiceImpl implements BookService {
     public BookResponseDto addBook(BookRequestDto bookRequestDto) {
 
         Optional<BookEntity> bookExists =
-                bookRepo.findByBookTitleAndAuthorEntityAuthorIdAndDateOfPublishing(
+                bookRepo.findByBookTitleAndAuthorEntityAuthorIdAndYearOfPublishing(
                         bookRequestDto.bookTitle(),
                         bookRequestDto.authorId(),
-                        bookRequestDto.dateOfPublishing()
+                        bookRequestDto.yearOfPublishing()
                 );
 
         if (bookExists.isPresent()) {
@@ -104,7 +104,7 @@ public class BookServiceImpl implements BookService {
 
         bookEntity.setBookTitle(bookRequestDto.bookTitle());
         bookEntity.setSizeInPages(bookRequestDto.sizeInPages());
-        bookEntity.setDateOfPublishing(bookRequestDto.dateOfPublishing());
+        bookEntity.setYearOfPublishing(bookRequestDto.yearOfPublishing());
 
         AuthorEntity author = getAuthorEntity(bookRequestDto);
 

@@ -3,6 +3,7 @@ package com.example.pageable.api.controllers;
 import com.example.pageable.usercesses.BookService;
 import com.example.pageable.usercesses.dto.BookRequestDto;
 import com.example.pageable.usercesses.dto.BookResponseDto;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,22 +19,22 @@ public class BookController {
     private final BookService bookService;
 
     @PostMapping
-    public BookResponseDto addBook(BookRequestDto bookRequestDto){
+    public BookResponseDto addBook(@Valid @RequestBody BookRequestDto bookRequestDto){
         return bookService.addBook(bookRequestDto);
     }
 
-    @GetMapping
-    public BookResponseDto getBookById(UUID bookId){
+    @GetMapping("/{bookId}")
+    public BookResponseDto getBookById(@PathVariable UUID bookId){
         return bookService.getBookById(bookId);
     }
 
-    @GetMapping
-    public Page<BookResponseDto> getBookByTitle(String title, Pageable pageable){
+    @GetMapping("/search")
+    public Page<BookResponseDto> getBookByTitle(@RequestParam String title, Pageable pageable){
         return bookService.getBookByTitle(title, pageable);
     }
 
-    @GetMapping
-    public Page<BookResponseDto> getBooksByAuthor(UUID authorId, Pageable pageable){
+    @GetMapping("/author/{authorId}")
+    public Page<BookResponseDto> getBooksByAuthor(@PathVariable UUID authorId, Pageable pageable){
         return bookService.getBooksByAuthor(authorId, pageable);
     }
 
@@ -42,13 +43,14 @@ public class BookController {
         return bookService.getAllBooks(pageable);
     }
 
-    @PutMapping
-    public BookResponseDto updateBook(UUID bookId, BookRequestDto bookRequestDto){
+    @PutMapping("/{bookId}")
+    public BookResponseDto updateBook(@PathVariable UUID bookId,
+                                      @Valid @RequestBody BookRequestDto bookRequestDto){
         return bookService.updateBook(bookId, bookRequestDto);
     }
 
-    @DeleteMapping
-    public void deleteBook(UUID bookId){
+    @DeleteMapping("/{bookId}")
+    public void deleteBook(@PathVariable UUID bookId){
         bookService.deleteBook(bookId);
     }
 }

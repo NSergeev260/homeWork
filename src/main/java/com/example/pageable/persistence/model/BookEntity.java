@@ -26,8 +26,8 @@ public class BookEntity {
     @Column(name = "size_in_pages")
     private Long sizeInPages;
 
-    @Column(name = "date_of_publishing")
-    private LocalDate dateOfPublishing;
+    @Column(name = "year_of_publishing")
+    private Integer yearOfPublishing;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")

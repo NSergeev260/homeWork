@@ -17,12 +17,12 @@ public class AuthorController {
     private final AuthorService authorService;
 
     @PostMapping
-    public AuthorResponseDto addAuthor(AuthorRequestDto authorRequestDto) {
+    public AuthorResponseDto addAuthor(@RequestBody AuthorRequestDto authorRequestDto) {
         return authorService.addAuthor(authorRequestDto);
     }
 
-    @GetMapping
-    public AuthorResponseDto getAuthorById(UUID authorId){
+    @GetMapping("/{authorId}")
+    public AuthorResponseDto getAuthorById(@PathVariable UUID authorId){
         return authorService.getAuthorById(authorId);
     }
 
@@ -32,12 +32,13 @@ public class AuthorController {
     }
 
 
-    @PutMapping
-    public AuthorResponseDto updateAuthor(UUID authorId, AuthorRequestDto authorRequestDto){
+    @PutMapping("/{authorId}")
+    public AuthorResponseDto updateAuthor(@PathVariable UUID authorId,
+                                          @RequestBody AuthorRequestDto authorRequestDto){
         return authorService.updateAuthor(authorId, authorRequestDto);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{authorId}")
     public void deleteAuthor(UUID authorId){
         authorService.deleteAuthor(authorId);
     }
