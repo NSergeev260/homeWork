@@ -7,3 +7,7 @@ databaseChangeLog:
       file: db/changelog/changelogs/TEST2025-003-data-authors-table.yaml
   - include:
       file: db/changelog/changelogs/TEST2025-004-data-books-table.yaml
+  - include:
+      file: db/changelog/changelogs/TEST2025-005-add-data-authors-table.yaml
+  - include:
+      file: db/changelog/changelogs/TEST2025-006-add-data-books-table.yaml

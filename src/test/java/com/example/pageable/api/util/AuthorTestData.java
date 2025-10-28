@@ -24,8 +24,8 @@ public class AuthorTestData {
 
     public static AuthorRequestDto getAuthorRequestDto() {
         return AuthorRequestDto.builder()
-                .withName(NAME)
-                .withSurname(SURNAME)
+                .withAuthorName(NAME)
+                .withAuthorSurname(SURNAME)
                 .build();
     }
 

@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-005-add-data-authors-table
+      author: nsergeev
+      changes:
+        - insert:
+            tableName: authors
+            columns:
+              - column:
+                  name: author_id
+                  value: "e9f6789a-bcde-4934-ef01-567890123456"
+              - column:
+                  name: author_name
+                  value: "Говард"
+              - column:
+                  name: author_surname
+                  value: "Лавкрафт"

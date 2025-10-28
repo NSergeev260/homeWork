@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-006-add-data-books-table
+      author: nsergeev
+      changes:
+        - sql:
+            sql: |
+              INSERT INTO books (book_id, book_title, size_in_pages, year_of_publishing, author_id)
+              SELECT 
+                gen_random_uuid(),
+                'Книга по Java ' || generate_series,
+                (150 + random() * 450)::integer,
+                (2018 + (random() * 7))::integer,
+                'e9f6789a-bcde-4934-ef01-567890123456'
+              FROM generate_series(1, 100);

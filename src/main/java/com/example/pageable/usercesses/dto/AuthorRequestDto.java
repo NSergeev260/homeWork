@@ -6,8 +6,8 @@ import lombok.Builder;
 @Builder(setterPrefix = "with")
 public record AuthorRequestDto(
         @NotBlank(message = "The name cannot be empty or null")
-        String name,
+        String authorName,
         @NotBlank(message = "The surname cannot be empty or null")
-        String surname
+        String authorSurname
 ) {
 }

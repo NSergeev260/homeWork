@@ -31,17 +31,21 @@ public class AuthorServiceImpl implements AuthorService {
     @Transactional
     @Override
     public AuthorResponseDto addAuthor(AuthorRequestDto authorRequestDto) {
-        Optional<AuthorEntity> authorExists =
-                authorRepo.findByAuthorNameAndAuthorSurname(
-                        authorRequestDto.name(),
-                        authorRequestDto.surname()
-                );
-
-        if (authorExists.isPresent()) {
-            throw new BadRequestException("This author already exists. FAIL!");
-        }
-
-        AuthorEntity authorEntity = authorMapper.fromDtoToEntity(authorRequestDto);
+//        Optional<AuthorEntity> authorExists =
+//                authorRepo.findByAuthorNameAndAuthorSurname(
+//                        authorRequestDto.authorName(),
+//                        authorRequestDto.authorSurname()
+//                );
+//
+//        if (authorExists.isPresent()) {
+//            throw new BadRequestException("This author already exists. FAIL!");
+//        }
+//
+//        AuthorEntity authorEntity = authorMapper.fromDtoToEntity(authorRequestDto);
+        AuthorEntity authorEntity = AuthorEntity.builder()
+                .withAuthorName(authorRequestDto.authorName())      // Обязательное поле!
+                .withAuthorSurname(authorRequestDto.authorSurname()) // Обязательное поле!
+                .build();
         AuthorEntity savedAuthor = authorRepo.save(authorEntity);
 
         log.info("The author with the id {} has been ADDED. Time: {}",
@@ -74,10 +78,10 @@ public class AuthorServiceImpl implements AuthorService {
     @Transactional
     @Override
     public AuthorResponseDto updateAuthor(UUID authorId, AuthorRequestDto authorRequestDto) {
-        AuthorEntity existingAuthor = getAuthorRepoByID(authorId);
-        existingAuthor.setAuthorName(authorRequestDto.name());
-        existingAuthor.setAuthorSurname(authorRequestDto.surname());
-        AuthorEntity updatedAuthor = authorRepo.save(existingAuthor);
+        AuthorEntity authorEntity = getAuthorRepoByID(authorId);
+        authorEntity.setAuthorName(authorRequestDto.authorName());
+        authorEntity.setAuthorSurname(authorRequestDto.authorSurname());
+        AuthorEntity updatedAuthor = authorRepo.save(authorEntity);
 
         log.info("The author with the id {} has been UPDATED, Date {}",
                 updatedAuthor.getAuthorId(), LocalDateTime.now());

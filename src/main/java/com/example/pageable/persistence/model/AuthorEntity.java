@@ -1,6 +1,5 @@
 package com.example.pageable.persistence.model;
 
-import com.example.pageable.usercesses.dto.BookResponseDto;
 import jakarta.persistence.*;
 import lombok.*;
 
