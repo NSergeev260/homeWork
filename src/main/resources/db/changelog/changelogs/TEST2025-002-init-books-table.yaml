@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: TEST2025-002-init-books-table
-      author: your_name
+      author: nsergeev
       changes:
         - createTable:
             tableName: books

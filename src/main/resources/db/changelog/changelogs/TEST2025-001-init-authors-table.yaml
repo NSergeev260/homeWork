@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: TEST2025-001-init-authors-table
-      author: your_name
+      author: nsergeev
       changes:
         - createTable:
             tableName: authors

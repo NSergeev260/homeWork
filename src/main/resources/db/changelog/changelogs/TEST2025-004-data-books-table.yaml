@@ -1,14 +1,14 @@
 databaseChangeLog:
   - changeSet:
       id: TEST2025-004-data-books-table
-      author: your_name
+      author: nsergeev
       changes:
         - insert:
             tableName: books
             columns:
               - column:
                   name: book_id
-                  value: "f6g7h8i9-j0k1-2345-fghi-678901234567"
+                  value: "f6789abc-def0-4945-6789-012345678901"
               - column:
                   name: book_title
                   value: "POSTGRESQL. ОСНОВЫ ЯЗЫКА SQL"
@@ -16,18 +16,18 @@ databaseChangeLog:
                   name: size_in_pages
                   value: 336
               - column:
-                  name: date_of_publishing
+                  name: year_of_publishing
                   value: "2018"
               - column:
                   name: author_id
-                  value: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+                  value: "a1b2c3d4-e5f6-4890-abcd-ef1234567890"
 
         - insert:
             tableName: books
             columns:
               - column:
                   name: book_id
-                  value: "g7h8i9j0-k1l2-3456-ghij-789012345678"
+                  value: "789abcde-f012-4956-7890-123456789012"
               - column:
                   name: book_title
                   value: "Элегантные объекты. Java Edition"
@@ -35,18 +35,18 @@ databaseChangeLog:
                   name: size_in_pages
                   value: 224
               - column:
-                  name: date_of_publishing
+                  name: year_of_publishing
                   value: "2019"
               - column:
                   name: author_id
-                  value: "b2c3d4e5-f6g7-8901-bcde-f23456789012"
+                  value: "b2c3d4e5-f678-4901-bcde-f23456789012"
 
         - insert:
             tableName: books
             columns:
               - column:
                   name: book_id
-                  value: "h8i9j0k1-l2m3-4567-hijk-890123456789"
+                  value: "9abcdef0-1234-4967-8901-234567890123"
               - column:
                   name: book_title
                   value: "Java. Полное руководство"
@@ -54,18 +54,18 @@ databaseChangeLog:
                   name: size_in_pages
                   value: 1344
               - column:
-                  name: date_of_publishing
+                  name: year_of_publishing
                   value: "2023"
               - column:
                   name: author_id
-                  value: "c3d4e5f6-g7h8-9012-cdef-345678901234"
+                  value: "c3d4e5f6-789a-4912-cdef-345678901234"
 
         - insert:
             tableName: books
             columns:
               - column:
                   name: book_id
-                  value: "i9j0k1l2-m3n4-5678-ijkl-901234567890"
+                  value: "abcdef01-2345-4978-9012-345678901234"
               - column:
                   name: book_title
                   value: "Программирование на Java для детей, родителей, бабушек и дедушек"
@@ -73,18 +73,18 @@ databaseChangeLog:
                   name: size_in_pages
                   value: 231
               - column:
-                  name: date_of_publishing
+                  name: year_of_publishing
                   value: "2011"
               - column:
                   name: author_id
-                  value: "d4e5f6g7-h8i9-0123-defg-456789012345"
+                  value: "d4e5f678-9abc-4923-dEf0-456789012345"
 
         - insert:
             tableName: books
             columns:
               - column:
                   name: book_id
-                  value: "j0k1l2m3-n4o5-6789-jklm-012345678901"
+                  value: "bcdef012-3456-4989-0123-456789012345"
               - column:
                   name: book_title
                   value: "Грокаем алгоритмы"
@@ -92,18 +92,18 @@ databaseChangeLog:
                   name: size_in_pages
                   value: 288
               - column:
-                  name: date_of_publishing
+                  name: year_of_publishing
                   value: "2017"
               - column:
                   name: author_id
-                  value: "e5f6g7h8-i9j0-1234-efgh-567890123456"
+                  value: "e5f6789a-bcde-4934-ef01-567890123456"
 
         - insert:
             tableName: books
             columns:
               - column:
                   name: book_id
-                  value: "k1l2m3n4-o5p6-7890-klmn-123456789012"
+                  value: "cdef0123-4567-4990-1234-567890123456"
               - column:
                   name: book_title
                   value: "Наш код. Ремесло, профессия, искусство"
@@ -111,18 +111,18 @@ databaseChangeLog:
                   name: size_in_pages
                   value: 224
               - column:
-                  name: date_of_publishing
+                  name: year_of_publishing
                   value: "2019"
               - column:
                   name: author_id
-                  value: "b2c3d4e5-f6g7-8901-bcde-f23456789012"
+                  value: "b2c3d4e5-f678-4901-bcde-f23456789012"
 
         - insert:
             tableName: books
             columns:
               - column:
                   name: book_id
-                  value: "l2m3n4o5-p6q7-8901-lmno-234567890123"
+                  value: "def01234-5678-5001-2345-678901234567"
               - column:
                   name: book_title
                   value: "Java. руководство для начинающих"
@@ -130,8 +130,8 @@ databaseChangeLog:
                   name: size_in_pages
                   value: 752
               - column:
-                  name: date_of_publishing
+                  name: year_of_publishing
                   value: "2023"
               - column:
                   name: author_id
-                  value: "c3d4e5f6-g7h8-9012-cdef-345678901234"
+                  value: "c3d4e5f6-789a-4912-cdef-345678901234"
