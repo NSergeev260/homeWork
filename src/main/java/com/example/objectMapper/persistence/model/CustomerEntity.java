@@ -3,7 +3,6 @@ package com.example.objectMapper.persistence.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import javax.annotation.processing.Generated;
 import java.util.UUID;
 
 @Builder(setterPrefix = "with")

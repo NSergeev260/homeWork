@@ -3,7 +3,6 @@ package com.example.objectMapper.usercasses.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-import java.util.UUID;
 
 public record CustomerRequestDto(
 

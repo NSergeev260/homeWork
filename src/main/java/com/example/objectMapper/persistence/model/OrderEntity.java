@@ -4,7 +4,6 @@ import com.example.objectMapper.usercasses.dto.CustomerResponseDto;
 import com.example.objectMapper.usercasses.dto.OrderStatus;
 import com.example.objectMapper.usercasses.dto.ProductResponseDto;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.math.BigDecimal;
