@@ -1,0 +1,14 @@
+package com.example.objectMapper.usercasses;
+
+import com.example.objectMapper.usercasses.dto.CustomerResponseDto;
+
+import java.util.UUID;
+
+public interface CustomerService {
+
+    CustomerResponseDto addCustomer(CustomerResponseDto customerResponseDto);
+
+    CustomerResponseDto getCustomer(UUID customerID);
+
+    void deleteCustomer(UUID customerID);
+}

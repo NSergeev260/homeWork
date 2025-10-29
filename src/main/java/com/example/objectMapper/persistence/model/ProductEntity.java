@@ -18,17 +18,17 @@ public class ProductEntity {
     @Id
     @GeneratedValue
     @Column(name = "product_id")
-    UUID productId;
+    private UUID productId;
 
-    @Column(name = "name", nullable = false)
-    String name;
+    @Column(name = "name", nullable = false, unique = true)
+    private String name;
 
     @Column(name = "description", nullable = false)
-    String description;
+    private String description;
 
     @Column(name = "price", nullable = false)
-    BigDecimal price;
+    private BigDecimal price;
 
     @Column(name = "quantity_in_stock")
-    Long quantityInStock;
+    private Long quantityInStock;
 }

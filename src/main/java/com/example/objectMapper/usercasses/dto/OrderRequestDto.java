@@ -13,7 +13,7 @@ public record OrderRequestDto(
         UUID customerId,
 
         @NotEmpty(message = "List of products cannot be empty")
-        List<ProductResponseDto> products,
+        List<@NotBlank String> products,
 
         @FutureOrPresent(message = "Order date cannot be in the past")
         LocalDateTime orderDate,

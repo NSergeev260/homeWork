@@ -18,17 +18,17 @@ public class CustomerEntity {
     @Id
     @GeneratedValue
     @Column(name = "customer_id")
-    UUID customerId;
+    private UUID customerId;
 
     @Column(name = "first_name", nullable = false)
-    String firstName;
+    private String firstName;
 
     @Column(name = "last_name", nullable = false)
-    String lastName;
+    private String lastName;
 
     @Column(name = "email", nullable = false)
-    String email;
+    private String email;
 
     @Column(name = "contact_number", nullable = false)
-    String contactNumber;
+    private String contactNumber;
 }
