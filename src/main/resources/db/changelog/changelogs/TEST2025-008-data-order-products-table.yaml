@@ -8,7 +8,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: order_id
-                  value: "p2l3a4c5-e6s7-8901-wxyz-y23456789012"
+                  value: "e5f6789a-bcde-4934-ef01-567890123456"
               - column:
                   name: product_id
-                  value: "a3s4d5f6-g7h8-9012-jklz-n34567890123"
+                  value: "d4e5f678-9abc-4923-def0-456789012345"

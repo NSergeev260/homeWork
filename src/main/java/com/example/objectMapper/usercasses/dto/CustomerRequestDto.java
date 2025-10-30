@@ -2,8 +2,9 @@ package com.example.objectMapper.usercasses.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.Builder;
 
-
+@Builder(setterPrefix = "with")
 public record CustomerRequestDto(
 
         @NotBlank(message = "First name cannot be empty or null")

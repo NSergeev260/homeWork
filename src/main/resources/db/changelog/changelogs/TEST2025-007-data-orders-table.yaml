@@ -8,10 +8,10 @@ databaseChangeLog:
             columns:
               - column:
                   name: order_id
-                  value: "p2l3a4c5-e6s7-8901-wxyz-y23456789012"
+                  value: "e5f6789a-bcde-4934-ef01-567890123456"
               - column:
                   name: customer_id
-                  value: "c1u2s3t4-o5m6-7890-erst-o12345678901"
+                  value: "a1b2c3d4-e5f6-4890-abcd-ef1234567890"
               - column:
                   name: order_date
                   value: "2024-01-16T14:45:00"

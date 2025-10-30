@@ -8,7 +8,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: product_id
-                  value: "p1c2d3e4-f5g6-7890-hijk-l12345678901"
+                  value: "b2c3d4e5-f678-4901-bcde-f23456789012"
               - column:
                   name: name
                   value: "iPhone 15 Pro"
@@ -27,7 +27,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: product_id
-                  value: "q2w3e4r5-t6y7-8901-uiop-m23456789012"
+                  value: "c3d4e5f6-789a-4912-cdef-345678901234"
               - column:
                   name: name
                   value: "Samsung Galaxy S24"
@@ -46,7 +46,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: product_id
-                  value: "a3s4d5f6-g7h8-9012-jklz-n34567890123"
+                  value: "d4e5f678-9abc-4923-def0-456789012345"
               - column:
                   name: name
                   value: "MacBook Pro 16"

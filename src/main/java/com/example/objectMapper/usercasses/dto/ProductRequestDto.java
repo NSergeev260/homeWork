@@ -1,9 +1,11 @@
 package com.example.objectMapper.usercasses.dto;
 
 import jakarta.validation.constraints.*;
+import lombok.Builder;
 
 import java.math.BigDecimal;
 
+@Builder(setterPrefix = "with")
 public record ProductRequestDto(
 
         @NotBlank(message = "Name of product cannot be empty or null")

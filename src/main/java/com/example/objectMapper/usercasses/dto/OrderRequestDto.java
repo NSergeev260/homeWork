@@ -1,12 +1,14 @@
 package com.example.objectMapper.usercasses.dto;
 
 import jakarta.validation.constraints.*;
+import lombok.Builder;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
+@Builder(setterPrefix = "with")
 public record OrderRequestDto(
 
         @NotNull(message = "Customer cannot be null")

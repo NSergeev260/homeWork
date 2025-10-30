@@ -2,9 +2,9 @@ databaseChangeLog:
   - include:
       file: db/changelog/changelogs/TEST2025-001-init-customers-table.yaml
   - include:
-      file: db/changelog/changelogs/TEST2025-002-init-orders-table.yaml
+      file: db/changelog/changelogs/TEST2025-003-init-products-table.yaml
   - include:
-      file: db/changelog/changelogs/TEST2025-003-data-products-table.yaml
+      file: db/changelog/changelogs/TEST2025-002-init-orders-table.yaml
   - include:
       file: db/changelog/changelogs/TEST2025-004-init-order-products-table.yaml
   - include:

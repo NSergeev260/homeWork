@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: TEST2025-001-init-products-table
+      id: TEST2025-003-init-products-table
       author: nsergeev
       changes:
         - createTable:
