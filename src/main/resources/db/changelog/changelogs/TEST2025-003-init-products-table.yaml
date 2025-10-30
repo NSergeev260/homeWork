@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-001-init-products-table
+      author: nsergeev
+      changes:
+        - createTable:
+            tableName: products
+            columns:
+              - column:
+                  name: product_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  defaultValueComputed: gen_random_uuid()
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: description
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: DECIMAL(10,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: quantity_in_stock
+                  type: BIGINT
+                  constraints:
+                    nullable: true

@@ -21,9 +21,9 @@ public record OrderRequestDto(
         @NotBlank(message = "Shipping address cannot be empty or null")
         String shippingAddress,
 
-        @NotNull(message = "Total price cannot be null")
-        @Positive(message = "Total price must be positive")
-        BigDecimal totalPrice,
+//        @NotNull(message = "Total price cannot be null")
+//        @Positive(message = "Total price must be positive")
+//        BigDecimal totalPrice,
 
         @NotNull(message = "Order status cannot be empty")
         OrderStatus orderStatus

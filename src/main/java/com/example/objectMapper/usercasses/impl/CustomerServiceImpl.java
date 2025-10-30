@@ -11,6 +11,7 @@ import com.example.objectMapper.usercasses.mapper.CustomerMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -23,6 +24,7 @@ public class CustomerServiceImpl implements CustomerService {
     private final CustomerMapper customerMapper;
     private final CustomerRepository customerRepo;
 
+    @Transactional
     @Override
     public CustomerResponseDto addCustomer(CustomerRequestDto customerRequestDto) {
         String email = customerRequestDto.email();
@@ -46,6 +48,7 @@ public class CustomerServiceImpl implements CustomerService {
         return customerMapper.fromEntityToDto(addedCustomer);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public CustomerResponseDto getCustomer(UUID customerID) {
         CustomerEntity customerEntity = getCustomerRepoByID(customerID);
@@ -57,6 +60,7 @@ public class CustomerServiceImpl implements CustomerService {
         return customerResponseDto;
     }
 
+    @Transactional
     @Override
     public void deleteCustomer(UUID customerID) {
         CustomerEntity customerEntity = getCustomerRepoByID(customerID);

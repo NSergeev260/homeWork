@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-004-init-order-products-table
+      author: nsergeev
+      changes:
+        - createTable:
+            tableName: order_products
+            columns:
+              - column:
+                  name: order_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_order_products_order
+                    references: orders(order_id)
+              - column:
+                  name: product_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_order_products_product
+                    references: products(product_id)
+        - addPrimaryKey:
+            tableName: order_products
+            columnNames: order_id, product_id
+            constraintName: pk_order_products

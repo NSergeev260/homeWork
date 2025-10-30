@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-002-init-orders-table
+      author: nsergeev
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: order_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  defaultValueComputed: gen_random_uuid()
+              - column:
+                  name: customer_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_orders_customer
+                    references: customers(customer_id)
+              - column:
+                  name: order_date
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: shipping_address
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_price
+                  type: DECIMAL(10,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: order_status
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false

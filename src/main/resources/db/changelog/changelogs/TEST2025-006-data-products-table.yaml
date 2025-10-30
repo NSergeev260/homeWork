@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-006-data-products-table
+      author: nsergeev
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: product_id
+                  value: "p1c2d3e4-f5g6-7890-hijk-l12345678901"
+              - column:
+                  name: name
+                  value: "iPhone 15 Pro"
+              - column:
+                  name: description
+                  value: "Latest Apple smartphone with advanced camera"
+              - column:
+                  name: price
+                  value: 1299.99
+              - column:
+                  name: quantity_in_stock
+                  value: 50
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: product_id
+                  value: "q2w3e4r5-t6y7-8901-uiop-m23456789012"
+              - column:
+                  name: name
+                  value: "Samsung Galaxy S24"
+              - column:
+                  name: description
+                  value: "Android flagship with AI features"
+              - column:
+                  name: price
+                  value: 899.99
+              - column:
+                  name: quantity_in_stock
+                  value: 75
+
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: product_id
+                  value: "a3s4d5f6-g7h8-9012-jklz-n34567890123"
+              - column:
+                  name: name
+                  value: "MacBook Pro 16"
+              - column:
+                  name: description
+                  value: "Professional laptop for developers"
+              - column:
+                  name: price
+                  value: 2499.99
+              - column:
+                  name: quantity_in_stock
+                  value: 25

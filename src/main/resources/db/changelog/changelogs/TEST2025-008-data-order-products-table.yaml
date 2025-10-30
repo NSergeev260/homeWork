@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-008-data-order-products-table
+      author: nsergeev
+      changes:
+        - insert:
+            tableName: order_products
+            columns:
+              - column:
+                  name: order_id
+                  value: "p2l3a4c5-e6s7-8901-wxyz-y23456789012"
+              - column:
+                  name: product_id
+                  value: "a3s4d5f6-g7h8-9012-jklz-n34567890123"

@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-005-data-customers-table
+      author: nsergeev
+      changes:
+        - insert:
+            tableName: customers
+            columns:
+              - column:
+                  name: customer_id
+                  value: "c1u2s3t4-o5m6-7890-erst-o12345678901"
+              - column:
+                  name: first_name
+                  value: "Nik"
+              - column:
+                  name: last_name
+                  value: "Sergeev"
+              - column:
+                  name: email
+                  value: "nik.sergeev@gmail.com"
+              - column:
+                  name: contact_number
+                  value: "+79211234567"

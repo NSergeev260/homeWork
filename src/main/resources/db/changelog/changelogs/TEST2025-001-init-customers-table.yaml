@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-001-init-customers-table
+      author: nsergeev
+      changes:
+        - createTable:
+            tableName: customers
+            columns:
+              - column:
+                  name: customer_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  defaultValueComputed: gen_random_uuid()
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: contact_number
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
