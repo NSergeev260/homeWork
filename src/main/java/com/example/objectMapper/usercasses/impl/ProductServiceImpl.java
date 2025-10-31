@@ -37,13 +37,14 @@ public class ProductServiceImpl implements ProductService {
             throw new BadRequestException("Product with name already EXIST. FAIL! name of product: " + nameOfProduct);
         }
 
-        ProductEntity productEntity = ProductEntity.builder()
-                .withName(productRequestDto.name())
-                .withDescription(productRequestDto.description())
-                .withPrice(productRequestDto.price())
-                .withQuantityInStock(productRequestDto.quantityInStock())
-                .build();
+//        ProductEntity productEntity = ProductEntity.builder()
+//                .withName(productRequestDto.name())
+//                .withDescription(productRequestDto.description())
+//                .withPrice(productRequestDto.price())
+//                .withQuantityInStock(productRequestDto.quantityInStock())
+//                .build();
 
+        ProductEntity productEntity = productMapper.fromDtoToEntity(productRequestDto);
         ProductEntity addedProduct = productRepo.save(productEntity);
 
         log.info("The product with the id {} has been ADDED. Time: {}",

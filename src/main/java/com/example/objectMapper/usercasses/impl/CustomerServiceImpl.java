@@ -33,13 +33,13 @@ public class CustomerServiceImpl implements CustomerService {
             throw new BadRequestException("Customer with email already EXIST. FAIL! email: " + email);
         }
 
-        CustomerEntity customerEntity = CustomerEntity.builder()
-                .withFirstName(customerRequestDto.firstName())
-                .withLastName(customerRequestDto.lastName())
-                .withEmail(customerRequestDto.email())
-                .withContactNumber(customerRequestDto.contactNumber())
-                .build();
-
+//        CustomerEntity customerEntity = CustomerEntity.builder()
+//                .withFirstName(customerRequestDto.firstName())
+//                .withLastName(customerRequestDto.lastName())
+//                .withEmail(customerRequestDto.email())
+//                .withContactNumber(customerRequestDto.contactNumber())
+//                .build();
+        CustomerEntity customerEntity = customerMapper.fromDtoToEntity(customerRequestDto);
         CustomerEntity addedCustomer = customerRepo.save(customerEntity);
 
         log.info("The customer with the id {} has been ADDED. Time: {}",

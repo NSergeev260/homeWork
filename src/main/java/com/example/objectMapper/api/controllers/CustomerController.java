@@ -23,12 +23,12 @@ public class CustomerController {
     }
 
     @GetMapping("/{customerId}")
-    public CustomerResponseDto getCustomer(UUID customerID) {
-        return customerService.getCustomer(customerID);
+    public CustomerResponseDto getCustomer(@PathVariable UUID customerId) {
+        return customerService.getCustomer(customerId);
     }
 
     @DeleteMapping("/{customerId}")
-    public void deleteCustomer(@PathVariable UUID customerID) {
-        customerService.deleteCustomer(customerID);
+    public void deleteCustomer(@PathVariable UUID customerId) {
+        customerService.deleteCustomer(customerId);
     }
 }

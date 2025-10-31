@@ -50,15 +50,19 @@ public class OrderServiceImpl implements OrderService {
 
         BigDecimal totalPrice = calculateTotalPrice(productEntities);
 
-        OrderEntity orderEntity = OrderEntity.builder()
-                .withCustomer(customerEntity)
-                .withProducts(productEntities)
-                .withOrderDate(orderRequestDto.orderDate())
-                .withShippingAddress(orderRequestDto.shippingAddress())
-                .withTotalPrice(totalPrice)
-                .withOrderStatus(orderRequestDto.orderStatus())
-                .build();
+//        OrderEntity orderEntity = OrderEntity.builder()
+//                .withCustomer(customerEntity)
+//                .withProducts(productEntities)
+//                .withOrderDate(orderRequestDto.orderDate())
+//                .withShippingAddress(orderRequestDto.shippingAddress())
+//                .withTotalPrice(totalPrice)
+//                .withOrderStatus(orderRequestDto.orderStatus())
+//                .build();
 
+        OrderEntity orderEntity = orderMapper.fromDtoToEntity(orderRequestDto);
+        orderEntity.setCustomer(customerEntity);
+        orderEntity.setProducts(productEntities);
+        orderEntity.setTotalPrice(totalPrice);
         OrderEntity addedOrder = orderRepo.save(orderEntity);
 
         log.info("The order with the id {} has been ADDED. Time: {}",

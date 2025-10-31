@@ -5,12 +5,14 @@ import com.example.objectMapper.usercasses.dto.ProductRequestDto;
 import com.example.objectMapper.usercasses.dto.ProductResponseDto;
 import org.mapstruct.Builder;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING,
         builder = @Builder(disableBuilder = true))
 public interface ProductMapper {
 
+    @Mapping(target = "productId", ignore = true)
     ProductEntity fromDtoToEntity(ProductRequestDto productRequestDto);
 
     ProductResponseDto fromEntityToDto(ProductEntity productEntity);

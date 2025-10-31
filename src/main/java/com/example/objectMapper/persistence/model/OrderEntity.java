@@ -31,7 +31,11 @@ public class OrderEntity {
     private CustomerEntity customer;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "order_products")
+    @JoinTable(
+            name = "order_products",
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
     @Builder.Default
     private List<ProductEntity> products = new ArrayList<>();
 
