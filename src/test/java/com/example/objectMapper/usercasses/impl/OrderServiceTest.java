@@ -60,6 +60,8 @@ class OrderServiceTest {
                 .thenReturn(Optional.of(customer));
         Mockito.when(productRepo.findByNameIn(requestDto.products()))
                 .thenReturn(products);
+        Mockito.when(orderMapper.fromDtoToEntity(requestDto))
+                .thenReturn(savedOrder);
         Mockito.when(orderRepo.save(any(OrderEntity.class)))
                 .thenReturn(savedOrder);
         Mockito.when(orderMapper.fromEntityToDto(savedOrder))
@@ -72,6 +74,8 @@ class OrderServiceTest {
         Mockito.verify(customerRepo).findById(CustomerTestData.CUSTOMER_ID);
         Mockito.verify(productRepo).findByNameIn(requestDto.products());
         Mockito.verify(orderRepo).save(any(OrderEntity.class));
+        Mockito.verify(orderMapper).fromDtoToEntity(requestDto);
+        Mockito.verify(orderMapper).fromEntityToDto(savedOrder);
     }
 
     @Test

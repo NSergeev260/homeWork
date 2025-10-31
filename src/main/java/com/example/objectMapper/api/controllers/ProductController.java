@@ -4,8 +4,11 @@ import com.example.objectMapper.usercasses.ProductService;
 import com.example.objectMapper.usercasses.dto.ProductRequestDto;
 import com.example.objectMapper.usercasses.dto.ProductResponseDto;
 import com.example.objectMapper.usercasses.impl.ProductServiceImpl;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,29 +22,44 @@ public class ProductController {
     private final ProductService productService;
 
     @PostMapping
-    public ProductResponseDto addProduct(@Valid @RequestBody ProductRequestDto productRequestDto) {
-        return productService.addProduct(productRequestDto);
+    public ResponseEntity<ProductResponseDto> addProduct(
+            @Valid @RequestBody ProductRequestDto productRequestDto) {
+        ProductResponseDto response = productService.addProduct(productRequestDto);
+        return ResponseEntity.
+                status(HttpStatus.CREATED)
+                .body(response);
     }
 
     @GetMapping
-    public List<ProductResponseDto> getAllProducts() {
-        return productService.getAllProducts();
+    public ResponseEntity<List<ProductResponseDto>> getAllProducts() {
+        List<ProductResponseDto> response = productService.getAllProducts();
+        return ResponseEntity
+                .ok(response);
     }
 
     @GetMapping("/{productId}")
-    public ProductResponseDto getProduct(@PathVariable UUID productId) {
-        return productService.getProduct(productId);
+    public ResponseEntity<ProductResponseDto> getProduct(
+            @PathVariable UUID productId) {
+        ProductResponseDto response = productService.getProduct(productId);
+        return ResponseEntity.ok(response);
     }
 
     @PutMapping("/{productId}")
-    public ProductResponseDto updateProduct(@PathVariable UUID productId,
-                                            @Valid @RequestBody ProductRequestDto productRequestDto) {
-        return productService.updateProduct(productId, productRequestDto);
+    public ResponseEntity<ProductResponseDto> updateProduct(
+            @PathVariable UUID productId,
+            @Valid @RequestBody ProductRequestDto productRequestDto) {
+        ProductResponseDto response = productService.updateProduct(productId, productRequestDto);
+        return ResponseEntity
+                .ok(response);
     }
 
     @DeleteMapping("/{productId}")
-    public void deleteProduct(@PathVariable UUID productId) {
+    public ResponseEntity<Void> deleteProduct(
+            @PathVariable UUID productId) {
         productService.deleteProduct(productId);
+        return ResponseEntity.
+                noContent().
+                build();
     }
 }
 

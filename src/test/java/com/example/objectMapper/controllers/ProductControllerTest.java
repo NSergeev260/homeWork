@@ -12,6 +12,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,12 +36,14 @@ class ProductControllerTest {
         Mockito.when(productService.addProduct(request))
                 .thenReturn(response);
 
-        ProductResponseDto result = productController.addProduct(request);
+        ResponseEntity<ProductResponseDto> result = productController.addProduct(request);
 
         Assertions.assertNotNull(result);
-        Assertions.assertEquals(response.productId(), result.productId());
-        Assertions.assertEquals(response.name(), result.name());
-        Assertions.assertEquals(response.price(), result.price());
+        Assertions.assertEquals(HttpStatus.CREATED, result.getStatusCode());
+        Assertions.assertNotNull(result.getBody());
+        Assertions.assertEquals(response.productId(), result.getBody().productId());
+        Assertions.assertEquals(response.name(), result.getBody().name());
+        Assertions.assertEquals(response.price(), result.getBody().price());
         Mockito.verify(productService).addProduct(request);
     }
 
@@ -51,12 +55,14 @@ class ProductControllerTest {
         Mockito.when(productService.getProduct(productId))
                 .thenReturn(response);
 
-        ProductResponseDto result = productController.getProduct(productId);
+        ResponseEntity<ProductResponseDto> result = productController.getProduct(productId);
 
         Assertions.assertNotNull(result);
-        Assertions.assertEquals(productId, result.productId());
-        Assertions.assertEquals(ProductTestData.PRODUCT_NAME, result.name());
-        Assertions.assertEquals(ProductTestData.PRODUCT_PRICE, result.price());
+        Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
+        Assertions.assertNotNull(result.getBody());
+        Assertions.assertEquals(productId, result.getBody().productId());
+        Assertions.assertEquals(ProductTestData.PRODUCT_NAME, result.getBody().name());
+        Assertions.assertEquals(ProductTestData.PRODUCT_PRICE, result.getBody().price());
         Mockito.verify(productService).getProduct(productId);
     }
 
@@ -68,12 +74,14 @@ class ProductControllerTest {
         Mockito.when(productService.getAllProducts())
                 .thenReturn(products);
 
-        List<ProductResponseDto> result = productController.getAllProducts();
+        ResponseEntity<List<ProductResponseDto>> result = productController.getAllProducts();
 
         Assertions.assertNotNull(result);
-        Assertions.assertEquals(1, result.size());
-        Assertions.assertEquals(ProductTestData.PRODUCT_NAME, result.get(0).name());
-        Assertions.assertEquals(ProductTestData.PRODUCT_PRICE, result.get(0).price());
+        Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
+        Assertions.assertNotNull(result.getBody());
+        Assertions.assertEquals(1, result.getBody().size());
+        Assertions.assertEquals(ProductTestData.PRODUCT_NAME, result.getBody().get(0).name());
+        Assertions.assertEquals(ProductTestData.PRODUCT_PRICE, result.getBody().get(0).price());
         Mockito.verify(productService).getAllProducts();
     }
 
@@ -85,11 +93,13 @@ class ProductControllerTest {
 
         Mockito.when(productService.updateProduct(productId, request)).thenReturn(response);
 
-        ProductResponseDto result = productController.updateProduct(productId, request);
+        ResponseEntity<ProductResponseDto> result = productController.updateProduct(productId, request);
 
         Assertions.assertNotNull(result);
-        Assertions.assertEquals(response.productId(), result.productId());
-        Assertions.assertEquals(response.name(), result.name());
+        Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
+        Assertions.assertNotNull(result.getBody());
+        Assertions.assertEquals(response.productId(), result.getBody().productId());
+        Assertions.assertEquals(response.name(), result.getBody().name());
         Mockito.verify(productService).updateProduct(productId, request);
     }
 
@@ -97,8 +107,10 @@ class ProductControllerTest {
     void methodShouldDeleteProductTest() {
         UUID productId = ProductTestData.PRODUCT_ID;
 
-        productController.deleteProduct(productId);
+        ResponseEntity<Void> result = productController.deleteProduct(productId);
 
+        Assertions.assertNotNull(result);
+        Assertions.assertEquals(HttpStatus.NO_CONTENT, result.getStatusCode());
         Mockito.verify(productService).deleteProduct(productId);
     }
 }

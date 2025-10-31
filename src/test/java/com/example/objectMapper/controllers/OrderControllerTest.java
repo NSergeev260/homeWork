@@ -12,6 +12,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.UUID;
 
@@ -32,12 +34,14 @@ class OrderControllerTest {
         Mockito.when(orderService.addOrder(request))
                 .thenReturn(response);
 
-        OrderResponseDto result = orderController.addOrder(request);
+        ResponseEntity<OrderResponseDto> result = orderController.addOrder(request);
 
         Assertions.assertNotNull(result);
-        Assertions.assertEquals(response.orderId(), result.orderId());
-        Assertions.assertEquals(response.shippingAddress(), result.shippingAddress());
-        Assertions.assertEquals(response.orderStatus(), result.orderStatus());
+        Assertions.assertEquals(HttpStatus.CREATED, result.getStatusCode());
+        Assertions.assertNotNull(result.getBody());
+        Assertions.assertEquals(response.orderId(), result.getBody().orderId());
+        Assertions.assertEquals(response.shippingAddress(), result.getBody().shippingAddress());
+        Assertions.assertEquals(response.orderStatus(), result.getBody().orderStatus());
         Mockito.verify(orderService).addOrder(request);
     }
 
@@ -49,12 +53,14 @@ class OrderControllerTest {
         Mockito.when(orderService.getOrder(orderId))
                 .thenReturn(response);
 
-        OrderResponseDto result = orderController.getOrder(orderId);
+        ResponseEntity<OrderResponseDto> result = orderController.getOrder(orderId);
 
         Assertions.assertNotNull(result);
-        Assertions.assertEquals(orderId, result.orderId());
-        Assertions.assertEquals(OrderTestData.SHIPPING_ADDRESS, result.shippingAddress());
-        Assertions.assertEquals(OrderTestData.ORDER_STATUS, result.orderStatus());
+        Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
+        Assertions.assertNotNull(result.getBody());
+        Assertions.assertEquals(orderId, result.getBody().orderId());
+        Assertions.assertEquals(OrderTestData.SHIPPING_ADDRESS, result.getBody().shippingAddress());
+        Assertions.assertEquals(OrderTestData.ORDER_STATUS, result.getBody().orderStatus());
         Mockito.verify(orderService).getOrder(orderId);
     }
 
@@ -67,11 +73,13 @@ class OrderControllerTest {
         Mockito.when(orderService.updateOrder(orderId, request))
                 .thenReturn(response);
 
-        OrderResponseDto result = orderController.updateOrder(orderId, request);
+        ResponseEntity<OrderResponseDto> result = orderController.updateOrder(orderId, request);
 
         Assertions.assertNotNull(result);
-        Assertions.assertEquals(response.orderId(), result.orderId());
-        Assertions.assertEquals(response.shippingAddress(), result.shippingAddress());
+        Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
+        Assertions.assertNotNull(result.getBody());
+        Assertions.assertEquals(response.orderId(), result.getBody().orderId());
+        Assertions.assertEquals(response.shippingAddress(), result.getBody().shippingAddress());
         Mockito.verify(orderService).updateOrder(orderId, request);
     }
 
@@ -79,8 +87,10 @@ class OrderControllerTest {
     void methodShouldDeleteOrderTest() {
         UUID orderId = OrderTestData.ORDER_ID;
 
-        orderController.deleteOrder(orderId);
+        ResponseEntity<Void> result = orderController.deleteOrder(orderId);
 
+        Assertions.assertNotNull(result);
+        Assertions.assertEquals(HttpStatus.NO_CONTENT, result.getStatusCode());
         Mockito.verify(orderService).deleteOrder(orderId);
     }
 }

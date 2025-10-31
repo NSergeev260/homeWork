@@ -37,14 +37,16 @@ class ProductServiceTest {
     @Test
     void methodShouldAddProductTest() {
         ProductRequestDto requestDto = ProductTestData.getProductRequestDto();
-        ProductEntity savedProduct = ProductTestData.getProductEntity();
+        ProductEntity productEntity = ProductTestData.getProductEntity();
         ProductResponseDto expectedResponse = ProductTestData.getProductResponseDto();
 
         Mockito.when(productRepo.findByName(ProductTestData.PRODUCT_NAME))
                 .thenReturn(Optional.empty());
-        Mockito.when(productRepo.save(any(ProductEntity.class)))
-                .thenReturn(savedProduct);
-        Mockito.when(productMapper.fromEntityToDto(savedProduct))
+        Mockito.when(productMapper.fromDtoToEntity(requestDto))
+                .thenReturn(productEntity);
+        Mockito.when(productRepo.save(productEntity))
+                .thenReturn(productEntity);
+        Mockito.when(productMapper.fromEntityToDto(productEntity))
                 .thenReturn(expectedResponse);
 
         ProductResponseDto result = productService.addProduct(requestDto);
@@ -53,7 +55,9 @@ class ProductServiceTest {
         Assertions.assertEquals(ProductTestData.PRODUCT_ID, result.productId());
         Assertions.assertEquals(ProductTestData.PRODUCT_NAME, result.name());
         Mockito.verify(productRepo).findByName(ProductTestData.PRODUCT_NAME);
-        Mockito.verify(productRepo).save(any(ProductEntity.class));
+        Mockito.verify(productRepo).save(productEntity);
+        Mockito.verify(productMapper).fromDtoToEntity(requestDto);
+        Mockito.verify(productMapper).fromEntityToDto(productEntity);
     }
 
     @Test

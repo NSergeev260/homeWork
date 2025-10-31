@@ -3186,3 +3186,709 @@ java.lang.IllegalArgumentException: The given id must not be null
 2025-10-31T19:22:58.098+03:00  INFO 79418 --- [objectMapper] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-10-31T19:22:58.115+03:00  INFO 79418 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-10-31T19:22:58.119+03:00  INFO 79418 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-31T19:59:55.052+03:00  INFO 81786 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Starting ObjectMapperApplication using Java 24.0.2 with PID 81786 (/home/nik/projects/objectMapper/target/classes started by nik in /home/nik/projects/objectMapper)
+2025-10-31T19:59:55.058+03:00  INFO 81786 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-10-31T19:59:56.774+03:00  INFO 81786 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-31T19:59:56.999+03:00  INFO 81786 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 202 ms. Found 3 JPA repository interfaces.
+2025-10-31T19:59:58.042+03:00  INFO 81786 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-31T19:59:58.077+03:00  INFO 81786 --- [objectMapper] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-31T19:59:58.079+03:00  INFO 81786 --- [objectMapper] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-31T19:59:58.195+03:00  INFO 81786 --- [objectMapper] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-31T19:59:58.196+03:00  INFO 81786 --- [objectMapper] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2977 ms
+2025-10-31T19:59:58.541+03:00  INFO 81786 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-31T19:59:58.814+03:00  INFO 81786 --- [objectMapper] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1ca610a0
+2025-10-31T19:59:58.816+03:00  INFO 81786 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-31T19:59:59.116+03:00  INFO 81786 --- [objectMapper] [main] liquibase.database                       : Set default schema name to public
+2025-10-31T19:59:59.735+03:00  INFO 81786 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T19:59:59.896+03:00  INFO 81786 --- [objectMapper] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-10-31T19:59:59.899+03:00  INFO 81786 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T19:59:59.918+03:00  INFO 81786 --- [objectMapper] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-31T19:59:59.918+03:00  INFO 81786 --- [objectMapper] [main] liquibase.util                           : Run:                          0
+2025-10-31T19:59:59.918+03:00  INFO 81786 --- [objectMapper] [main] liquibase.util                           : Previously run:               8
+2025-10-31T19:59:59.919+03:00  INFO 81786 --- [objectMapper] [main] liquibase.util                           : Filtered out:                 0
+2025-10-31T19:59:59.919+03:00  INFO 81786 --- [objectMapper] [main] liquibase.util                           : -------------------------------
+2025-10-31T19:59:59.919+03:00  INFO 81786 --- [objectMapper] [main] liquibase.util                           : Total change sets:            8
+2025-10-31T19:59:59.920+03:00  INFO 81786 --- [objectMapper] [main] liquibase.util                           : Update summary generated
+2025-10-31T19:59:59.922+03:00  INFO 81786 --- [objectMapper] [main] liquibase.command                        : Command execution complete
+2025-10-31T20:00:01.419+03:00  INFO 81786 --- [objectMapper] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-31T20:00:01.497+03:00  INFO 81786 --- [objectMapper] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-10-31T20:00:01.551+03:00  INFO 81786 --- [objectMapper] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-31T20:00:02.035+03:00  INFO 81786 --- [objectMapper] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-31T20:00:02.154+03:00  INFO 81786 --- [objectMapper] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-31T20:00:03.437+03:00  INFO 81786 --- [objectMapper] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-31T20:00:03.481+03:00  INFO 81786 --- [objectMapper] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:00:04.139+03:00  WARN 81786 --- [objectMapper] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-31T20:00:04.195+03:00  INFO 81786 --- [objectMapper] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-31T20:00:04.609+03:00  INFO 81786 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-31T20:00:04.644+03:00  INFO 81786 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Started ObjectMapperApplication in 11.143 seconds (process running for 11.997)
+2025-10-31T20:00:52.275+03:00  INFO 81786 --- [objectMapper] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-31T20:00:52.277+03:00  INFO 81786 --- [objectMapper] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-31T20:00:52.280+03:00  INFO 81786 --- [objectMapper] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-31T20:00:52.673+03:00  INFO 81786 --- [objectMapper] [http-nio-8080-exec-1] c.e.o.u.impl.CustomerServiceImpl         : The customer with the id 0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2 has been ADDED. Time: 2025-10-31T20:00:52.673047489
+2025-10-31T20:01:12.943+03:00  INFO 81786 --- [objectMapper] [http-nio-8080-exec-3] c.e.o.u.impl.CustomerServiceImpl         : The customer with the id 0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2 FOUND. Time: 2025-10-31T20:01:12.943089047
+2025-10-31T20:01:12.946+03:00  INFO 81786 --- [objectMapper] [http-nio-8080-exec-3] c.e.o.a.controllers.CustomerController   : Returning customer: {"customerId":"0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2","firstName":"Eldar","lastName":"Akhundov","email":"akhuel@gmail.com","contactNumber":"+79217654321"}
+2025-10-31T20:01:36.354+03:00  INFO 81786 --- [objectMapper] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-31T20:01:36.358+03:00  INFO 81786 --- [objectMapper] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-31T20:01:36.365+03:00  INFO 81786 --- [objectMapper] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:01:36.370+03:00  INFO 81786 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-31T20:01:36.383+03:00  INFO 81786 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-31T20:01:59.009+03:00  INFO 82115 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Starting ObjectMapperApplication using Java 24.0.2 with PID 82115 (/home/nik/projects/objectMapper/target/classes started by nik in /home/nik/projects/objectMapper)
+2025-10-31T20:01:59.012+03:00  INFO 82115 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-10-31T20:02:00.540+03:00  INFO 82115 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-31T20:02:00.692+03:00  INFO 82115 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 133 ms. Found 3 JPA repository interfaces.
+2025-10-31T20:02:01.507+03:00  INFO 82115 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-31T20:02:01.535+03:00  INFO 82115 --- [objectMapper] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-31T20:02:01.536+03:00  INFO 82115 --- [objectMapper] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-31T20:02:01.618+03:00  INFO 82115 --- [objectMapper] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-31T20:02:01.620+03:00  INFO 82115 --- [objectMapper] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2460 ms
+2025-10-31T20:02:01.955+03:00  INFO 82115 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-31T20:02:02.242+03:00  INFO 82115 --- [objectMapper] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3e214105
+2025-10-31T20:02:02.245+03:00  INFO 82115 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-31T20:02:02.475+03:00  INFO 82115 --- [objectMapper] [main] liquibase.database                       : Set default schema name to public
+2025-10-31T20:02:03.162+03:00  INFO 82115 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:02:03.325+03:00  INFO 82115 --- [objectMapper] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-10-31T20:02:03.328+03:00  INFO 82115 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:02:03.350+03:00  INFO 82115 --- [objectMapper] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-31T20:02:03.351+03:00  INFO 82115 --- [objectMapper] [main] liquibase.util                           : Run:                          0
+2025-10-31T20:02:03.352+03:00  INFO 82115 --- [objectMapper] [main] liquibase.util                           : Previously run:               8
+2025-10-31T20:02:03.352+03:00  INFO 82115 --- [objectMapper] [main] liquibase.util                           : Filtered out:                 0
+2025-10-31T20:02:03.353+03:00  INFO 82115 --- [objectMapper] [main] liquibase.util                           : -------------------------------
+2025-10-31T20:02:03.353+03:00  INFO 82115 --- [objectMapper] [main] liquibase.util                           : Total change sets:            8
+2025-10-31T20:02:03.356+03:00  INFO 82115 --- [objectMapper] [main] liquibase.util                           : Update summary generated
+2025-10-31T20:02:03.358+03:00  INFO 82115 --- [objectMapper] [main] liquibase.command                        : Command execution complete
+2025-10-31T20:02:06.033+03:00  INFO 82115 --- [objectMapper] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-31T20:02:06.089+03:00  INFO 82115 --- [objectMapper] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-10-31T20:02:06.130+03:00  INFO 82115 --- [objectMapper] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-31T20:02:06.561+03:00  INFO 82115 --- [objectMapper] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-31T20:02:06.664+03:00  INFO 82115 --- [objectMapper] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-31T20:02:07.973+03:00  INFO 82115 --- [objectMapper] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-31T20:02:08.021+03:00  INFO 82115 --- [objectMapper] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:02:08.671+03:00  WARN 82115 --- [objectMapper] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-31T20:02:08.718+03:00  INFO 82115 --- [objectMapper] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-31T20:02:09.039+03:00  INFO 82115 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-31T20:02:09.050+03:00  INFO 82115 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Started ObjectMapperApplication in 11.167 seconds (process running for 11.982)
+2025-10-31T20:02:12.748+03:00  INFO 82115 --- [objectMapper] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-31T20:02:12.749+03:00  INFO 82115 --- [objectMapper] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-31T20:02:12.751+03:00  INFO 82115 --- [objectMapper] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-31T20:02:12.882+03:00  INFO 82115 --- [objectMapper] [http-nio-8080-exec-2] c.e.o.u.impl.CustomerServiceImpl         : The customer with the id 0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2 FOUND. Time: 2025-10-31T20:02:12.882890952
+2025-10-31T20:02:24.016+03:00  INFO 82115 --- [objectMapper] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-31T20:02:24.025+03:00  INFO 82115 --- [objectMapper] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-31T20:02:24.038+03:00  INFO 82115 --- [objectMapper] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:02:24.044+03:00  INFO 82115 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-31T20:02:24.081+03:00  INFO 82115 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-31T20:02:39.458+03:00  INFO 82225 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Starting ObjectMapperApplication using Java 24.0.2 with PID 82225 (/home/nik/projects/objectMapper/target/classes started by nik in /home/nik/projects/objectMapper)
+2025-10-31T20:02:39.462+03:00  INFO 82225 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-10-31T20:02:41.030+03:00  INFO 82225 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-31T20:02:41.137+03:00  INFO 82225 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 3 JPA repository interfaces.
+2025-10-31T20:02:41.908+03:00  INFO 82225 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-31T20:02:41.933+03:00  INFO 82225 --- [objectMapper] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-31T20:02:41.934+03:00  INFO 82225 --- [objectMapper] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-31T20:02:42.005+03:00  INFO 82225 --- [objectMapper] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-31T20:02:42.006+03:00  INFO 82225 --- [objectMapper] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2426 ms
+2025-10-31T20:02:42.266+03:00  INFO 82225 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-31T20:02:42.533+03:00  INFO 82225 --- [objectMapper] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1ca610a0
+2025-10-31T20:02:42.535+03:00  INFO 82225 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-31T20:02:42.760+03:00  INFO 82225 --- [objectMapper] [main] liquibase.database                       : Set default schema name to public
+2025-10-31T20:02:43.364+03:00  INFO 82225 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:02:43.535+03:00  INFO 82225 --- [objectMapper] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-10-31T20:02:43.538+03:00  INFO 82225 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:02:43.560+03:00  INFO 82225 --- [objectMapper] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-31T20:02:43.561+03:00  INFO 82225 --- [objectMapper] [main] liquibase.util                           : Run:                          0
+2025-10-31T20:02:43.561+03:00  INFO 82225 --- [objectMapper] [main] liquibase.util                           : Previously run:               8
+2025-10-31T20:02:43.561+03:00  INFO 82225 --- [objectMapper] [main] liquibase.util                           : Filtered out:                 0
+2025-10-31T20:02:43.562+03:00  INFO 82225 --- [objectMapper] [main] liquibase.util                           : -------------------------------
+2025-10-31T20:02:43.562+03:00  INFO 82225 --- [objectMapper] [main] liquibase.util                           : Total change sets:            8
+2025-10-31T20:02:43.563+03:00  INFO 82225 --- [objectMapper] [main] liquibase.util                           : Update summary generated
+2025-10-31T20:02:43.565+03:00  INFO 82225 --- [objectMapper] [main] liquibase.command                        : Command execution complete
+2025-10-31T20:02:44.761+03:00  INFO 82225 --- [objectMapper] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-31T20:02:44.825+03:00  INFO 82225 --- [objectMapper] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-10-31T20:02:44.856+03:00  INFO 82225 --- [objectMapper] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-31T20:02:45.162+03:00  INFO 82225 --- [objectMapper] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-31T20:02:45.236+03:00  INFO 82225 --- [objectMapper] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-31T20:02:46.176+03:00  INFO 82225 --- [objectMapper] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-31T20:02:46.213+03:00  INFO 82225 --- [objectMapper] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:02:46.764+03:00  WARN 82225 --- [objectMapper] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-31T20:02:46.809+03:00  INFO 82225 --- [objectMapper] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-31T20:02:47.130+03:00  INFO 82225 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-31T20:02:47.141+03:00  INFO 82225 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Started ObjectMapperApplication in 8.873 seconds (process running for 9.539)
+2025-10-31T20:02:51.138+03:00  INFO 82225 --- [objectMapper] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-31T20:02:51.139+03:00  INFO 82225 --- [objectMapper] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-31T20:02:51.143+03:00  INFO 82225 --- [objectMapper] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-10-31T20:02:51.279+03:00  INFO 82225 --- [objectMapper] [http-nio-8080-exec-1] c.e.o.u.impl.CustomerServiceImpl         : The customer with the id 0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2 FOUND. Time: 2025-10-31T20:02:51.279377378
+2025-10-31T20:02:51.340+03:00  INFO 82225 --- [objectMapper] [http-nio-8080-exec-1] c.e.o.a.controllers.CustomerController   : Returning customer: {"customerId":"0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2","firstName":"Eldar","lastName":"Akhundov","email":"akhuel@gmail.com","contactNumber":"+79217654321"}
+2025-10-31T20:05:04.915+03:00  INFO 82225 --- [objectMapper] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-31T20:05:04.920+03:00  INFO 82225 --- [objectMapper] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-31T20:05:04.925+03:00  INFO 82225 --- [objectMapper] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:05:04.929+03:00  INFO 82225 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-31T20:05:04.933+03:00  INFO 82225 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-31T20:05:11.341+03:00  INFO 82441 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Starting ObjectMapperApplication using Java 24.0.2 with PID 82441 (/home/nik/projects/objectMapper/target/classes started by nik in /home/nik/projects/objectMapper)
+2025-10-31T20:05:11.345+03:00  INFO 82441 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-10-31T20:05:12.983+03:00  INFO 82441 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-31T20:05:13.110+03:00  INFO 82441 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 3 JPA repository interfaces.
+2025-10-31T20:05:13.873+03:00  INFO 82441 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-31T20:05:13.898+03:00  INFO 82441 --- [objectMapper] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-31T20:05:13.899+03:00  INFO 82441 --- [objectMapper] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-31T20:05:13.970+03:00  INFO 82441 --- [objectMapper] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-31T20:05:13.971+03:00  INFO 82441 --- [objectMapper] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2511 ms
+2025-10-31T20:05:14.250+03:00  INFO 82441 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-31T20:05:14.520+03:00  INFO 82441 --- [objectMapper] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@64b70f41
+2025-10-31T20:05:14.524+03:00  INFO 82441 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-31T20:05:14.795+03:00  INFO 82441 --- [objectMapper] [main] liquibase.database                       : Set default schema name to public
+2025-10-31T20:05:15.364+03:00  INFO 82441 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:05:15.540+03:00  INFO 82441 --- [objectMapper] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-10-31T20:05:15.544+03:00  INFO 82441 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:05:15.564+03:00  INFO 82441 --- [objectMapper] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-31T20:05:15.564+03:00  INFO 82441 --- [objectMapper] [main] liquibase.util                           : Run:                          0
+2025-10-31T20:05:15.564+03:00  INFO 82441 --- [objectMapper] [main] liquibase.util                           : Previously run:               8
+2025-10-31T20:05:15.565+03:00  INFO 82441 --- [objectMapper] [main] liquibase.util                           : Filtered out:                 0
+2025-10-31T20:05:15.565+03:00  INFO 82441 --- [objectMapper] [main] liquibase.util                           : -------------------------------
+2025-10-31T20:05:15.565+03:00  INFO 82441 --- [objectMapper] [main] liquibase.util                           : Total change sets:            8
+2025-10-31T20:05:15.567+03:00  INFO 82441 --- [objectMapper] [main] liquibase.util                           : Update summary generated
+2025-10-31T20:05:15.569+03:00  INFO 82441 --- [objectMapper] [main] liquibase.command                        : Command execution complete
+2025-10-31T20:05:16.614+03:00  INFO 82441 --- [objectMapper] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-31T20:05:16.659+03:00  INFO 82441 --- [objectMapper] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-10-31T20:05:16.702+03:00  INFO 82441 --- [objectMapper] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-31T20:05:17.040+03:00  INFO 82441 --- [objectMapper] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-31T20:05:17.111+03:00  INFO 82441 --- [objectMapper] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-31T20:05:18.217+03:00  INFO 82441 --- [objectMapper] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-31T20:05:18.255+03:00  INFO 82441 --- [objectMapper] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:05:18.826+03:00  WARN 82441 --- [objectMapper] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-31T20:05:18.873+03:00  INFO 82441 --- [objectMapper] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-31T20:05:19.221+03:00  INFO 82441 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-31T20:05:19.234+03:00  INFO 82441 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Started ObjectMapperApplication in 9.08 seconds (process running for 9.704)
+2025-10-31T20:05:26.141+03:00  INFO 82441 --- [objectMapper] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-31T20:05:26.141+03:00  INFO 82441 --- [objectMapper] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-31T20:05:26.143+03:00  INFO 82441 --- [objectMapper] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-31T20:05:26.345+03:00  INFO 82441 --- [objectMapper] [http-nio-8080-exec-2] c.e.o.u.impl.CustomerServiceImpl         : The customer with the id 0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2 FOUND. Time: 2025-10-31T20:05:26.345135897
+2025-10-31T20:05:26.465+03:00  INFO 82441 --- [objectMapper] [http-nio-8080-exec-2] c.e.o.a.controllers.CustomerController   : Returning customer: {"customerId":"0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2","firstName":"Eldar","lastName":"Akhundov","email":"akhuel@gmail.com","contactNumber":"+79217654321"}
+2025-10-31T20:10:48.090+03:00  INFO 82441 --- [objectMapper] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-31T20:10:48.098+03:00  INFO 82441 --- [objectMapper] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-31T20:10:48.106+03:00  INFO 82441 --- [objectMapper] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:10:48.111+03:00  INFO 82441 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-31T20:10:48.117+03:00  INFO 82441 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-31T20:12:31.858+03:00  INFO 82824 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Starting ObjectMapperApplication using Java 24.0.2 with PID 82824 (/home/nik/projects/objectMapper/target/classes started by nik in /home/nik/projects/objectMapper)
+2025-10-31T20:12:31.864+03:00  INFO 82824 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-10-31T20:12:33.410+03:00  INFO 82824 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-31T20:12:33.519+03:00  INFO 82824 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 3 JPA repository interfaces.
+2025-10-31T20:12:34.495+03:00  INFO 82824 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-31T20:12:34.523+03:00  INFO 82824 --- [objectMapper] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-31T20:12:34.524+03:00  INFO 82824 --- [objectMapper] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-31T20:12:34.637+03:00  INFO 82824 --- [objectMapper] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-31T20:12:34.638+03:00  INFO 82824 --- [objectMapper] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2570 ms
+2025-10-31T20:12:35.298+03:00  INFO 82824 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-31T20:12:35.580+03:00  INFO 82824 --- [objectMapper] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@16f0ec18
+2025-10-31T20:12:35.583+03:00  INFO 82824 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-31T20:12:35.868+03:00  INFO 82824 --- [objectMapper] [main] liquibase.database                       : Set default schema name to public
+2025-10-31T20:12:36.501+03:00  INFO 82824 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:12:36.684+03:00  INFO 82824 --- [objectMapper] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-10-31T20:12:36.687+03:00  INFO 82824 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:12:36.709+03:00  INFO 82824 --- [objectMapper] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-31T20:12:36.709+03:00  INFO 82824 --- [objectMapper] [main] liquibase.util                           : Run:                          0
+2025-10-31T20:12:36.709+03:00  INFO 82824 --- [objectMapper] [main] liquibase.util                           : Previously run:               8
+2025-10-31T20:12:36.709+03:00  INFO 82824 --- [objectMapper] [main] liquibase.util                           : Filtered out:                 0
+2025-10-31T20:12:36.710+03:00  INFO 82824 --- [objectMapper] [main] liquibase.util                           : -------------------------------
+2025-10-31T20:12:36.711+03:00  INFO 82824 --- [objectMapper] [main] liquibase.util                           : Total change sets:            8
+2025-10-31T20:12:36.715+03:00  INFO 82824 --- [objectMapper] [main] liquibase.util                           : Update summary generated
+2025-10-31T20:12:36.719+03:00  INFO 82824 --- [objectMapper] [main] liquibase.command                        : Command execution complete
+2025-10-31T20:12:38.546+03:00  INFO 82824 --- [objectMapper] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-31T20:12:38.613+03:00  INFO 82824 --- [objectMapper] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-10-31T20:12:38.661+03:00  INFO 82824 --- [objectMapper] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-31T20:12:39.051+03:00  INFO 82824 --- [objectMapper] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-31T20:12:39.154+03:00  INFO 82824 --- [objectMapper] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-31T20:12:40.329+03:00  INFO 82824 --- [objectMapper] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-31T20:12:40.381+03:00  INFO 82824 --- [objectMapper] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:12:40.979+03:00  WARN 82824 --- [objectMapper] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-31T20:12:41.054+03:00  INFO 82824 --- [objectMapper] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-31T20:12:41.500+03:00  INFO 82824 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-31T20:12:41.517+03:00  INFO 82824 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Started ObjectMapperApplication in 10.904 seconds (process running for 11.578)
+2025-10-31T20:12:44.982+03:00  INFO 82824 --- [objectMapper] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-31T20:12:44.983+03:00  INFO 82824 --- [objectMapper] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-31T20:12:44.987+03:00  INFO 82824 --- [objectMapper] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-10-31T20:12:45.153+03:00  INFO 82824 --- [objectMapper] [http-nio-8080-exec-2] c.e.o.u.impl.CustomerServiceImpl         : The customer with the id 0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2 FOUND. Time: 2025-10-31T20:12:45.153609468
+2025-10-31T20:14:27.387+03:00  INFO 82824 --- [objectMapper] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-31T20:14:27.391+03:00  INFO 82824 --- [objectMapper] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-31T20:14:27.396+03:00  INFO 82824 --- [objectMapper] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:14:27.400+03:00  INFO 82824 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-31T20:14:27.407+03:00  INFO 82824 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-31T20:14:33.697+03:00  INFO 83054 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Starting ObjectMapperApplication using Java 24.0.2 with PID 83054 (/home/nik/projects/objectMapper/target/classes started by nik in /home/nik/projects/objectMapper)
+2025-10-31T20:14:33.706+03:00  INFO 83054 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-10-31T20:14:35.556+03:00  INFO 83054 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-31T20:14:35.722+03:00  INFO 83054 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139 ms. Found 3 JPA repository interfaces.
+2025-10-31T20:14:36.586+03:00  INFO 83054 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-31T20:14:36.608+03:00  INFO 83054 --- [objectMapper] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-31T20:14:36.608+03:00  INFO 83054 --- [objectMapper] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-31T20:14:36.666+03:00  INFO 83054 --- [objectMapper] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-31T20:14:36.666+03:00  INFO 83054 --- [objectMapper] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2868 ms
+2025-10-31T20:14:36.926+03:00  INFO 83054 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-31T20:14:37.208+03:00  INFO 83054 --- [objectMapper] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2519026b
+2025-10-31T20:14:37.211+03:00  INFO 83054 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-31T20:14:37.462+03:00  INFO 83054 --- [objectMapper] [main] liquibase.database                       : Set default schema name to public
+2025-10-31T20:14:38.014+03:00  INFO 83054 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:14:38.178+03:00  INFO 83054 --- [objectMapper] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-10-31T20:14:38.180+03:00  INFO 83054 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:14:38.202+03:00  INFO 83054 --- [objectMapper] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-31T20:14:38.202+03:00  INFO 83054 --- [objectMapper] [main] liquibase.util                           : Run:                          0
+2025-10-31T20:14:38.202+03:00  INFO 83054 --- [objectMapper] [main] liquibase.util                           : Previously run:               8
+2025-10-31T20:14:38.202+03:00  INFO 83054 --- [objectMapper] [main] liquibase.util                           : Filtered out:                 0
+2025-10-31T20:14:38.202+03:00  INFO 83054 --- [objectMapper] [main] liquibase.util                           : -------------------------------
+2025-10-31T20:14:38.203+03:00  INFO 83054 --- [objectMapper] [main] liquibase.util                           : Total change sets:            8
+2025-10-31T20:14:38.204+03:00  INFO 83054 --- [objectMapper] [main] liquibase.util                           : Update summary generated
+2025-10-31T20:14:38.205+03:00  INFO 83054 --- [objectMapper] [main] liquibase.command                        : Command execution complete
+2025-10-31T20:14:39.376+03:00  INFO 83054 --- [objectMapper] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-31T20:14:39.448+03:00  INFO 83054 --- [objectMapper] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-10-31T20:14:39.494+03:00  INFO 83054 --- [objectMapper] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-31T20:14:39.894+03:00  INFO 83054 --- [objectMapper] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-31T20:14:39.985+03:00  INFO 83054 --- [objectMapper] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-31T20:14:41.202+03:00  INFO 83054 --- [objectMapper] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-31T20:14:41.245+03:00  INFO 83054 --- [objectMapper] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:14:41.810+03:00  WARN 83054 --- [objectMapper] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-31T20:14:41.866+03:00  INFO 83054 --- [objectMapper] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-31T20:14:42.259+03:00  INFO 83054 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-31T20:14:42.279+03:00  INFO 83054 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Started ObjectMapperApplication in 9.719 seconds (process running for 10.397)
+2025-10-31T20:14:45.076+03:00  INFO 83054 --- [objectMapper] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-31T20:14:45.077+03:00  INFO 83054 --- [objectMapper] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-31T20:14:45.079+03:00  INFO 83054 --- [objectMapper] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-31T20:14:45.237+03:00  INFO 83054 --- [objectMapper] [http-nio-8080-exec-2] c.e.o.u.impl.CustomerServiceImpl         : The customer with the id 0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2 FOUND. Time: 2025-10-31T20:14:45.237572772
+2025-10-31T20:25:59.909+03:00  INFO 83054 --- [objectMapper] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-31T20:25:59.914+03:00  INFO 83054 --- [objectMapper] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-31T20:25:59.921+03:00  INFO 83054 --- [objectMapper] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:25:59.925+03:00  INFO 83054 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-31T20:25:59.930+03:00  INFO 83054 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-31T20:26:06.750+03:00  INFO 83740 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Starting ObjectMapperApplication using Java 24.0.2 with PID 83740 (/home/nik/projects/objectMapper/target/classes started by nik in /home/nik/projects/objectMapper)
+2025-10-31T20:26:06.755+03:00  INFO 83740 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-10-31T20:26:08.152+03:00  INFO 83740 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-31T20:26:08.280+03:00  INFO 83740 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 3 JPA repository interfaces.
+2025-10-31T20:26:09.269+03:00  INFO 83740 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-31T20:26:09.295+03:00  INFO 83740 --- [objectMapper] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-31T20:26:09.296+03:00  INFO 83740 --- [objectMapper] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-31T20:26:09.358+03:00  INFO 83740 --- [objectMapper] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-31T20:26:09.358+03:00  INFO 83740 --- [objectMapper] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2528 ms
+2025-10-31T20:26:09.650+03:00  INFO 83740 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-31T20:26:09.928+03:00  INFO 83740 --- [objectMapper] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@28cd2c2
+2025-10-31T20:26:09.931+03:00  INFO 83740 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-31T20:26:10.166+03:00  INFO 83740 --- [objectMapper] [main] liquibase.database                       : Set default schema name to public
+2025-10-31T20:26:10.773+03:00  INFO 83740 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:26:11.015+03:00  INFO 83740 --- [objectMapper] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-10-31T20:26:11.018+03:00  INFO 83740 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:26:11.042+03:00  INFO 83740 --- [objectMapper] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-31T20:26:11.043+03:00  INFO 83740 --- [objectMapper] [main] liquibase.util                           : Run:                          0
+2025-10-31T20:26:11.043+03:00  INFO 83740 --- [objectMapper] [main] liquibase.util                           : Previously run:               8
+2025-10-31T20:26:11.043+03:00  INFO 83740 --- [objectMapper] [main] liquibase.util                           : Filtered out:                 0
+2025-10-31T20:26:11.043+03:00  INFO 83740 --- [objectMapper] [main] liquibase.util                           : -------------------------------
+2025-10-31T20:26:11.043+03:00  INFO 83740 --- [objectMapper] [main] liquibase.util                           : Total change sets:            8
+2025-10-31T20:26:11.044+03:00  INFO 83740 --- [objectMapper] [main] liquibase.util                           : Update summary generated
+2025-10-31T20:26:11.046+03:00  INFO 83740 --- [objectMapper] [main] liquibase.command                        : Command execution complete
+2025-10-31T20:26:12.330+03:00  INFO 83740 --- [objectMapper] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-31T20:26:12.391+03:00  INFO 83740 --- [objectMapper] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-10-31T20:26:12.430+03:00  INFO 83740 --- [objectMapper] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-31T20:26:12.908+03:00  INFO 83740 --- [objectMapper] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-31T20:26:13.021+03:00  INFO 83740 --- [objectMapper] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-31T20:26:14.445+03:00  INFO 83740 --- [objectMapper] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-31T20:26:14.525+03:00  INFO 83740 --- [objectMapper] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:26:15.251+03:00  WARN 83740 --- [objectMapper] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-31T20:26:15.483+03:00  INFO 83740 --- [objectMapper] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-31T20:26:16.065+03:00  INFO 83740 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-31T20:26:16.079+03:00  INFO 83740 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Started ObjectMapperApplication in 10.37 seconds (process running for 11.216)
+2025-10-31T20:26:24.152+03:00  INFO 83740 --- [objectMapper] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-31T20:26:24.154+03:00  INFO 83740 --- [objectMapper] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-31T20:26:24.168+03:00  INFO 83740 --- [objectMapper] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-31T20:26:24.328+03:00  INFO 83740 --- [objectMapper] [http-nio-8080-exec-2] c.e.o.u.impl.CustomerServiceImpl         : The customer with the id 0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2 FOUND. Time: 2025-10-31T20:26:24.328691674
+2025-10-31T20:28:50.915+03:00  INFO 83740 --- [objectMapper] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-31T20:28:50.919+03:00  INFO 83740 --- [objectMapper] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-31T20:28:50.929+03:00  INFO 83740 --- [objectMapper] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:28:50.934+03:00  INFO 83740 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-31T20:28:50.939+03:00  INFO 83740 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-31T20:37:26.132+03:00  INFO 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] c.e.o.ObjectMapperApplicationTests       : Starting ObjectMapperApplicationTests using Java 24.0.2 with PID 84709 (started by nik in /home/nik/projects/objectMapper)
+2025-10-31T20:37:26.134+03:00  INFO 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] c.e.o.ObjectMapperApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2025-10-31T20:37:27.409+03:00  INFO 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-31T20:37:27.509+03:00  INFO 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 3 JPA repository interfaces.
+2025-10-31T20:37:28.236+03:00  WARN 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: 'url' must start with "jdbc"
+2025-10-31T20:37:28.270+03:00  INFO 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-31T20:37:28.314+03:00 ERROR 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: 'url' must start with "jdbc"
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:973) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:144) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.2.12.jar:6.2.12]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.2.12.jar:6.2.12]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1461) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:563) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:144) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:110) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:200) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:139) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:383) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:388) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:382) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:382) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:293) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:292) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:281) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:280) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:27) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:112) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:111) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:128) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:128) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.exec(ForkJoinPoolHierarchicalTestExecutorService.java:274) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.execSync(ForkJoinPoolHierarchicalTestExecutorService.java:247) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.invokeAll(ForkJoinPoolHierarchicalTestExecutorService.java:159) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.exec(ForkJoinPoolHierarchicalTestExecutorService.java:274) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.execSync(ForkJoinPoolHierarchicalTestExecutorService.java:247) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.executeSync(ForkJoinPoolHierarchicalTestExecutorService.java:194) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.invokeAll(ForkJoinPoolHierarchicalTestExecutorService.java:166) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.exec(ForkJoinPoolHierarchicalTestExecutorService.java:274) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:507) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1394) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1970) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187) ~[na:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: 'url' must start with "jdbc"
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 79 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: 'url' must start with "jdbc"
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 89 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: 'url' must start with "jdbc"
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.getIfUnique(DefaultListableBeanFactory.java:2604) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:107) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 92 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: 'url' must start with "jdbc"
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 107 common frames omitted
+Caused by: java.lang.IllegalArgumentException: 'url' must start with "jdbc"
+	at org.springframework.util.Assert.isTrue(Assert.java:116) ~[spring-core-6.2.12.jar:6.2.12]
+	at org.springframework.boot.jdbc.DatabaseDriver.fromJdbcUrl(DatabaseDriver.java:310) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.findDriverClassName(DataSourceProperties.java:189) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:174) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails.getDriverClassName(PropertiesJdbcConnectionDetails.java:49) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:62) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:127) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 110 common frames omitted
+
+2025-10-31T20:37:28.366+03:00  WARN 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.example.objectMapper.ObjectMapperApplicationTests@77a6be6a]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@b51eede testClass = com.example.objectMapper.ObjectMapperApplicationTests, locations = [], classes = [com.example.objectMapper.ObjectMapperApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@23226e3b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7f4bbacd, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@75c43a67, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@2d875624, org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@49df479d, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@6b47113b, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@d096850c], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:200) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:139) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:383) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:388) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:382) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:382) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:293) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:292) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:281) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:280) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:27) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:112) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:111) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:128) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:128) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.exec(ForkJoinPoolHierarchicalTestExecutorService.java:274) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.execSync(ForkJoinPoolHierarchicalTestExecutorService.java:247) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.invokeAll(ForkJoinPoolHierarchicalTestExecutorService.java:159) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.exec(ForkJoinPoolHierarchicalTestExecutorService.java:274) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.execSync(ForkJoinPoolHierarchicalTestExecutorService.java:247) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.executeSync(ForkJoinPoolHierarchicalTestExecutorService.java:194) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.invokeAll(ForkJoinPoolHierarchicalTestExecutorService.java:166) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.exec(ForkJoinPoolHierarchicalTestExecutorService.java:274) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:507) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1394) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1970) ~[na:na]
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187) ~[na:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: 'url' must start with "jdbc"
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:328) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:973) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:144) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.2.12.jar:6.2.12]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.2.12.jar:6.2.12]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1461) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:563) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:144) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:110) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.2.12.jar:6.2.12]
+	... 64 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: 'url' must start with "jdbc"
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 79 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: 'url' must start with "jdbc"
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 89 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: 'url' must start with "jdbc"
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.getIfUnique(DefaultListableBeanFactory.java:2604) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:107) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 92 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: 'url' must start with "jdbc"
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 107 common frames omitted
+Caused by: java.lang.IllegalArgumentException: 'url' must start with "jdbc"
+	at org.springframework.util.Assert.isTrue(Assert.java:116) ~[spring-core-6.2.12.jar:6.2.12]
+	at org.springframework.boot.jdbc.DatabaseDriver.fromJdbcUrl(DatabaseDriver.java:310) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.findDriverClassName(DataSourceProperties.java:189) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:174) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails.getDriverClassName(PropertiesJdbcConnectionDetails.java:49) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:62) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:127) ~[spring-boot-autoconfigure-3.5.7.jar:3.5.7]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.12.jar:6.2.12]
+	... 110 common frames omitted
+
+2025-10-31T20:37:28.576+03:00  INFO 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] c.e.o.u.impl.ProductServiceImpl          : The product with the id d2e3f4a5-b6c7-8901-def2-3456789abcde FOUND. Time: 2025-10-31T20:37:28.576426784
+2025-10-31T20:37:28.589+03:00  INFO 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] c.e.o.u.impl.ProductServiceImpl          : The product with the id d2e3f4a5-b6c7-8901-def2-3456789abcde has been UPDATED, Date 2025-10-31T20:37:28.589811042
+2025-10-31T20:37:28.608+03:00  INFO 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] c.e.o.u.impl.ProductServiceImpl          : Method `getAllProducts` was run. Date 2025-10-31T20:37:28.608246414
+2025-10-31T20:37:28.640+03:00  INFO 84709 --- [objectMapper] [ForkJoinPool-1-worker-1] c.e.o.u.impl.ProductServiceImpl          : The product with the id d2e3f4a5-b6c7-8901-def2-3456789abcde has been DELETED, Date 2025-10-31T20:37:28.640017210
+2025-10-31T20:55:53.780+03:00  INFO 86250 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Starting ObjectMapperApplication using Java 24.0.2 with PID 86250 (/home/nik/projects/objectMapper/target/classes started by nik in /home/nik/projects/objectMapper)
+2025-10-31T20:55:53.784+03:00  INFO 86250 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : No active profile set, falling back to 1 default profile: "default"
+2025-10-31T20:55:55.377+03:00  INFO 86250 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-31T20:55:55.506+03:00  INFO 86250 --- [objectMapper] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 3 JPA repository interfaces.
+2025-10-31T20:55:56.424+03:00  INFO 86250 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-31T20:55:56.451+03:00  INFO 86250 --- [objectMapper] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-31T20:55:56.451+03:00  INFO 86250 --- [objectMapper] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-10-31T20:55:56.519+03:00  INFO 86250 --- [objectMapper] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-31T20:55:56.520+03:00  INFO 86250 --- [objectMapper] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2638 ms
+2025-10-31T20:55:56.781+03:00  INFO 86250 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-31T20:55:57.001+03:00  INFO 86250 --- [objectMapper] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6c977dcf
+2025-10-31T20:55:57.004+03:00  INFO 86250 --- [objectMapper] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-31T20:55:57.279+03:00  INFO 86250 --- [objectMapper] [main] liquibase.database                       : Set default schema name to public
+2025-10-31T20:55:57.934+03:00  INFO 86250 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:55:58.101+03:00  INFO 86250 --- [objectMapper] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-10-31T20:55:58.104+03:00  INFO 86250 --- [objectMapper] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-10-31T20:55:58.125+03:00  INFO 86250 --- [objectMapper] [main] liquibase.util                           : UPDATE SUMMARY
+2025-10-31T20:55:58.125+03:00  INFO 86250 --- [objectMapper] [main] liquibase.util                           : Run:                          0
+2025-10-31T20:55:58.125+03:00  INFO 86250 --- [objectMapper] [main] liquibase.util                           : Previously run:               8
+2025-10-31T20:55:58.125+03:00  INFO 86250 --- [objectMapper] [main] liquibase.util                           : Filtered out:                 0
+2025-10-31T20:55:58.125+03:00  INFO 86250 --- [objectMapper] [main] liquibase.util                           : -------------------------------
+2025-10-31T20:55:58.126+03:00  INFO 86250 --- [objectMapper] [main] liquibase.util                           : Total change sets:            8
+2025-10-31T20:55:58.127+03:00  INFO 86250 --- [objectMapper] [main] liquibase.util                           : Update summary generated
+2025-10-31T20:55:58.128+03:00  INFO 86250 --- [objectMapper] [main] liquibase.command                        : Command execution complete
+2025-10-31T20:55:59.129+03:00  INFO 86250 --- [objectMapper] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-31T20:55:59.205+03:00  INFO 86250 --- [objectMapper] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-10-31T20:55:59.253+03:00  INFO 86250 --- [objectMapper] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-31T20:55:59.691+03:00  INFO 86250 --- [objectMapper] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-31T20:55:59.797+03:00  INFO 86250 --- [objectMapper] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-31T20:56:01.155+03:00  INFO 86250 --- [objectMapper] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-31T20:56:01.197+03:00  INFO 86250 --- [objectMapper] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:56:01.892+03:00  WARN 86250 --- [objectMapper] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-31T20:56:01.973+03:00  INFO 86250 --- [objectMapper] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-10-31T20:56:02.445+03:00  INFO 86250 --- [objectMapper] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-31T20:56:02.460+03:00  INFO 86250 --- [objectMapper] [main] c.e.o.ObjectMapperApplication            : Started ObjectMapperApplication in 9.724 seconds (process running for 10.751)
+2025-10-31T20:56:17.057+03:00  INFO 86250 --- [objectMapper] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-31T20:56:17.057+03:00  INFO 86250 --- [objectMapper] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-31T20:56:17.060+03:00  INFO 86250 --- [objectMapper] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-31T20:56:17.255+03:00  INFO 86250 --- [objectMapper] [http-nio-8080-exec-1] c.e.o.u.impl.CustomerServiceImpl         : The customer with the id 0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2 FOUND. Time: 2025-10-31T20:56:17.255762229
+2025-10-31T20:56:35.172+03:00  INFO 86250 --- [objectMapper] [http-nio-8080-exec-3] c.e.o.u.impl.CustomerServiceImpl         : The customer with the id 0e38eebf-3b7e-4cb9-b2b0-77b49d0e1ea2 has been DELETED, Date 2025-10-31T20:56:35.172667162
+2025-10-31T20:56:46.403+03:00  INFO 86250 --- [objectMapper] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-31T20:56:46.411+03:00  INFO 86250 --- [objectMapper] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-31T20:56:46.425+03:00  INFO 86250 --- [objectMapper] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-31T20:56:46.430+03:00  INFO 86250 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-31T20:56:46.437+03:00  INFO 86250 --- [objectMapper] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
