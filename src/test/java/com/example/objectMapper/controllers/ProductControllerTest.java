@@ -5,6 +5,8 @@ import com.example.objectMapper.usercasses.ProductService;
 import com.example.objectMapper.usercasses.dto.ProductRequestDto;
 import com.example.objectMapper.usercasses.dto.ProductResponseDto;
 import com.example.objectMapper.util.ProductTestData;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,81 +27,92 @@ class ProductControllerTest {
     @Mock
     private ProductService productService;
 
+    @Mock
+    private ObjectMapper objectMapper;
+
     @InjectMocks
     private ProductController productController;
 
     @Test
-    void methodShouldAddProductTest() {
+    void methodShouldAddProductTest() throws JsonProcessingException {
         ProductRequestDto request = ProductTestData.getProductRequestDto();
         ProductResponseDto response = ProductTestData.getProductResponseDto();
+        String requestJson = "{\"name\":\"Test Product\",\"price\":100}";
+        String responseJson = "{\"productId\":\"123\",\"name\":\"Test Product\"}";
 
+        Mockito.when(objectMapper.readValue(requestJson, ProductRequestDto.class))
+                .thenReturn(request);
         Mockito.when(productService.addProduct(request))
                 .thenReturn(response);
+        Mockito.when(objectMapper.writeValueAsString(response))
+                .thenReturn(responseJson);
 
-        ResponseEntity<ProductResponseDto> result = productController.addProduct(request);
+        ResponseEntity<String> result = productController.addProduct(requestJson);
 
         Assertions.assertNotNull(result);
         Assertions.assertEquals(HttpStatus.CREATED, result.getStatusCode());
-        Assertions.assertNotNull(result.getBody());
-        Assertions.assertEquals(response.productId(), result.getBody().productId());
-        Assertions.assertEquals(response.name(), result.getBody().name());
-        Assertions.assertEquals(response.price(), result.getBody().price());
+        Assertions.assertEquals(responseJson, result.getBody());
         Mockito.verify(productService).addProduct(request);
     }
 
     @Test
-    void methodShouldGetProductByIdTest() {
+    void methodShouldGetProductByIdTest() throws JsonProcessingException {
         ProductResponseDto response = ProductTestData.getProductResponseDto();
         UUID productId = ProductTestData.PRODUCT_ID;
+        String responseJson = "{\"productId\":\"123\",\"name\":\"Test Product\"}";
 
         Mockito.when(productService.getProduct(productId))
                 .thenReturn(response);
+        Mockito.when(objectMapper.writeValueAsString(response))
+                .thenReturn(responseJson);
 
-        ResponseEntity<ProductResponseDto> result = productController.getProduct(productId);
+        ResponseEntity<String> result = productController.getProduct(productId);
 
         Assertions.assertNotNull(result);
         Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
-        Assertions.assertNotNull(result.getBody());
-        Assertions.assertEquals(productId, result.getBody().productId());
-        Assertions.assertEquals(ProductTestData.PRODUCT_NAME, result.getBody().name());
-        Assertions.assertEquals(ProductTestData.PRODUCT_PRICE, result.getBody().price());
+        Assertions.assertEquals(responseJson, result.getBody());
         Mockito.verify(productService).getProduct(productId);
     }
 
     @Test
-    void methodShouldGetAllProductsTest() {
+    void methodShouldGetAllProductsTest() throws JsonProcessingException {
         ProductResponseDto productResponse = ProductTestData.getProductResponseDto();
         List<ProductResponseDto> products = Arrays.asList(productResponse);
+        String responseJson = "[{\"productId\":\"123\",\"name\":\"Test Product\"}]";
 
         Mockito.when(productService.getAllProducts())
                 .thenReturn(products);
+        Mockito.when(objectMapper.writeValueAsString(products))
+                .thenReturn(responseJson);
 
-        ResponseEntity<List<ProductResponseDto>> result = productController.getAllProducts();
+        ResponseEntity<String> result = productController.getAllProducts();
 
         Assertions.assertNotNull(result);
         Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
-        Assertions.assertNotNull(result.getBody());
-        Assertions.assertEquals(1, result.getBody().size());
-        Assertions.assertEquals(ProductTestData.PRODUCT_NAME, result.getBody().get(0).name());
-        Assertions.assertEquals(ProductTestData.PRODUCT_PRICE, result.getBody().get(0).price());
+        Assertions.assertEquals(responseJson, result.getBody());
         Mockito.verify(productService).getAllProducts();
     }
 
     @Test
-    void methodShouldUpdateProductTest() {
+    void methodShouldUpdateProductTest() throws JsonProcessingException {
         ProductRequestDto request = ProductTestData.getProductRequestDto();
         ProductResponseDto response = ProductTestData.getProductResponseDto();
         UUID productId = ProductTestData.PRODUCT_ID;
+        String requestJson = "{\"name\":\"Updated Product\",\"price\":150}";
+        String responseJson = "{\"productId\":\"123\",\"name\":\"Updated Product\"}";
 
-        Mockito.when(productService.updateProduct(productId, request)).thenReturn(response);
+        Mockito.when(objectMapper.readValue(requestJson, ProductRequestDto.class))
+                .thenReturn(request);
+        Mockito.when(productService.updateProduct(productId, request))
+                .thenReturn(response);
+        Mockito.when(objectMapper.writeValueAsString(response))
+                .thenReturn(responseJson);
 
-        ResponseEntity<ProductResponseDto> result = productController.updateProduct(productId, request);
+        ResponseEntity<String> result = productController.updateProduct(productId, requestJson);
 
         Assertions.assertNotNull(result);
         Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
-        Assertions.assertNotNull(result.getBody());
-        Assertions.assertEquals(response.productId(), result.getBody().productId());
-        Assertions.assertEquals(response.name(), result.getBody().name());
+        Assertions.assertEquals(responseJson, result.getBody());
         Mockito.verify(productService).updateProduct(productId, request);
     }
 

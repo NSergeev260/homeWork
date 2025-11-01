@@ -3,7 +3,8 @@ package com.example.objectMapper.api.controllers;
 import com.example.objectMapper.usercasses.ProductService;
 import com.example.objectMapper.usercasses.dto.ProductRequestDto;
 import com.example.objectMapper.usercasses.dto.ProductResponseDto;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,52 +13,68 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-@RequiredArgsConstructor
-@RequestMapping("/api/products")
 @RestController
+@RequestMapping("/api/products")
+@RequiredArgsConstructor
 public class ProductController {
 
     private final ProductService productService;
+    private final ObjectMapper objectMapper;
 
     @PostMapping
-    public ResponseEntity<ProductResponseDto> addProduct(
-            @Valid @RequestBody ProductRequestDto productRequestDto) {
-        ProductResponseDto response = productService.addProduct(productRequestDto);
+    public ResponseEntity<String> addProduct(@RequestBody String productJson)
+            throws JsonProcessingException {
+
+        ProductRequestDto requestDto = objectMapper.readValue(
+                productJson, ProductRequestDto.class);
+        ProductResponseDto responseDto = productService.addProduct(requestDto);
+        String responseJson = objectMapper.writeValueAsString(responseDto);
+
         return ResponseEntity.
-                status(HttpStatus.CREATED)
-                .body(response);
+                status(HttpStatus.CREATED).
+                body(responseJson);
     }
 
     @GetMapping
-    public ResponseEntity<List<ProductResponseDto>> getAllProducts() {
-        List<ProductResponseDto> response = productService.getAllProducts();
-        return ResponseEntity
-                .ok(response);
+    public ResponseEntity<String> getAllProducts() throws JsonProcessingException {
+        List<ProductResponseDto> products = productService.getAllProducts();
+        String productsJson = objectMapper.writeValueAsString(products);
+
+        return ResponseEntity.
+                ok(productsJson);
     }
 
     @GetMapping("/{productId}")
-    public ResponseEntity<ProductResponseDto> getProduct(
-            @PathVariable UUID productId) {
-        ProductResponseDto response = productService.getProduct(productId);
-        return ResponseEntity.ok(response);
+    public ResponseEntity<String> getProduct(@PathVariable UUID productId)
+            throws JsonProcessingException {
+
+        ProductResponseDto product = productService.getProduct(productId);
+        String productJson = objectMapper.writeValueAsString(product);
+
+        return ResponseEntity.
+                ok(productJson);
     }
 
     @PutMapping("/{productId}")
-    public ResponseEntity<ProductResponseDto> updateProduct(
+    public ResponseEntity<String> updateProduct(
             @PathVariable UUID productId,
-            @Valid @RequestBody ProductRequestDto productRequestDto) {
-        ProductResponseDto response = productService.updateProduct(productId, productRequestDto);
-        return ResponseEntity
-                .ok(response);
+            @RequestBody String productJson) throws JsonProcessingException {
+
+        ProductRequestDto requestDto = objectMapper.
+                readValue(productJson, ProductRequestDto.class);
+        ProductResponseDto responseDto = productService.updateProduct(productId, requestDto);
+        String responseJson = objectMapper.writeValueAsString(responseDto);
+
+        return ResponseEntity.
+                ok(responseJson);
     }
 
     @DeleteMapping("/{productId}")
-    public ResponseEntity<Void> deleteProduct(
-            @PathVariable UUID productId) {
+    public ResponseEntity<Void> deleteProduct(@PathVariable UUID productId) {
         productService.deleteProduct(productId);
+
         return ResponseEntity.
                 noContent().
                 build();
     }
 }
-

@@ -3,7 +3,8 @@ package com.example.objectMapper.api.controllers;
 import com.example.objectMapper.usercasses.OrderService;
 import com.example.objectMapper.usercasses.dto.OrderRequestDto;
 import com.example.objectMapper.usercasses.dto.OrderResponseDto;
-import jakarta.validation.Valid;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,43 +12,56 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
-@RequiredArgsConstructor
-@RequestMapping("/api/orders")
 @RestController
+@RequestMapping("/api/orders")
+@RequiredArgsConstructor
 public class OrderController {
 
     private final OrderService orderService;
+    private final ObjectMapper objectMapper;
 
     @PostMapping
-    public ResponseEntity<OrderResponseDto> addOrder(
-            @Valid @RequestBody OrderRequestDto orderRequestDto) {
-        OrderResponseDto response = orderService.addOrder(orderRequestDto);
+    public ResponseEntity<String> addOrder(@RequestBody String orderJson)
+            throws JsonProcessingException {
+
+        OrderRequestDto requestDto = objectMapper.readValue(
+                orderJson, OrderRequestDto.class);
+        OrderResponseDto responseDto = orderService.addOrder(requestDto);
+        String responseJson = objectMapper.writeValueAsString(responseDto);
+
         return ResponseEntity.
-                status(HttpStatus.CREATED)
-                .body(response);
+                status(HttpStatus.CREATED).
+                body(responseJson);
     }
 
     @GetMapping("/{orderId}")
-    public ResponseEntity<OrderResponseDto> getOrder(
-            @PathVariable UUID orderId) {
-        OrderResponseDto response = orderService.getOrder(orderId);
+    public ResponseEntity<String> getOrder(@PathVariable UUID orderId)
+            throws JsonProcessingException {
+
+        OrderResponseDto order = orderService.getOrder(orderId);
+        String orderJson = objectMapper.writeValueAsString(order);
+
         return ResponseEntity.
-                ok(response);
+                ok(orderJson);
     }
 
     @PutMapping("/{orderId}")
-    public ResponseEntity<OrderResponseDto> updateOrder(
+    public ResponseEntity<String> updateOrder(
             @PathVariable UUID orderId,
-            @Valid @RequestBody OrderRequestDto orderRequestDto) {
-        OrderResponseDto response = orderService.updateOrder(orderId, orderRequestDto);
+            @RequestBody String orderJson) throws JsonProcessingException {
+
+        OrderRequestDto requestDto = objectMapper.readValue(orderJson, OrderRequestDto.class);
+        OrderResponseDto responseDto = orderService.updateOrder(orderId, requestDto);
+        String responseJson = objectMapper.writeValueAsString(responseDto);
+
         return ResponseEntity.
-                ok(response);
+                ok(responseJson);
     }
 
     @DeleteMapping("/{orderId}")
-    public ResponseEntity<Void> deleteOrder(
-            @PathVariable UUID orderId) {
+    public ResponseEntity<Void> deleteOrder(@PathVariable UUID orderId) {
         orderService.deleteOrder(orderId);
+
         return ResponseEntity.
                 noContent().
                 build();
