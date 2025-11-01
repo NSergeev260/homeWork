@@ -37,11 +37,15 @@ class OrderControllerTest {
         ResponseEntity<OrderResponseDto> result = orderController.addOrder(request);
 
         Assertions.assertNotNull(result);
-        Assertions.assertEquals(HttpStatus.CREATED, result.getStatusCode());
+        Assertions.assertEquals(HttpStatus.CREATED,
+                result.getStatusCode());
         Assertions.assertNotNull(result.getBody());
-        Assertions.assertEquals(response.orderId(), result.getBody().orderId());
-        Assertions.assertEquals(response.shippingAddress(), result.getBody().shippingAddress());
-        Assertions.assertEquals(response.orderStatus(), result.getBody().orderStatus());
+        Assertions.assertEquals(response.orderId(),
+                result.getBody().orderId());
+        Assertions.assertEquals(response.shippingAddress(),
+                result.getBody().shippingAddress());
+        Assertions.assertEquals(response.orderStatus(),
+                result.getBody().orderStatus());
         Mockito.verify(orderService).addOrder(request);
     }
 
@@ -59,8 +63,10 @@ class OrderControllerTest {
         Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
         Assertions.assertNotNull(result.getBody());
         Assertions.assertEquals(orderId, result.getBody().orderId());
-        Assertions.assertEquals(OrderTestData.SHIPPING_ADDRESS, result.getBody().shippingAddress());
-        Assertions.assertEquals(OrderTestData.ORDER_STATUS, result.getBody().orderStatus());
+        Assertions.assertEquals(OrderTestData.SHIPPING_ADDRESS,
+                result.getBody().shippingAddress());
+        Assertions.assertEquals(OrderTestData.ORDER_STATUS,
+                result.getBody().orderStatus());
         Mockito.verify(orderService).getOrder(orderId);
     }
 
@@ -78,8 +84,10 @@ class OrderControllerTest {
         Assertions.assertNotNull(result);
         Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
         Assertions.assertNotNull(result.getBody());
-        Assertions.assertEquals(response.orderId(), result.getBody().orderId());
-        Assertions.assertEquals(response.shippingAddress(), result.getBody().shippingAddress());
+        Assertions.assertEquals(response.orderId(),
+                result.getBody().orderId());
+        Assertions.assertEquals(response.shippingAddress(),
+                result.getBody().shippingAddress());
         Mockito.verify(orderService).updateOrder(orderId, request);
     }
 

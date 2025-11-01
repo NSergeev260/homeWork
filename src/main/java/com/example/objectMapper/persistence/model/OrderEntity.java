@@ -1,8 +1,6 @@
 package com.example.objectMapper.persistence.model;
 
-import com.example.objectMapper.usercasses.dto.CustomerResponseDto;
 import com.example.objectMapper.usercasses.dto.OrderStatus;
-import com.example.objectMapper.usercasses.dto.ProductResponseDto;
 import jakarta.persistence.*;
 import lombok.*;
 

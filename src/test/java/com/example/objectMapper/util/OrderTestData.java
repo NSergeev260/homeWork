@@ -1,6 +1,5 @@
 package com.example.objectMapper.util;
 
-import com.example.objectMapper.persistence.model.CustomerEntity;
 import com.example.objectMapper.persistence.model.OrderEntity;
 import com.example.objectMapper.persistence.model.ProductEntity;
 import com.example.objectMapper.usercasses.dto.*;

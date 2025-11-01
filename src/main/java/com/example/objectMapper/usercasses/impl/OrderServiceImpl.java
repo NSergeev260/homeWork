@@ -1,6 +1,5 @@
 package com.example.objectMapper.usercasses.impl;
 
-import com.example.objectMapper.api.exeption.BadRequestException;
 import com.example.objectMapper.api.exeption.NotFoundException;
 import com.example.objectMapper.persistence.model.CustomerEntity;
 import com.example.objectMapper.persistence.model.OrderEntity;
@@ -49,15 +48,6 @@ public class OrderServiceImpl implements OrderService {
         }
 
         BigDecimal totalPrice = calculateTotalPrice(productEntities);
-
-//        OrderEntity orderEntity = OrderEntity.builder()
-//                .withCustomer(customerEntity)
-//                .withProducts(productEntities)
-//                .withOrderDate(orderRequestDto.orderDate())
-//                .withShippingAddress(orderRequestDto.shippingAddress())
-//                .withTotalPrice(totalPrice)
-//                .withOrderStatus(orderRequestDto.orderStatus())
-//                .build();
 
         OrderEntity orderEntity = orderMapper.fromDtoToEntity(orderRequestDto);
         orderEntity.setCustomer(customerEntity);

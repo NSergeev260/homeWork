@@ -30,15 +30,10 @@ public class CustomerServiceImpl implements CustomerService {
         String email = customerRequestDto.email();
 
         if (customerRepo.findByEmail(email).isPresent()) {
-            throw new BadRequestException("Customer with email already EXIST. FAIL! email: " + email);
+            throw new BadRequestException(
+                    "Customer with email already EXIST. FAIL! email: " + email);
         }
 
-//        CustomerEntity customerEntity = CustomerEntity.builder()
-//                .withFirstName(customerRequestDto.firstName())
-//                .withLastName(customerRequestDto.lastName())
-//                .withEmail(customerRequestDto.email())
-//                .withContactNumber(customerRequestDto.contactNumber())
-//                .build();
         CustomerEntity customerEntity = customerMapper.fromDtoToEntity(customerRequestDto);
         CustomerEntity addedCustomer = customerRepo.save(customerEntity);
 

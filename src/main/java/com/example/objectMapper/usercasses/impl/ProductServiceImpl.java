@@ -2,14 +2,12 @@ package com.example.objectMapper.usercasses.impl;
 
 import com.example.objectMapper.api.exeption.BadRequestException;
 import com.example.objectMapper.api.exeption.NotFoundException;
-import com.example.objectMapper.persistence.model.CustomerEntity;
 import com.example.objectMapper.persistence.model.ProductEntity;
 import com.example.objectMapper.persistence.repository.ProductRepository;
 import com.example.objectMapper.usercasses.ProductService;
 import com.example.objectMapper.usercasses.dto.ProductRequestDto;
 import com.example.objectMapper.usercasses.dto.ProductResponseDto;
 import com.example.objectMapper.usercasses.mapper.ProductMapper;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

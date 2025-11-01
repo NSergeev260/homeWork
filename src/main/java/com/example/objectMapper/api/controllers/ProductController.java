@@ -3,8 +3,6 @@ package com.example.objectMapper.api.controllers;
 import com.example.objectMapper.usercasses.ProductService;
 import com.example.objectMapper.usercasses.dto.ProductRequestDto;
 import com.example.objectMapper.usercasses.dto.ProductResponseDto;
-import com.example.objectMapper.usercasses.impl.ProductServiceImpl;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
