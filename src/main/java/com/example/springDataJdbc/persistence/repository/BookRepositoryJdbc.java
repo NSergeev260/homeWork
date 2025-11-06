@@ -2,6 +2,7 @@ package com.example.springDataJdbc.persistence.repository;
 
 import com.example.springDataJdbc.persistence.model.BookData;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Slf4j
 @Repository
 @AllArgsConstructor
 public class BookRepositoryJdbc implements BookRepository {
@@ -42,6 +44,7 @@ public class BookRepositoryJdbc implements BookRepository {
                     GET_BOOK_BY_ID, bookRowMapper, id);
             return Optional.ofNullable(bookData);
         } catch (EmptyResultDataAccessException e) {
+            log.debug("Book not found. FAIL! id: {}", id);
             return Optional.empty();
         }
     }
@@ -53,7 +56,7 @@ public class BookRepositoryJdbc implements BookRepository {
                     GET_BOOK_BY_TITLE, bookRowMapper, title);
             return Optional.ofNullable(bookData);
         } catch (EmptyResultDataAccessException e) {
-            e.printStackTrace();
+            log.debug("Book not found. FAIL! title: {}", title);
             return Optional.empty();
         }
     }

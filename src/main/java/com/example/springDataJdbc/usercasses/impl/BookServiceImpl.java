@@ -38,8 +38,8 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookResponseDto getBookByID(UUID id) {
         BookData bookData = getByID(id);
-        BookResponseDto bookResponseDto = bookMapper.fromDataToDto(bookData);
-        return bookResponseDto;
+
+        return bookMapper.fromDataToDto(bookData);
     }
 
     @Transactional(readOnly = true)
@@ -47,12 +47,11 @@ public class BookServiceImpl implements BookService {
     public BookResponseDto getBookByTitle(String title) {
         BookData bookData = bookRepo.findBookByTitle(title)
                 .orElseThrow(() -> new RuntimeException("Book not found. FAIL! title: " + title));
-        BookResponseDto bookResponseDto = bookMapper.fromDataToDto(bookData);
 
         log.info("The book with the title {} FOUND. Time: {}"
                 , title, LocalDateTime.now());
 
-        return bookResponseDto;
+        return bookMapper.fromDataToDto(bookData);
     }
 
     @Transactional(readOnly = true)
@@ -70,13 +69,15 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookResponseDto updateBook(UUID id, BookRequestDto bookRequestDto) {
         BookData bookData = getByID(id);
-        BookData bookToUpdate = bookMapper.fromDtoToData(bookRequestDto);
-
         bookData.setTitle(bookRequestDto.title());
         bookData.setAuthor(bookRequestDto.author());
         bookData.setPublicationYear(bookRequestDto.publicationYear());
-        BookData updatedBook = bookRepo.updateBook()
-        return null;
+        BookData updatedBook = bookRepo.updateBook(bookData);
+
+        log.info("The book with the id {} has been UPDATED, Date {}",
+                updatedBook.getId(), LocalDateTime.now());
+
+        return bookMapper.fromDataToDto(updatedBook);
     }
 
     @Transactional
