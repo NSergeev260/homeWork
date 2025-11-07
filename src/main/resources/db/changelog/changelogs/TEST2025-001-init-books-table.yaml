@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-001-init-books-table
+      author: nsergeev
+      changes:
+        - createTable:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  defaultValueComputed: gen_random_uuid()
+              - column:
+                  name: title
+                  type: VARCHAR(500)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: author
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: publication_year
+                  type: INTEGER
+                  constraints:
+                    nullable: false

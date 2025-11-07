@@ -10,7 +10,7 @@ public interface BookService {
 
     BookResponseDto insertBook(BookRequestDto bookRequestDto);
 
-    BookResponseDto getBookByID(UUID id);
+    BookResponseDto getBookById(UUID id);
 
     BookResponseDto getBookByTitle(String title);
 

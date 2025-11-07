@@ -2,11 +2,13 @@ package com.example.springDataJdbc.persistence.repository;
 
 import com.example.springDataJdbc.persistence.model.BookData;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
 
+@Component
 public class BookRowMapper implements RowMapper<BookData> {
 
     @Override

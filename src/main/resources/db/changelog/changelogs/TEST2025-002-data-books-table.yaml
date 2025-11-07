@@ -1,0 +1,116 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-002-data-books-table
+      author: nsergeev
+      changes:
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: "f6789abc-def0-4945-6789-012345678901"
+              - column:
+                  name: title
+                  value: "POSTGRESQL. ОСНОВЫ ЯЗЫКА SQL"
+              - column:
+                  name: author
+                  value: "Моргунов Евгений"
+              - column:
+                  name: publication_year
+                  value: "2018"
+
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: "789abcde-f012-4956-7890-123456789012"
+              - column:
+                  name: title
+                  value: "Элегантные объекты. Java Edition"
+              - column:
+                  name: author
+                  value: "Бугаенко Егор"
+              - column:
+                  name: publication_year
+                  value: "2019"
+
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: "9abcdef0-1234-4967-8901-234567890123"
+              - column:
+                  name: title
+                  value: "Java. Полное руководство"
+              - column:
+                  name: author
+                  value: "Шилдт Герберт"
+              - column:
+                  name: publication_year
+                  value: "2023"
+
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: "abcdef01-2345-4978-9012-345678901234"
+              - column:
+                  name: title
+                  value: "Программирование на Java для детей, родителей, бабушек и дедушек"
+              - column:
+                  name: author
+                  value: "Файн Яков"
+              - column:
+                  name: publication_year
+                  value: "2011"
+
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: "bcdef012-3456-4989-0123-456789012345"
+              - column:
+                  name: title
+                  value: "Грокаем алгоритмы"
+              - column:
+                  name: author
+                  value: "Бхаргава Адитья"
+              - column:
+                  name: publication_year
+                  value: "2017"
+
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: "cdef0123-4567-4990-1234-567890123456"
+              - column:
+                  name: title
+                  value: "Наш код. Ремесло, профессия, искусство"
+              - column:
+                  name: author
+                  value: "Бугаенко Егор"
+              - column:
+                  name: publication_year
+                  value: "2019"
+
+        - insert:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  value: "def01234-5678-5001-2345-678901234567"
+              - column:
+                  name: title
+                  value: "Java. руководство для начинающих"
+              - column:
+                  name: author
+                  value: "Шилдт Герберт"
+              - column:
+                  name: publication_year
+                  value: "2023"

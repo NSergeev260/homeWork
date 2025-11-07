@@ -31,13 +31,19 @@ public class BookServiceImpl implements BookService {
         BookData bookData = bookMapper.fromDtoToData(bookRequestDto);
         BookData savedBook = bookRepo.insertBook(bookData);
 
+        log.info("Book with id {} has been ADDED. Time: {}"
+                , savedBook.getId(), LocalDateTime.now());
+
         return bookMapper.fromDataToDto(savedBook);
     }
 
     @Transactional(readOnly = true)
     @Override
-    public BookResponseDto getBookByID(UUID id) {
+    public BookResponseDto getBookById(UUID id) {
         BookData bookData = getByID(id);
+
+        log.info("Book with id {} FOUND. Time: {}"
+                , id, LocalDateTime.now());
 
         return bookMapper.fromDataToDto(bookData);
     }
