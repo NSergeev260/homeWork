@@ -1,8 +1,11 @@
 package com.example.springDataProjections.persistence.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Builder(setterPrefix = "with")
@@ -20,4 +23,7 @@ public class DepartmentEntity {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+    private List<EmployeeEntity> employees = new ArrayList<>();
 }

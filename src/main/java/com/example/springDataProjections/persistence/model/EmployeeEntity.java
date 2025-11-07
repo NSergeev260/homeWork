@@ -1,9 +1,7 @@
 package com.example.springDataProjections.persistence.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -20,20 +18,21 @@ public class EmployeeEntity {
 
     @Id
     @Column(name = "id")
-    UUID id = UUID.randomUUID();
+    private UUID id = UUID.randomUUID();
 
     @Column(name = "first_name")
-    String firstName;
+    private String firstName;
 
     @Column(name = "last_name")
-    String lastName;
+    private String lastName;
 
     @Column(name = "position")
-    String position;
+    private String position;
 
     @Column(name = "salary")
-    BigDecimal salary;
+    private BigDecimal salary;
 
-
-    String department;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "department_id")
+    private DepartmentEntity department;
 }
