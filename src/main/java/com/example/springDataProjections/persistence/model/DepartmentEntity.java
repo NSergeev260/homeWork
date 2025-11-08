@@ -21,7 +21,7 @@ public class DepartmentEntity {
     @Column(name = "id")
     private UUID id = UUID.randomUUID();
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     private String name;
 
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)

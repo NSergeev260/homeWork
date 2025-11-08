@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -30,36 +29,36 @@ public class DepartmentServiceImpl implements DepartmentService {
     public DepartmentResponseDto addDepartment(
             DepartmentRequestDto departmentRequestDto) {
         DepartmentEntity departmentEntity = departmentMapper
-                .fromDtoToEntity(departmentRequestDto);
+                .dtoToEntity(departmentRequestDto);
         DepartmentEntity addedDepartmentEntity = departmentRepo
                 .save(departmentEntity);
 
         log.info("NEW Department with id {} has been CREATED, Date: {}",
                 addedDepartmentEntity.getId(), LocalDateTime.now());
 
-        return departmentMapper.fromEntityToDto(addedDepartmentEntity);
+        return departmentMapper.entityToDto(addedDepartmentEntity);
     }
 
     @Transactional(readOnly = true)
     @Override
     public DepartmentResponseDto getDepartment(UUID id) {
-        DepartmentEntity departmentEntity = getDepartmentRepoByID(id);
+        DepartmentEntity departmentEntity = getDepartmentRepoById(id);
 
         log.info("Department with id {} was FOUND, Date: {}",
                 id, LocalDateTime.now());
 
-        return departmentMapper.fromEntityToDto(departmentEntity);
+        return departmentMapper.entityToDto(departmentEntity);
     }
 
     @Transactional(readOnly = true)
     @Override
     public List<DepartmentResponseDto> getAllDepartments() {
 
-        log.info("Method `getAllDepartments` was run, Date: ",
+        log.info("Method `getAllDepartments` was run, Date: {}",
                 LocalDateTime.now());
 
         return departmentRepo.findAll().stream()
-                 .map(departmentMapper::fromEntityToDto)
+                 .map(departmentMapper::entityToDto)
                  .toList();
     }
 
@@ -67,7 +66,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public DepartmentResponseDto updateDepartment(UUID id,
                                                   DepartmentRequestDto departmentRequestDto) {
-        DepartmentEntity departmentEntity = getDepartmentRepoByID(id);
+        DepartmentEntity departmentEntity = getDepartmentRepoById(id);
         departmentEntity.setName(departmentRequestDto.name());
         DepartmentEntity updatedDepartmentEntity = departmentRepo
                 .save(departmentEntity);
@@ -75,13 +74,13 @@ public class DepartmentServiceImpl implements DepartmentService {
         log.info("Department with id {} has been UPDATED, Date: {}",
                 updatedDepartmentEntity.getId(), LocalDateTime.now());
 
-        return departmentMapper.fromEntityToDto(updatedDepartmentEntity);
+        return departmentMapper.entityToDto(updatedDepartmentEntity);
     }
 
     @Transactional
     @Override
     public void deleteDepartment(UUID id) {
-        DepartmentEntity departmentEntity = getDepartmentRepoByID(id);
+        DepartmentEntity departmentEntity = getDepartmentRepoById(id);
         departmentRepo.delete(departmentEntity);
 
         log.info("Department with id {} has been DELETED, Date: {}",
@@ -89,7 +88,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     }
 
-    private DepartmentEntity getDepartmentRepoByID(UUID id) {
+    private DepartmentEntity getDepartmentRepoById(UUID id) {
         DepartmentEntity departmentEntity = departmentRepo.findById(id)
                 .orElseThrow(() ->
                         new NotFoundException("Department not found. FAIL! ID: " + id));

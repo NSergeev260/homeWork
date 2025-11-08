@@ -3,16 +3,21 @@ package com.example.springDataProjections.usercasses.mapper;
 import com.example.springDataProjections.persistence.model.DepartmentEntity;
 import com.example.springDataProjections.usercasses.dto.DepartmentRequestDto;
 import com.example.springDataProjections.usercasses.dto.DepartmentResponseDto;
-import org.mapstruct.Builder;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
+import org.springframework.stereotype.Component;
 
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING,
-        builder = @Builder(disableBuilder = true))
-public interface DepartmentMapper {
-
-    DepartmentEntity fromDtoToEntity(DepartmentRequestDto departmentRequestDto);
-
-    DepartmentResponseDto fromEntityToDto(DepartmentEntity departmentEntity);
+@Component
+public class DepartmentMapper {
+    
+    public DepartmentEntity dtoToEntity(DepartmentRequestDto dto) {
+        return DepartmentEntity.builder()
+            .withName(dto.name())
+            .build();
+    }
+    
+    public DepartmentResponseDto entityToDto(DepartmentEntity entity) {
+        return DepartmentResponseDto.builder()
+            .withId(entity.getId())
+            .withName(entity.getName())
+            .build();
+    }
 }
-

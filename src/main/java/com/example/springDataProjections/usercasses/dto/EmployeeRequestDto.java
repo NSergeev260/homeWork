@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Positive;
 import lombok.Builder;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Builder(setterPrefix = "with")
 public record EmployeeRequestDto(
@@ -18,5 +19,7 @@ public record EmployeeRequestDto(
         String position,
         @NotNull(message = "Salary is required")
         @Positive(message = "Salary must be positive")
-        BigDecimal salary) {
+        BigDecimal salary,
+        @NotBlank(message = "The department cannot be empty or null")
+        String departmentName) {
 }

@@ -1,5 +1,6 @@
 package com.example.springDataProjections.usercasses;
 
+import com.example.springDataProjections.persistence.projection.EmployeeProjection;
 import com.example.springDataProjections.usercasses.dto.DepartmentRequestDto;
 import com.example.springDataProjections.usercasses.dto.DepartmentResponseDto;
 import com.example.springDataProjections.usercasses.dto.EmployeeRequestDto;
@@ -19,4 +20,6 @@ public interface EmployeeService {
     EmployeeResponseDto updateEmployee(UUID id, EmployeeRequestDto employeeRequestDto);
 
     void deleteEmployee(UUID id);
+
+    List<EmployeeProjection> getEmployeeProjections();
 }

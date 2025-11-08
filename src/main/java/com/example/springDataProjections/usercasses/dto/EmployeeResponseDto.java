@@ -12,5 +12,6 @@ public record EmployeeResponseDto(
         String firstName,
         String lastName,
         String position,
-        BigDecimal salary) {
+        BigDecimal salary,
+        String departmentName) {
 }
