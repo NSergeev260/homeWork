@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-003-data-departments-table
+      author: nsergeev
+      changes:
+        - insert:
+            tableName: departments
+            columns:
+              - column:
+                  name: id
+                  value: "789abcde-f012-4956-7890-123456789012"
+              - column:
+                  name: name
+                  value: "Marketing"
+        - insert:
+            tableName: departments
+            columns:
+              - column:
+                  name: id
+                  value: "9abcdef0-1234-4967-8901-234567890123"
+              - column:
+                  name: name
+                  value: "Finance"
+        - insert:
+            tableName: departments
+            columns:
+              - column:
+                  name: id
+                  value: "abcdef01-2345-4978-9012-345678901234"
+              - column:
+                  name: name
+                  value: "Sales"
+        - insert:
+            tableName: departments
+            columns:
+              - column:
+                  name: id
+                  value: "bcdef012-3456-4989-0123-456789012345"
+              - column:
+                  name: name
+                  value: "HR"
+        - insert:
+            tableName: departments
+            columns:
+              - column:
+                  name: id
+                  value: "cdef0123-4567-4990-1234-567890123456"
+              - column:
+                  name: name
+                  value: "IT"

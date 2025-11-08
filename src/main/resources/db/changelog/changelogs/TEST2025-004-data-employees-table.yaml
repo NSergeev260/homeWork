@@ -1,0 +1,224 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-004-data-employees-table
+      author: nsergeev
+      changes:
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: "a1b1c1d1-e1f1-4a1a-8a1a-a1b1c1d1e1f1"
+              - column:
+                  name: first_name
+                  value: "John"
+              - column:
+                  name: last_name
+                  value: "Doe"
+              - column:
+                  name: position
+                  value: "CTO"
+              - column:
+                  name: salary
+                  value: 450000.00  # ✅ High (> 400k)
+              - column:
+                  name: department_id
+                  value: "cdef0123-4567-4990-1234-567890123456"  # IT
+
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: "a2b2c2d2-e2f2-4a2a-8a2a-a2b2c2d2e2f2"
+              - column:
+                  name: first_name
+                  value: "Jane"
+              - column:
+                  name: last_name
+                  value: "Smith"
+              - column:
+                  name: position
+                  value: "HR Director"
+              - column:
+                  name: salary
+                  value: 350000.00  # ✅ Medium (220k - 400k)
+              - column:
+                  name: department_id
+                  value: "bcdef012-3456-4989-0123-456789012345"  # HR
+
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: "a3b3c3d3-e3f3-4a3a-8a3a-a3b3c3d3e3f3"
+              - column:
+                  name: first_name
+                  value: "Mike"
+              - column:
+                  name: last_name
+                  value: "Johnson"
+              - column:
+                  name: position
+                  value: "Sales Director"
+              - column:
+                  name: salary
+                  value: 420000.00  # ✅ High (> 400k)
+              - column:
+                  name: department_id
+                  value: "abcdef01-2345-4978-9012-345678901234"  # Sales
+
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: "a4b4c4d4-e4f4-4a4a-8a4a-a4b4c4d4e4f4"
+              - column:
+                  name: first_name
+                  value: "Sarah"
+              - column:
+                  name: last_name
+                  value: "Wilson"
+              - column:
+                  name: position
+                  value: "Senior Financial Analyst"
+              - column:
+                  name: salary
+                  value: 280000.00  # ✅ Medium (220k - 400k)
+              - column:
+                  name: department_id
+                  value: "9abcdef0-1234-4967-8901-234567890123"  # Finance
+
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: "a5b5c5d5-e5f5-4a5a-8a5a-a5b5c5d5e5f5"
+              - column:
+                  name: first_name
+                  value: "Emily"
+              - column:
+                  name: last_name
+                  value: "Brown"
+              - column:
+                  name: position
+                  value: "Marketing Manager"
+              - column:
+                  name: salary
+                  value: 320000.00  # ✅ Medium (220k - 400k)
+              - column:
+                  name: department_id
+                  value: "789abcde-f012-4956-7890-123456789012"  # Marketing
+
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: "a6b6c6d6-e6f6-4a6a-8a6a-a6b6c6d6e6f6"
+              - column:
+                  name: first_name
+                  value: "David"
+              - column:
+                  name: last_name
+                  value: "Taylor"
+              - column:
+                  name: position
+                  value: "Junior Developer"
+              - column:
+                  name: salary
+                  value: 180000.00  # ✅ Low (< 220k)
+              - column:
+                  name: department_id
+                  value: "cdef0123-4567-4990-1234-567890123456"  # IT
+
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: "a7b7c7d7-e7f7-4a7a-8a7a-a7b7c7d7e7f7"
+              - column:
+                  name: first_name
+                  value: "Lisa"
+              - column:
+                  name: last_name
+                  value: "Anderson"
+              - column:
+                  name: position
+                  value: "HR Specialist"
+              - column:
+                  name: salary
+                  value: 150000.00  # ✅ Low (< 220k)
+              - column:
+                  name: department_id
+                  value: "bcdef012-3456-4989-0123-456789012345"  # HR
+
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: "a8b8c8d8-e8f8-4a8a-8a8a-a8b8c8d8e8f8"
+              - column:
+                  name: first_name
+                  value: "Robert"
+              - column:
+                  name: last_name
+                  value: "Davis"
+              - column:
+                  name: position
+                  value: "Sales Representative"
+              - column:
+                  name: salary
+                  value: 190000.00  # ✅ Low (< 220k)
+              - column:
+                  name: department_id
+                  value: "abcdef01-2345-4978-9012-345678901234"  # Sales
+
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: "a9b9c9d9-e9f9-4a9a-8a9a-a9b9c9d9e9f9"
+              - column:
+                  name: first_name
+                  value: "Anna"
+              - column:
+                  name: last_name
+                  value: "Clark"
+              - column:
+                  name: position
+                  value: "CFO"
+              - column:
+                  name: salary
+                  value: 500000.00  # ✅ High (> 400k)
+              - column:
+                  name: department_id
+                  value: "9abcdef0-1234-4967-8901-234567890123"  # Finance
+
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: "b1b1c1d1-e1f1-4b1a-8b1a-b1b1c1d1e1f1"
+              - column:
+                  name: first_name
+                  value: "Michael"
+              - column:
+                  name: last_name
+                  value: "Rodriguez"
+              - column:
+                  name: position
+                  value: "Marketing Intern"
+              - column:
+                  name: salary
+                  value: 80000.00   # ✅ Low (< 220k)
+              - column:
+                  name: department_id
+                  value: "789abcde-f012-4956-7890-123456789012"  # Marketing

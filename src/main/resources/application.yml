@@ -1,0 +1,28 @@
+logging:
+  level:
+    root: INFO
+  file:
+    name: ${user.dir}/logs/java.log
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  application:
+    name: springDataProjections
+  datasource:
+    url: ${LOCAL_DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    change-log: db/changelog/changelog.yaml
+    enabled: true
+  output:
+    ansi:
+      enabled: always

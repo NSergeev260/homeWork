@@ -11,7 +11,7 @@ public interface EmployeeSalaryProjection {
 
     BigDecimal getSalary();
 
-    @Value("#{target.salary > 50000 ? 'High' : " +
-            "#{target.salary > 30000 ? 'Medium' : 'Low'}}")
+    @Value("#{target.salary > 400000 ? 'High' : " +
+            "#{target.salary > 220000 ? 'Medium' : 'Low'}}")
     String getSalaryCategory();
 }
