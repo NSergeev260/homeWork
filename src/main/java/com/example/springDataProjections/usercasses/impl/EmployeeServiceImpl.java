@@ -4,6 +4,7 @@ import com.example.springDataProjections.api.exeption.NotFoundException;
 import com.example.springDataProjections.persistence.model.DepartmentEntity;
 import com.example.springDataProjections.persistence.model.EmployeeEntity;
 import com.example.springDataProjections.persistence.projection.EmployeeProjection;
+import com.example.springDataProjections.persistence.projection.EmployeeSalaryProjection;
 import com.example.springDataProjections.persistence.repository.DepartmentRepository;
 import com.example.springDataProjections.persistence.repository.EmployeeRepository;
 import com.example.springDataProjections.usercasses.EmployeeService;
@@ -17,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Slf4j
@@ -65,13 +67,21 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Transactional(readOnly = true)
     @Override
-    public List<EmployeeProjection> getEmployeeProjections(){
+    public Optional<EmployeeProjection> getEmployeeProjectionById(UUID id) {
 
-        log.info("Method `getEmployeeProjections` was run, Date: {}", LocalDateTime.now());
+        log.info("Method `getEmployeeProjectionById` was run, Date: {}", LocalDateTime.now());
 
-        return employeeRepo.findEmployeeProjections();
+        return employeeRepo.findEmployeeProjectionById(id);
     }
 
+    @Transactional(readOnly = true)
+    @Override
+    public List<EmployeeSalaryProjection> getEmployeeSalaryProjections() {
+
+        log.info("Method `getEmployeeSalaryProjections` was run, Date: {}", LocalDateTime.now());
+
+        return employeeRepo.findEmployeeSalaryProjections();
+    }
 
     @Transactional
     @Override
