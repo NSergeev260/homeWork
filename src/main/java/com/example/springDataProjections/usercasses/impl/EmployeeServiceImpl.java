@@ -76,7 +76,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Transactional(readOnly = true)
     @Override
-    public List<EmployeeSalaryProjection> getEmployeeSalaryProjections() {
+    public List<EmployeeSalaryProjection> getEmployeeScroogeMcDuckLevelProjections() {
 
         log.info("Method `getEmployeeSalaryProjections` was run, Date: {}", LocalDateTime.now());
 

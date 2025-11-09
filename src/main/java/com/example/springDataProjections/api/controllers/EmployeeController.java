@@ -12,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -79,8 +78,8 @@ public class EmployeeController {
                 .orElseThrow(() -> new NotFoundException("Employee projection not found")));
     }
 
-    @GetMapping("/salary-projections")
-    public List<EmployeeSalaryProjection> getEmployeeSalaryProjections() {
-        return employeeService.getEmployeeSalaryProjections();
+    @GetMapping("/ScroogeMcDuckLevel-projections")
+    public List<EmployeeSalaryProjection> getEmployeeScroogeMcDuckLevelProjections() {
+        return employeeService.getEmployeeScroogeMcDuckLevelProjections();
     }
 }

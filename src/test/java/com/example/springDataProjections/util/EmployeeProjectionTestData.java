@@ -46,7 +46,7 @@ public class EmployeeProjectionTestData {
             }
 
             @Override
-            public String getSalaryCategory() {
+            public String getScroogeMcDuckLevel() {
                 return "High";
             }
         };

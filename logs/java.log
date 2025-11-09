@@ -1,0 +1,706 @@
+2025-11-09T11:38:31.671+03:00  INFO 2677 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : Starting SpringDataProjectionsApplication using Java 17.0.16 with PID 2677 (/home/nik/projects/springDataProjections/target/classes started by nik in /home/nik/projects/springDataProjections)
+2025-11-09T11:38:31.705+03:00  INFO 2677 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-09T11:38:33.897+03:00  INFO 2677 --- [springDataProjections] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-09T11:38:34.010+03:00  INFO 2677 --- [springDataProjections] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 2 JPA repository interfaces.
+2025-11-09T11:38:34.926+03:00  INFO 2677 --- [springDataProjections] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-09T11:38:34.949+03:00  INFO 2677 --- [springDataProjections] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-09T11:38:34.950+03:00  INFO 2677 --- [springDataProjections] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-09T11:38:35.025+03:00  INFO 2677 --- [springDataProjections] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-09T11:38:35.026+03:00  INFO 2677 --- [springDataProjections] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3024 ms
+2025-11-09T11:38:35.382+03:00  INFO 2677 --- [springDataProjections] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-09T11:38:35.833+03:00  INFO 2677 --- [springDataProjections] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11381415
+2025-11-09T11:38:35.839+03:00  INFO 2677 --- [springDataProjections] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-09T11:38:36.361+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.database                       : Set default schema name to public
+2025-11-09T11:38:37.591+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-11-09T11:38:37.913+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-11-09T11:38:37.916+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-11-09T11:38:37.942+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.util                           : UPDATE SUMMARY
+2025-11-09T11:38:37.945+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.util                           : Run:                          0
+2025-11-09T11:38:37.947+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.util                           : Previously run:               4
+2025-11-09T11:38:37.948+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.util                           : Filtered out:                 0
+2025-11-09T11:38:37.949+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.util                           : -------------------------------
+2025-11-09T11:38:37.949+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.util                           : Total change sets:            4
+2025-11-09T11:38:37.957+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.util                           : Update summary generated
+2025-11-09T11:38:37.960+03:00  INFO 2677 --- [springDataProjections] [main] liquibase.command                        : Command execution complete
+2025-11-09T11:38:39.611+03:00  INFO 2677 --- [springDataProjections] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-09T11:38:39.743+03:00  INFO 2677 --- [springDataProjections] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-09T11:38:39.799+03:00  INFO 2677 --- [springDataProjections] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-09T11:38:40.232+03:00  INFO 2677 --- [springDataProjections] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-09T11:38:40.355+03:00  INFO 2677 --- [springDataProjections] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-09T11:38:41.818+03:00  INFO 2677 --- [springDataProjections] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-09T11:38:41.860+03:00  INFO 2677 --- [springDataProjections] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-09T11:38:42.412+03:00  INFO 2677 --- [springDataProjections] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-09T11:38:43.759+03:00  WARN 2677 --- [springDataProjections] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-09T11:38:44.332+03:00  INFO 2677 --- [springDataProjections] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-09T11:38:44.347+03:00  INFO 2677 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : Started SpringDataProjectionsApplication in 14.375 seconds (process running for 15.655)
+2025-11-09T11:39:43.435+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-09T11:39:43.437+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-09T11:39:43.439+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-11-09T11:39:43.506+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-1] c.e.s.u.impl.DepartmentServiceImpl       : Method `getAllDepartments` was run, Date: 2025-11-09T11:39:43.506206273
+2025-11-09T11:42:24.679+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-5] c.e.s.u.impl.DepartmentServiceImpl       : Method `getAllDepartments` was run, Date: 2025-11-09T11:42:24.679965904
+2025-11-09T11:44:59.124+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-6] c.e.s.u.impl.DepartmentServiceImpl       : Method `getAllDepartments` was run, Date: 2025-11-09T11:44:59.124136051
+2025-11-09T11:46:15.400+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-1] c.e.s.u.impl.EmployeeServiceImpl         : Method `getAllEmployees` was run, Date: 2025-11-09T11:46:15.400540039
+2025-11-09T11:47:59.739+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-5] c.e.s.u.impl.DepartmentServiceImpl       : Method `getAllDepartments` was run, Date: 2025-11-09T11:47:59.739220962
+2025-11-09T11:48:06.894+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-7] c.e.s.u.impl.DepartmentServiceImpl       : Department with id 789abcde-f012-4956-7890-123456789012 was FOUND, Date: 2025-11-09T11:48:06.894107197
+2025-11-09T11:48:20.730+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-9] c.e.s.u.impl.DepartmentServiceImpl       : Department with id cdef0123-4567-4990-1234-567890123456 was FOUND, Date: 2025-11-09T11:48:20.730386717
+2025-11-09T11:49:21.090+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-6] c.e.s.u.impl.EmployeeServiceImpl         : Method `getAllEmployees` was run, Date: 2025-11-09T11:49:21.090444236
+2025-11-09T11:50:02.035+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-10] c.e.s.u.impl.EmployeeServiceImpl         : Employee with id a1b1c1d1-e1f1-4a1a-8a1a-a1b1c1d1e1f1 was FOUND, Date: 2025-11-09T11:50:02.035434890
+2025-11-09T11:50:12.431+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-2] c.e.s.u.impl.EmployeeServiceImpl         : Employee with id a1b1c1d1-e1f1-4a1a-8a1a-a1b1c1d1e1f1 was FOUND, Date: 2025-11-09T11:50:12.431871743
+2025-11-09T11:50:32.573+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-1] c.e.s.u.impl.EmployeeServiceImpl         : Employee with id a1b1c1d1-e1f1-4a1a-8a1a-a1b1c1d1e1f1 was FOUND, Date: 2025-11-09T11:50:32.573289051
+2025-11-09T11:51:19.187+03:00 ERROR 2677 --- [springDataProjections] [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.orm.jpa.JpaSystemException: Identifier of entity 'com.example.springDataProjections.persistence.model.DepartmentEntity' must be manually assigned before calling 'persist()'] with root cause
+
+org.hibernate.id.IdentifierGenerationException: Identifier of entity 'com.example.springDataProjections.persistence.model.DepartmentEntity' must be manually assigned before calling 'persist()'
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:209) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364) ~[spring-orm-6.2.12.jar:6.2.12]
+	at jdk.proxy2/jdk.proxy2.$Proxy131.persist(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320) ~[spring-orm-6.2.12.jar:6.2.12]
+	at jdk.proxy2/jdk.proxy2.$Proxy131.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:654) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:734) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.12.jar:6.2.12]
+	at jdk.proxy2/jdk.proxy2.$Proxy134.save(Unknown Source) ~[na:na]
+	at com.example.springDataProjections.usercasses.impl.DepartmentServiceImpl.addDepartment(DepartmentServiceImpl.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.12.jar:6.2.12]
+	at com.example.springDataProjections.usercasses.impl.DepartmentServiceImpl$$SpringCGLIB$$0.addDepartment(<generated>) ~[classes/:na]
+	at com.example.springDataProjections.api.controllers.DepartmentController.addDepartment(DepartmentController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.48.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.48.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-11-09T11:51:56.722+03:00  INFO 2677 --- [springDataProjections] [http-nio-8080-exec-5] c.e.s.u.impl.DepartmentServiceImpl       : Method `getAllDepartments` was run, Date: 2025-11-09T11:51:56.721972753
+2025-11-09T11:53:55.856+03:00 ERROR 2677 --- [springDataProjections] [http-nio-8080-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.orm.jpa.JpaSystemException: Identifier of entity 'com.example.springDataProjections.persistence.model.DepartmentEntity' must be manually assigned before calling 'persist()'] with root cause
+
+org.hibernate.id.IdentifierGenerationException: Identifier of entity 'com.example.springDataProjections.persistence.model.DepartmentEntity' must be manually assigned before calling 'persist()'
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:209) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745) ~[hibernate-core-6.6.33.Final.jar:6.6.33.Final]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364) ~[spring-orm-6.2.12.jar:6.2.12]
+	at jdk.proxy2/jdk.proxy2.$Proxy131.persist(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320) ~[spring-orm-6.2.12.jar:6.2.12]
+	at jdk.proxy2/jdk.proxy2.$Proxy131.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:654) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:734) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.12.jar:6.2.12]
+	at jdk.proxy2/jdk.proxy2.$Proxy134.save(Unknown Source) ~[na:na]
+	at com.example.springDataProjections.usercasses.impl.DepartmentServiceImpl.addDepartment(DepartmentServiceImpl.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.12.jar:6.2.12]
+	at com.example.springDataProjections.usercasses.impl.DepartmentServiceImpl$$SpringCGLIB$$0.addDepartment(<generated>) ~[classes/:na]
+	at com.example.springDataProjections.api.controllers.DepartmentController.addDepartment(DepartmentController.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.48.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.48.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-11-09T11:59:18.037+03:00  INFO 2677 --- [springDataProjections] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-09T11:59:18.040+03:00  INFO 2677 --- [springDataProjections] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-09T11:59:18.045+03:00  INFO 2677 --- [springDataProjections] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-09T11:59:18.049+03:00  INFO 2677 --- [springDataProjections] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-09T11:59:18.052+03:00  INFO 2677 --- [springDataProjections] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-09T12:00:49.382+03:00  INFO 5217 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : Starting SpringDataProjectionsApplication using Java 17.0.16 with PID 5217 (/home/nik/projects/springDataProjections/target/classes started by nik in /home/nik/projects/springDataProjections)
+2025-11-09T12:00:49.389+03:00  INFO 5217 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-09T12:00:50.865+03:00  INFO 5217 --- [springDataProjections] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-09T12:00:50.967+03:00  INFO 5217 --- [springDataProjections] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 2 JPA repository interfaces.
+2025-11-09T12:00:52.115+03:00  INFO 5217 --- [springDataProjections] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-09T12:00:52.162+03:00  INFO 5217 --- [springDataProjections] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-09T12:00:52.163+03:00  INFO 5217 --- [springDataProjections] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-09T12:00:52.302+03:00  INFO 5217 --- [springDataProjections] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-09T12:00:52.304+03:00  INFO 5217 --- [springDataProjections] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2778 ms
+2025-11-09T12:00:52.691+03:00  INFO 5217 --- [springDataProjections] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-09T12:00:52.978+03:00  INFO 5217 --- [springDataProjections] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@691124ee
+2025-11-09T12:00:52.981+03:00  INFO 5217 --- [springDataProjections] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-09T12:00:53.246+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.database                       : Set default schema name to public
+2025-11-09T12:00:53.785+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-11-09T12:00:53.955+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-11-09T12:00:53.958+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-11-09T12:00:53.974+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.util                           : UPDATE SUMMARY
+2025-11-09T12:00:53.974+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.util                           : Run:                          0
+2025-11-09T12:00:53.974+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.util                           : Previously run:               4
+2025-11-09T12:00:53.975+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.util                           : Filtered out:                 0
+2025-11-09T12:00:53.975+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.util                           : -------------------------------
+2025-11-09T12:00:53.975+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.util                           : Total change sets:            4
+2025-11-09T12:00:53.976+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.util                           : Update summary generated
+2025-11-09T12:00:53.978+03:00  INFO 5217 --- [springDataProjections] [main] liquibase.command                        : Command execution complete
+2025-11-09T12:00:54.771+03:00  INFO 5217 --- [springDataProjections] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-09T12:00:54.844+03:00  INFO 5217 --- [springDataProjections] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-09T12:00:54.894+03:00  INFO 5217 --- [springDataProjections] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-09T12:00:55.275+03:00  INFO 5217 --- [springDataProjections] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-09T12:00:55.378+03:00  INFO 5217 --- [springDataProjections] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-09T12:00:56.492+03:00  INFO 5217 --- [springDataProjections] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-09T12:00:56.531+03:00  INFO 5217 --- [springDataProjections] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-09T12:00:57.105+03:00  INFO 5217 --- [springDataProjections] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-09T12:00:58.536+03:00  WARN 5217 --- [springDataProjections] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-09T12:00:58.986+03:00  INFO 5217 --- [springDataProjections] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-09T12:00:58.996+03:00  INFO 5217 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : Started SpringDataProjectionsApplication in 10.74 seconds (process running for 11.566)
+2025-11-09T12:01:17.077+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-09T12:01:17.078+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-09T12:01:17.082+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-11-09T12:01:17.137+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-1] c.e.s.u.impl.DepartmentServiceImpl       : Method `getAllDepartments` was run, Date: 2025-11-09T12:01:17.137439060
+2025-11-09T12:01:24.419+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-3] c.e.s.u.impl.DepartmentServiceImpl       : Department with id cdef0123-4567-4990-1234-567890123456 was FOUND, Date: 2025-11-09T12:01:24.419102796
+2025-11-09T12:01:32.057+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-4] c.e.s.u.impl.DepartmentServiceImpl       : NEW Department with id 2fa30504-4ddf-4b3e-b33e-8686ae642689 has been CREATED, Date: 2025-11-09T12:01:32.057264240
+2025-11-09T12:03:20.732+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-7] c.e.s.u.impl.DepartmentServiceImpl       : Department with id 2fa30504-4ddf-4b3e-b33e-8686ae642689 has been UPDATED, Date: 2025-11-09T12:03:20.732683573
+2025-11-09T12:03:52.004+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-8] c.e.s.u.impl.DepartmentServiceImpl       : Method `getAllDepartments` was run, Date: 2025-11-09T12:03:52.004411378
+2025-11-09T12:04:20.120+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-9] c.e.s.u.impl.DepartmentServiceImpl       : Department with id 2fa30504-4ddf-4b3e-b33e-8686ae642689 has been DELETED, Date: 2025-11-09T12:04:20.120081876
+2025-11-09T12:04:29.706+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-10] c.e.s.u.impl.DepartmentServiceImpl       : Method `getAllDepartments` was run, Date: 2025-11-09T12:04:29.706045603
+2025-11-09T12:06:37.555+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-3] c.e.s.u.impl.EmployeeServiceImpl         : Method `getAllEmployees` was run, Date: 2025-11-09T12:06:37.555283515
+2025-11-09T12:06:52.118+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-4] c.e.s.u.impl.EmployeeServiceImpl         : Employee with id a1b1c1d1-e1f1-4a1a-8a1a-a1b1c1d1e1f1 was FOUND, Date: 2025-11-09T12:06:52.118888624
+2025-11-09T12:09:34.857+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-7] c.e.s.u.impl.EmployeeServiceImpl         : NEW Employee with id aae41bec-d0f2-4a98-a6f1-a94d3875cad6 has been CREATED, Date: 2025-11-09T12:09:34.857261464
+2025-11-09T12:12:05.334+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-10] c.e.s.u.impl.EmployeeServiceImpl         : Employee with id aae41bec-d0f2-4a98-a6f1-a94d3875cad6 was FOUND, Date: 2025-11-09T12:12:05.334497450
+2025-11-09T12:13:03.958+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-2] c.e.s.u.impl.EmployeeServiceImpl         : Employee with id aae41bec-d0f2-4a98-a6f1-a94d3875cad6 was FOUND, Date: 2025-11-09T12:13:03.958903890
+2025-11-09T12:14:22.433+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-4] c.e.s.u.impl.EmployeeServiceImpl         : Employee with id aae41bec-d0f2-4a98-a6f1-a94d3875cad6 has been UPDATED, Date: 2025-11-09T12:14:22.432973825
+2025-11-09T12:14:30.167+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-5] c.e.s.u.impl.EmployeeServiceImpl         : Employee with id aae41bec-d0f2-4a98-a6f1-a94d3875cad6 was FOUND, Date: 2025-11-09T12:14:30.167714397
+2025-11-09T12:15:04.873+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-6] c.e.s.u.impl.EmployeeServiceImpl         : Employee with id aae41bec-d0f2-4a98-a6f1-a94d3875cad6 has been DELETED, Date: 2025-11-09T12:15:04.873301165
+2025-11-09T12:15:22.999+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-8] c.e.s.u.impl.EmployeeServiceImpl         : Method `getAllEmployees` was run, Date: 2025-11-09T12:15:22.999107806
+2025-11-09T12:18:43.235+03:00  WARN 5217 --- [springDataProjections] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'id': Failed to convert value of type 'java.lang.String' to required type 'java.util.UUID'; Invalid UUID string: salary-projections"]
+2025-11-09T12:18:50.782+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-3] c.e.s.u.impl.EmployeeServiceImpl         : Method `getEmployeeSalaryProjections` was run, Date: 2025-11-09T12:18:50.782538371
+2025-11-09T12:18:50.947+03:00 ERROR 5217 --- [springDataProjections] [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.expression.spel.SpelParseException: Expression [target.salary > 400000 ? 'High' : #{target.salary > 220000 ? 'Medium' : 'Low'}] @35: EL1043E: Unexpected token. Expected 'identifier' but was 'lcurly({)'] with root cause
+
+org.springframework.expression.spel.SpelParseException: Expression [target.salary > 400000 ? 'High' : #{target.salary > 220000 ? 'Medium' : 'Low'}] @35: EL1043E: Unexpected token. Expected 'identifier' but was 'lcurly({)'
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.internalException(InternalSpelExpressionParser.java:1072) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatToken(InternalSpelExpressionParser.java:951) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.maybeEatFunctionOrVar(InternalSpelExpressionParser.java:446) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatStartNode(InternalSpelExpressionParser.java:536) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatPrimaryExpression(InternalSpelExpressionParser.java:375) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatUnaryExpression(InternalSpelExpressionParser.java:369) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatPowerIncDecExpression(InternalSpelExpressionParser.java:322) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatProductExpression(InternalSpelExpressionParser.java:300) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatSumExpression(InternalSpelExpressionParser.java:282) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatRelationalExpression(InternalSpelExpressionParser.java:236) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatLogicalAndExpression(InternalSpelExpressionParser.java:223) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatLogicalOrExpression(InternalSpelExpressionParser.java:210) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatExpression(InternalSpelExpressionParser.java:171) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatExpression(InternalSpelExpressionParser.java:200) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:140) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:63) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:34) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:128) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:69) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:55) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.data.projection.SpelEvaluatingMethodInterceptor.potentiallyCreateExpressionsForMethodsOnTargetInterface(SpelEvaluatingMethodInterceptor.java:124) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.projection.SpelEvaluatingMethodInterceptor.<init>(SpelEvaluatingMethodInterceptor.java:91) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.projection.SpelAwareProxyProjectionFactory.postProcessAccessorInterceptor(SpelAwareProxyProjectionFactory.java:97) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.projection.ProxyProjectionFactory.getMethodInterceptor(ProxyProjectionFactory.java:192) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.projection.ProxyProjectionFactory.createProjection(ProxyProjectionFactory.java:132) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.projection.SpelAwareProxyProjectionFactory.createProjection(SpelAwareProxyProjectionFactory.java:47) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.jpa.projection.CollectionAwareProjectionFactory.createProjection(CollectionAwareProjectionFactory.java:1) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.query.ResultProcessor$ProjectingConverter.convert(ResultProcessor.java:302) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter.lambda$and$0(ResultProcessor.java:233) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter.convert(ResultProcessor.java:240) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.query.ResultProcessor.processResult(ResultProcessor.java:160) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:163) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:148) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:170) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.12.jar:6.2.12]
+	at jdk.proxy2/jdk.proxy2.$Proxy139.findEmployeeSalaryProjections(Unknown Source) ~[na:na]
+	at com.example.springDataProjections.usercasses.impl.EmployeeServiceImpl.getEmployeeSalaryProjections(EmployeeServiceImpl.java:83) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.12.jar:6.2.12]
+	at com.example.springDataProjections.usercasses.impl.EmployeeServiceImpl$$SpringCGLIB$$0.getEmployeeSalaryProjections(<generated>) ~[classes/:na]
+	at com.example.springDataProjections.api.controllers.EmployeeController.getEmployeeSalaryProjections(EmployeeController.java:84) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.48.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.48.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-11-09T12:20:13.220+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-4] c.e.s.u.impl.EmployeeServiceImpl         : Method `getEmployeeProjectionById` was run, Date: 2025-11-09T12:20:13.220738245
+2025-11-09T12:20:39.224+03:00  INFO 5217 --- [springDataProjections] [http-nio-8080-exec-6] c.e.s.u.impl.EmployeeServiceImpl         : Method `getEmployeeSalaryProjections` was run, Date: 2025-11-09T12:20:39.224787112
+2025-11-09T12:20:39.243+03:00 ERROR 5217 --- [springDataProjections] [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.expression.spel.SpelParseException: Expression [target.salary > 400000 ? 'High' : #{target.salary > 220000 ? 'Medium' : 'Low'}] @35: EL1043E: Unexpected token. Expected 'identifier' but was 'lcurly({)'] with root cause
+
+org.springframework.expression.spel.SpelParseException: Expression [target.salary > 400000 ? 'High' : #{target.salary > 220000 ? 'Medium' : 'Low'}] @35: EL1043E: Unexpected token. Expected 'identifier' but was 'lcurly({)'
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.internalException(InternalSpelExpressionParser.java:1072) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatToken(InternalSpelExpressionParser.java:951) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.maybeEatFunctionOrVar(InternalSpelExpressionParser.java:446) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatStartNode(InternalSpelExpressionParser.java:536) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatPrimaryExpression(InternalSpelExpressionParser.java:375) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatUnaryExpression(InternalSpelExpressionParser.java:369) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatPowerIncDecExpression(InternalSpelExpressionParser.java:322) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatProductExpression(InternalSpelExpressionParser.java:300) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatSumExpression(InternalSpelExpressionParser.java:282) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatRelationalExpression(InternalSpelExpressionParser.java:236) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatLogicalAndExpression(InternalSpelExpressionParser.java:223) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatLogicalOrExpression(InternalSpelExpressionParser.java:210) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatExpression(InternalSpelExpressionParser.java:171) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatExpression(InternalSpelExpressionParser.java:200) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:140) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:63) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:34) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpressions(TemplateAwareExpressionParser.java:128) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseTemplate(TemplateAwareExpressionParser.java:69) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:55) ~[spring-expression-6.2.12.jar:6.2.12]
+	at org.springframework.data.projection.SpelEvaluatingMethodInterceptor.potentiallyCreateExpressionsForMethodsOnTargetInterface(SpelEvaluatingMethodInterceptor.java:124) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.projection.SpelEvaluatingMethodInterceptor.<init>(SpelEvaluatingMethodInterceptor.java:91) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.projection.SpelAwareProxyProjectionFactory.postProcessAccessorInterceptor(SpelAwareProxyProjectionFactory.java:97) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.projection.ProxyProjectionFactory.getMethodInterceptor(ProxyProjectionFactory.java:192) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.projection.ProxyProjectionFactory.createProjection(ProxyProjectionFactory.java:132) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.projection.SpelAwareProxyProjectionFactory.createProjection(SpelAwareProxyProjectionFactory.java:47) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.jpa.projection.CollectionAwareProjectionFactory.createProjection(CollectionAwareProjectionFactory.java:1) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.query.ResultProcessor$ProjectingConverter.convert(ResultProcessor.java:302) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter.lambda$and$0(ResultProcessor.java:233) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.query.ResultProcessor$ChainingConverter.convert(ResultProcessor.java:240) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.query.ResultProcessor.processResult(ResultProcessor.java:160) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:163) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:148) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:170) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69) ~[spring-data-commons-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136) ~[spring-data-jpa-3.5.5.jar:3.5.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.12.jar:6.2.12]
+	at jdk.proxy2/jdk.proxy2.$Proxy139.findEmployeeSalaryProjections(Unknown Source) ~[na:na]
+	at com.example.springDataProjections.usercasses.impl.EmployeeServiceImpl.getEmployeeSalaryProjections(EmployeeServiceImpl.java:83) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.12.jar:6.2.12]
+	at com.example.springDataProjections.usercasses.impl.EmployeeServiceImpl$$SpringCGLIB$$0.getEmployeeSalaryProjections(<generated>) ~[classes/:na]
+	at com.example.springDataProjections.api.controllers.EmployeeController.getEmployeeSalaryProjections(EmployeeController.java:84) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.48.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.12.jar:6.2.12]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.48.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-11-09T12:34:04.094+03:00  INFO 5217 --- [springDataProjections] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-09T12:34:04.100+03:00  INFO 5217 --- [springDataProjections] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-09T12:34:04.109+03:00  INFO 5217 --- [springDataProjections] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-09T12:34:04.116+03:00  INFO 5217 --- [springDataProjections] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-09T12:34:04.121+03:00  INFO 5217 --- [springDataProjections] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-09T12:34:39.704+03:00  INFO 6520 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : Starting SpringDataProjectionsApplication using Java 17.0.16 with PID 6520 (/home/nik/projects/springDataProjections/target/classes started by nik in /home/nik/projects/springDataProjections)
+2025-11-09T12:34:39.708+03:00  INFO 6520 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-09T12:34:41.531+03:00  INFO 6520 --- [springDataProjections] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-09T12:34:41.640+03:00  INFO 6520 --- [springDataProjections] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 2 JPA repository interfaces.
+2025-11-09T12:34:42.505+03:00  INFO 6520 --- [springDataProjections] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-09T12:34:42.530+03:00  INFO 6520 --- [springDataProjections] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-09T12:34:42.531+03:00  INFO 6520 --- [springDataProjections] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-09T12:34:42.612+03:00  INFO 6520 --- [springDataProjections] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-09T12:34:42.613+03:00  INFO 6520 --- [springDataProjections] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2712 ms
+2025-11-09T12:34:43.074+03:00  INFO 6520 --- [springDataProjections] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-09T12:34:43.448+03:00  INFO 6520 --- [springDataProjections] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6dce59e
+2025-11-09T12:34:43.453+03:00  INFO 6520 --- [springDataProjections] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-09T12:34:43.772+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.database                       : Set default schema name to public
+2025-11-09T12:34:44.403+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-11-09T12:34:44.587+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-11-09T12:34:44.591+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-11-09T12:34:44.606+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.util                           : UPDATE SUMMARY
+2025-11-09T12:34:44.607+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.util                           : Run:                          0
+2025-11-09T12:34:44.608+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.util                           : Previously run:               4
+2025-11-09T12:34:44.608+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.util                           : Filtered out:                 0
+2025-11-09T12:34:44.608+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.util                           : -------------------------------
+2025-11-09T12:34:44.608+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.util                           : Total change sets:            4
+2025-11-09T12:34:44.610+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.util                           : Update summary generated
+2025-11-09T12:34:44.612+03:00  INFO 6520 --- [springDataProjections] [main] liquibase.command                        : Command execution complete
+2025-11-09T12:34:45.616+03:00  INFO 6520 --- [springDataProjections] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-09T12:34:45.697+03:00  INFO 6520 --- [springDataProjections] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-09T12:34:45.752+03:00  INFO 6520 --- [springDataProjections] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-09T12:34:46.205+03:00  INFO 6520 --- [springDataProjections] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-09T12:34:46.322+03:00  INFO 6520 --- [springDataProjections] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-09T12:34:47.597+03:00  INFO 6520 --- [springDataProjections] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-09T12:34:47.639+03:00  INFO 6520 --- [springDataProjections] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-09T12:34:48.179+03:00  INFO 6520 --- [springDataProjections] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-09T12:34:49.382+03:00  WARN 6520 --- [springDataProjections] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-09T12:34:49.875+03:00  INFO 6520 --- [springDataProjections] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-09T12:34:49.891+03:00  INFO 6520 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : Started SpringDataProjectionsApplication in 11.894 seconds (process running for 12.678)
+2025-11-09T12:34:57.883+03:00  INFO 6520 --- [springDataProjections] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-09T12:34:57.884+03:00  INFO 6520 --- [springDataProjections] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-09T12:34:57.887+03:00  INFO 6520 --- [springDataProjections] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-11-09T12:34:57.958+03:00  INFO 6520 --- [springDataProjections] [http-nio-8080-exec-3] c.e.s.u.impl.EmployeeServiceImpl         : Method `getEmployeeSalaryProjections` was run, Date: 2025-11-09T12:34:57.958765070
+2025-11-09T12:44:29.133+03:00  INFO 6520 --- [springDataProjections] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-09T12:44:29.138+03:00  INFO 6520 --- [springDataProjections] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-09T12:44:29.143+03:00  INFO 6520 --- [springDataProjections] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-09T12:44:29.147+03:00  INFO 6520 --- [springDataProjections] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-09T12:44:29.156+03:00  INFO 6520 --- [springDataProjections] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-09T12:46:08.371+03:00  INFO 7690 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : Starting SpringDataProjectionsApplication using Java 17.0.16 with PID 7690 (/home/nik/projects/springDataProjections/target/classes started by nik in /home/nik/projects/springDataProjections)
+2025-11-09T12:46:08.382+03:00  INFO 7690 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-09T12:46:10.357+03:00  INFO 7690 --- [springDataProjections] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-09T12:46:10.460+03:00  INFO 7690 --- [springDataProjections] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 2 JPA repository interfaces.
+2025-11-09T12:46:11.218+03:00  INFO 7690 --- [springDataProjections] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-09T12:46:11.245+03:00  INFO 7690 --- [springDataProjections] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-09T12:46:11.245+03:00  INFO 7690 --- [springDataProjections] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-09T12:46:11.328+03:00  INFO 7690 --- [springDataProjections] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-09T12:46:11.329+03:00  INFO 7690 --- [springDataProjections] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2758 ms
+2025-11-09T12:46:11.628+03:00  INFO 7690 --- [springDataProjections] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-09T12:46:11.930+03:00  INFO 7690 --- [springDataProjections] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@637791d
+2025-11-09T12:46:11.932+03:00  INFO 7690 --- [springDataProjections] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-09T12:46:12.124+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.database                       : Set default schema name to public
+2025-11-09T12:46:12.721+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-11-09T12:46:12.925+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-11-09T12:46:12.929+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-11-09T12:46:12.962+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.util                           : UPDATE SUMMARY
+2025-11-09T12:46:12.966+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.util                           : Run:                          0
+2025-11-09T12:46:12.967+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.util                           : Previously run:               4
+2025-11-09T12:46:12.968+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.util                           : Filtered out:                 0
+2025-11-09T12:46:12.969+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.util                           : -------------------------------
+2025-11-09T12:46:12.970+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.util                           : Total change sets:            4
+2025-11-09T12:46:12.972+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.util                           : Update summary generated
+2025-11-09T12:46:12.974+03:00  INFO 7690 --- [springDataProjections] [main] liquibase.command                        : Command execution complete
+2025-11-09T12:46:14.232+03:00  INFO 7690 --- [springDataProjections] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-09T12:46:14.330+03:00  INFO 7690 --- [springDataProjections] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-11-09T12:46:14.391+03:00  INFO 7690 --- [springDataProjections] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-09T12:46:14.887+03:00  INFO 7690 --- [springDataProjections] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-09T12:46:15.027+03:00  INFO 7690 --- [springDataProjections] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-09T12:46:16.441+03:00  INFO 7690 --- [springDataProjections] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-09T12:46:16.502+03:00  INFO 7690 --- [springDataProjections] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-09T12:46:17.061+03:00  INFO 7690 --- [springDataProjections] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-09T12:46:18.645+03:00  WARN 7690 --- [springDataProjections] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-09T12:46:19.157+03:00  INFO 7690 --- [springDataProjections] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-09T12:46:19.170+03:00  INFO 7690 --- [springDataProjections] [main] c.e.s.SpringDataProjectionsApplication   : Started SpringDataProjectionsApplication in 12.076 seconds (process running for 12.847)
+2025-11-09T12:46:28.894+03:00  INFO 7690 --- [springDataProjections] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-09T12:46:28.895+03:00  INFO 7690 --- [springDataProjections] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-09T12:46:28.900+03:00  INFO 7690 --- [springDataProjections] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-11-09T12:46:28.974+03:00  INFO 7690 --- [springDataProjections] [http-nio-8080-exec-2] c.e.s.u.impl.EmployeeServiceImpl         : Method `getEmployeeSalaryProjections` was run, Date: 2025-11-09T12:46:28.974351294
+2025-11-09T12:46:35.462+03:00  INFO 7690 --- [springDataProjections] [http-nio-8080-exec-3] c.e.s.u.impl.EmployeeServiceImpl         : Method `getEmployeeProjectionById` was run, Date: 2025-11-09T12:46:35.462351151
+2025-11-09T12:46:43.900+03:00  INFO 7690 --- [springDataProjections] [http-nio-8080-exec-4] c.e.s.u.impl.EmployeeServiceImpl         : NEW Employee with id 80c84e17-410d-4f44-a96d-ce7fa78b73b8 has been CREATED, Date: 2025-11-09T12:46:43.899695383
+2025-11-09T12:47:04.665+03:00  INFO 7690 --- [springDataProjections] [http-nio-8080-exec-6] c.e.s.u.impl.EmployeeServiceImpl         : Method `getEmployeeSalaryProjections` was run, Date: 2025-11-09T12:47:04.665915741
+2025-11-09T12:47:26.204+03:00  INFO 7690 --- [springDataProjections] [http-nio-8080-exec-7] c.e.s.u.impl.EmployeeServiceImpl         : Employee with id 80c84e17-410d-4f44-a96d-ce7fa78b73b8 was FOUND, Date: 2025-11-09T12:47:26.204346302
+2025-11-09T12:47:41.828+03:00  INFO 7690 --- [springDataProjections] [http-nio-8080-exec-9] c.e.s.u.impl.EmployeeServiceImpl         : Method `getEmployeeProjectionById` was run, Date: 2025-11-09T12:47:41.828197487
+2025-11-09T12:47:47.948+03:00  INFO 7690 --- [springDataProjections] [http-nio-8080-exec-10] c.e.s.u.impl.EmployeeServiceImpl         : Method `getEmployeeSalaryProjections` was run, Date: 2025-11-09T12:47:47.948064130
+2025-11-09T12:49:04.517+03:00  INFO 7690 --- [springDataProjections] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-09T12:49:04.522+03:00  INFO 7690 --- [springDataProjections] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-09T12:49:04.530+03:00  INFO 7690 --- [springDataProjections] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-09T12:49:04.534+03:00  INFO 7690 --- [springDataProjections] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-09T12:49:04.538+03:00  INFO 7690 --- [springDataProjections] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

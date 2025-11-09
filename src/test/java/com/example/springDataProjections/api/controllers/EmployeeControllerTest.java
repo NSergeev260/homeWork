@@ -141,19 +141,19 @@ class EmployeeControllerTest {
     }
 
     @Test
-    void methodShouldGetEmployeeSalaryProjectionsTest() {
+    void methodShouldGetEmployeeScroogeMcDuckLevelProjectionsTest() {
         List<EmployeeSalaryProjection> projections = List.of(
                 EmployeeProjectionTestData.getEmployeeSalaryProjection());
 
-        Mockito.when(employeeService.getEmployeeSalaryProjections())
+        Mockito.when(employeeService.getEmployeeScroogeMcDuckLevelProjections())
                 .thenReturn(projections);
 
-        List<EmployeeSalaryProjection> result = employeeController.getEmployeeSalaryProjections();
+        List<EmployeeSalaryProjection> result = employeeController.getEmployeeScroogeMcDuckLevelProjections();
 
         Assertions.assertNotNull(result);
         Assertions.assertEquals(1, result.size());
         Assertions.assertEquals("Doe John", result.get(0).getFullName());
         Assertions.assertEquals("IT", result.get(0).getDepartmentName());
-        Mockito.verify(employeeService).getEmployeeSalaryProjections();
+        Mockito.verify(employeeService).getEmployeeScroogeMcDuckLevelProjections();
     }
 }

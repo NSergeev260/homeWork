@@ -26,4 +26,11 @@ public class DepartmentEntity {
 
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
     private List<EmployeeEntity> employees = new ArrayList<>();
+
+    @PrePersist
+    protected void onCreate() {
+        if (id == null) {
+            id = UUID.randomUUID();
+        }
+    }
 }

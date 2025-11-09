@@ -19,7 +19,7 @@ public interface EmployeeService {
 
     Optional<EmployeeProjection> getEmployeeProjectionById(UUID id);
 
-    List<EmployeeSalaryProjection> getEmployeeSalaryProjections();
+    List<EmployeeSalaryProjection> getEmployeeScroogeMcDuckLevelProjections();
 
     EmployeeResponseDto updateEmployee(UUID id, EmployeeRequestDto employeeRequestDto);
 
