@@ -49,7 +49,7 @@ public class BookController {
                 .body(bookResponseDto);
     }
 
-    @GetMapping
+    @GetMapping("/public")
     public ResponseEntity<List<BookResponseDto>> getAllBooks() {
         List<BookResponseDto> bookResponseDtoList = bookService.getAllBooks();
 
