@@ -8,10 +8,10 @@ import java.util.Collection;
 import java.util.UUID;
 
 @Getter
-public class ProfilerUserDetails extends User {
+public class ObjMapperUserDetails extends User {
     private final UUID id;
 
-    public ProfilerUserDetails(UUID id, String username, String password, Collection<? extends GrantedAuthority> authorities) {
+    public ObjMapperUserDetails(UUID id, String username, String password, Collection<? extends GrantedAuthority> authorities) {
         super(username, password, authorities);
         this.id = id;
     }

@@ -1,6 +1,6 @@
 package com.example.objectMapper.usercasses.dto;
 
-import by.javaguru.profiler.persistence.model.UserRole;
+import com.example.objectMapper.persistence.model.UserRole;
 import lombok.Builder;
 
 import java.util.UUID;

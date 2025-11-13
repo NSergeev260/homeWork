@@ -2,7 +2,7 @@ package com.example.objectMapper.security;
 
 import com.example.objectMapper.persistence.model.UserEntity;
 import com.example.objectMapper.persistence.repository.UserRepository;
-import com.example.objectMapper.security.dto.ProfilerUserDetails;
+import com.example.objectMapper.security.dto.ObjMapperUserDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -33,7 +33,7 @@ public class OurUserDetailedService implements UserDetailsService {
 
         List<SimpleGrantedAuthority> userAuthorities = List.of(new SimpleGrantedAuthority(
                 userEntity.getRole().name()));
-        return new ProfilerUserDetails(
+        return new ObjMapperUserDetails(
                 userEntity.getUuid(), userEntity., userEntity.getPassword(), userAuthorities);
     }
 }

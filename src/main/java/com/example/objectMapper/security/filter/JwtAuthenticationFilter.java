@@ -1,5 +1,6 @@
 package com.example.objectMapper.security.filter;
 
+import com.example.objectMapper.security.OurUserDetailedService;
 import com.example.objectMapper.security.token.JWTUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -18,7 +19,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
   
     private final JWTUtils jwtUtils;
   
-    private OurUserDetailedService ourUserDetailedService;  
+    private OurUserDetailedService ourUserDetailedService;
   
     // Метод, выполняемый для каждого HTTP запроса  
     @Override  
