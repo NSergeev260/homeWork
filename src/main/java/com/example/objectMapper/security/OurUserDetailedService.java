@@ -27,13 +27,15 @@ public class OurUserDetailedService implements UserDetailsService {
         UserEntity userEntity = userRepo.findByEmail(email);
 
         if (userEntity == null)
-            throw new UsernameNotFoundException(String.format("User's email '%s' not found", email));
+            throw new UsernameNotFoundException("User's email=  " + email + " NOT found");
 
         log.info("Load user {} by email: {}", userEntity, email);
 
-        List<SimpleGrantedAuthority> userAuthorities = List.of(new SimpleGrantedAuthority(
-                userEntity.getRole().name()));
         return new ObjMapperUserDetails(
-                userEntity.getUuid(), userEntity., userEntity.getPassword(), userAuthorities);
+                userEntity.getUuid(),
+                userEntity.getEmail(),
+                userEntity.getPassword(),
+                List.of(new SimpleGrantedAuthority("ROLE_" + userEntity.getRole().name()))
+        );
     }
 }

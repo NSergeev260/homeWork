@@ -13,14 +13,20 @@ import java.io.IOException;
 
 @Component
 public class LoggingFilter extends OncePerRequestFilter {
-  
+
     private static final Logger logger = LoggerFactory.getLogger(LoggingFilter.class);
-  
-    @Override  
+
+    @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-        logger.info("Request: {} {}", request.getMethod(), request.getRequestURI());
+
+        logger.info("AUTH-LOG: {} {} | Remote-IP: {}",
+                request.getMethod(),
+                request.getRequestURI(),
+                request.getRemoteAddr());
+
         filterChain.doFilter(request, response);
-        logger.info("Response: {}", response.getStatus());
-    }  
+
+        logger.info("AUTH-LOG: response-status={}", response.getStatus());
+    }
 }

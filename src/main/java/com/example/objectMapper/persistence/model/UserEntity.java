@@ -13,69 +13,24 @@ import java.util.UUID;
 @Builder(setterPrefix = "with")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    @Getter
-    @Setter
     private Long id;
 
+    @Column(unique = true, nullable = false)
+    private String username;
 
-    @JdbcTypeCode(SqlTypes.VARCHAR)
-    @Column
-    @Getter
-    @Setter
-    private UUID uuid;
-
-    @Column(length = 60, nullable = false)
-    @Setter
-    @Getter
-    private String email;
-
-    @Column(length = 72, nullable = false)
-    @Setter
-    @Getter
+    @Column(nullable = false)
     private String password;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    @Setter
-    @Getter
-    private CustomerEntity customer;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    @Getter
-    @Setter
     private UserRole role;
 
-    @PrePersist
-    public void prePersist() {
-        uuid = UUID.randomUUID();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        UserEntity user = (UserEntity) o;
-        return Objects.equals(id, user.id) && Objects.equals(uuid, user.uuid) &&
-                Objects.equals(email, user.email) && Objects.equals(password, user.password);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, uuid, email, password);
-    }
-
-    @Override
-    public String toString() {
-        return "UserEntity{" +
-                "id=" + id +
-                ", uuid=" + uuid +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
+    private boolean isAccountNonLocked = true;
+    private int failedAttempt = 0;
 }
