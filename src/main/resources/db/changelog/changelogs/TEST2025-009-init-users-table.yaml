@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-009-init-users-table
+      author: nsergeev
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: uuid
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: account_non_locked
+                  type: boolean
+                  defaultValue: true
+              - column:
+                  name: failed_attempt
+                  type: int
+                  defaultValue: 0
+              - column:
+                  name: lock_time
+                  type: datetime
+                  constraints:
+                    nullable: true

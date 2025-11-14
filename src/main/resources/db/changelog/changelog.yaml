@@ -15,3 +15,7 @@ databaseChangeLog:
       file: db/changelog/changelogs/TEST2025-007-data-orders-table.yaml
   - include:
       file: db/changelog/changelogs/TEST2025-008-data-order-products-table.yaml
+  - include:
+      file: db/changelog/changelogs/TEST2025-009-init-users-table.yaml
+  - include:
+      file: db/changelog/changelogs/TEST2025-010-data-users-table.yaml

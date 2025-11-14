@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -21,8 +22,11 @@ public class UserEntity {
     @Column
     private Long id;
 
+    @Column(unique = true, nullable = false, updatable = false)
+    private UUID uuid = UUID.randomUUID();
+
     @Column(unique = true, nullable = false)
-    private String username;
+    private String email;
 
     @Column(nullable = false)
     private String password;
@@ -31,6 +35,32 @@ public class UserEntity {
     @Column(nullable = false)
     private UserRole role;
 
-    private boolean isAccountNonLocked = true;
+    @Column(name = "account_non_locked")
+    private boolean accountNonLocked = true;
+
+    @Column(name = "failed_attempt")
     private int failedAttempt = 0;
+
+    @Column(name = "lock_time")
+    private Date lockTime;
+
+    // Методы для управления блокировкой
+    public void incrementFailedAttempt() {
+        this.failedAttempt++;
+    }
+
+    public void resetFailedAttempt() {
+        this.failedAttempt = 0;
+        this.accountNonLocked = true;
+        this.lockTime = null;
+    }
+
+    public void lockAccount() {
+        this.accountNonLocked = false;
+        this.lockTime = new Date();
+    }
+
+    public boolean isAccountLocked() {
+        return !accountNonLocked;
+    }
 }

@@ -11,7 +11,9 @@ import java.util.UUID;
 public class ObjMapperUserDetails extends User {
     private final UUID id;
 
-    public ObjMapperUserDetails(UUID id, String username, String password, Collection<? extends GrantedAuthority> authorities) {
+    public ObjMapperUserDetails(
+            UUID id, String username, String password, Collection<? extends GrantedAuthority> authorities) {
+
         super(username, password, authorities);
         this.id = id;
     }

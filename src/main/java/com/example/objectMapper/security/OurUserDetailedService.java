@@ -5,6 +5,7 @@ import com.example.objectMapper.persistence.repository.UserRepository;
 import com.example.objectMapper.security.dto.ObjMapperUserDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -29,7 +30,11 @@ public class OurUserDetailedService implements UserDetailsService {
         if (userEntity == null)
             throw new UsernameNotFoundException("User's email=  " + email + " NOT found");
 
-        log.info("Load user {} by email: {}", userEntity, email);
+        if (!userEntity.isAccountNonLocked()) {
+            throw new LockedException("Account is locked");
+        }
+
+        log.info("Load user id={} by email: {}", userEntity.getId(), email);
 
         return new ObjMapperUserDetails(
                 userEntity.getUuid(),

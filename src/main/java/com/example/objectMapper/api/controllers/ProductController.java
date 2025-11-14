@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class ProductController {
     private final ObjectMapper objectMapper;
 
     @PostMapping
+    @PreAuthorize("hasAnyRole('MODERATOR', 'SUPER_ADMIN')")
     public ResponseEntity<String> addProduct(@RequestBody String productJson)
             throws JsonProcessingException {
 
@@ -36,6 +38,7 @@ public class ProductController {
     }
 
     @GetMapping
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<String> getAllProducts() throws JsonProcessingException {
         List<ProductResponseDto> products = productService.getAllProducts();
         String productsJson = objectMapper.writeValueAsString(products);
@@ -45,6 +48,7 @@ public class ProductController {
     }
 
     @GetMapping("/{productId}")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<String> getProduct(@PathVariable UUID productId)
             throws JsonProcessingException {
 
@@ -56,6 +60,7 @@ public class ProductController {
     }
 
     @PutMapping("/{productId}")
+    @PreAuthorize("hasAnyRole('MODERATOR', 'SUPER_ADMIN')")
     public ResponseEntity<String> updateProduct(
             @PathVariable UUID productId,
             @RequestBody String productJson) throws JsonProcessingException {
@@ -70,6 +75,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{productId}")
+    @PreAuthorize("hasRole('SUPER_ADMIN')")
     public ResponseEntity<Void> deleteProduct(@PathVariable UUID productId) {
         productService.deleteProduct(productId);
 

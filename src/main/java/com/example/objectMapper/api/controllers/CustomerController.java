@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -23,6 +24,7 @@ public class CustomerController {
     private final ObjectMapper objectMapper;
 
     @PostMapping
+    @PreAuthorize("hasAnyRole('MODERATOR', 'SUPER_ADMIN')")
     public ResponseEntity<String> addCustomer(
             @RequestBody String customerJson) throws JsonProcessingException {
 
@@ -37,6 +39,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{customerId}")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<String> getCustomer(@PathVariable UUID customerId) throws JsonProcessingException {
         CustomerResponseDto customer = customerService.getCustomer(customerId);
         String customerJson = objectMapper.writeValueAsString(customer);
@@ -46,6 +49,7 @@ public class CustomerController {
     }
 
     @DeleteMapping("/{customerId}")
+    @PreAuthorize("hasRole('SUPER_ADMIN')")
     public ResponseEntity<Void> deleteCustomer(
             @PathVariable UUID customerId) {
 

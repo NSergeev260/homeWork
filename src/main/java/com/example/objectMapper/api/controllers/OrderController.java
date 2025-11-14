@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -21,6 +22,7 @@ public class OrderController {
     private final ObjectMapper objectMapper;
 
     @PostMapping
+    @PreAuthorize("hasAnyRole('USER', 'MODERATOR', 'SUPER_ADMIN')")
     public ResponseEntity<String> addOrder(@RequestBody String orderJson)
             throws JsonProcessingException {
 
@@ -35,6 +37,7 @@ public class OrderController {
     }
 
     @GetMapping("/{orderId}")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<String> getOrder(@PathVariable UUID orderId)
             throws JsonProcessingException {
 
@@ -46,6 +49,7 @@ public class OrderController {
     }
 
     @PutMapping("/{orderId}")
+    @PreAuthorize("hasAnyRole('MODERATOR', 'SUPER_ADMIN')")
     public ResponseEntity<String> updateOrder(
             @PathVariable UUID orderId,
             @RequestBody String orderJson) throws JsonProcessingException {
@@ -59,6 +63,7 @@ public class OrderController {
     }
 
     @DeleteMapping("/{orderId}")
+    @PreAuthorize("hasRole('SUPER_ADMIN')")
     public ResponseEntity<Void> deleteOrder(@PathVariable UUID orderId) {
         orderService.deleteOrder(orderId);
 
