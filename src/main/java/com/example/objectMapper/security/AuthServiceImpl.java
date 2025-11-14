@@ -14,6 +14,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,22 +27,88 @@ public class AuthServiceImpl implements AuthService {
     private final UserRepository userRepository;
     private final OurUserDetailedService userDetailsService;
     private final static long LOCK_DURATION = 30 * 60 * 1000;
+    private final PasswordEncoder passwordEncoder;
+
+//    @Override
+//    public AuthenticatedUserResponseDto login(LoginRequestDto loginRequestDto) {
+//        UserEntity user = userRepository.findByEmail(loginRequestDto.username());
+//
+//        if (user != null && user.isAccountLocked()) {
+//            if (isLockTimeExpired(user)) {
+//                user.resetFailedAttempt();
+//                userRepository.save(user);
+//            } else {
+//                log.warn("Attempt to login to locked account: {}", loginRequestDto.username());
+//                throw new RuntimeException("Account is locked. Try again later");
+//            }
+//        }
+//
+//        try {
+//            Authentication authentication = authenticationManager.authenticate(
+//                    new UsernamePasswordAuthenticationToken(
+//                            loginRequestDto.username(),
+//                            loginRequestDto.password()
+//                    )
+//            );
+//
+//            if (user != null) {
+//                user.resetFailedAttempt();
+//                userRepository.save(user);
+//            }
+//
+//            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+//            String token = jwtUtils.generateToken(userDetails);
+//
+//            log.info("Successful login for user: {}", loginRequestDto.username());
+//            return new AuthenticatedUserResponseDto(userDetails.getUsername(), token);
+//
+//        } catch (BadCredentialsException e) {
+//            if (user != null) {
+//                user.incrementFailedAttempt();
+//                if (user.getFailedAttempt() >= 5) {
+//                    user.lockAccount();
+//                    log.warn("Account locked due to 5 failed attempts: {}", loginRequestDto.username());
+//                }
+//                userRepository.save(user);
+//            }
+//
+//            log.warn("Failed login attempt for user: {}", loginRequestDto.username());
+//
+//            throw new RuntimeException("Invalid username or password");
+//        } catch (LockedException e) {
+//            log.warn("Attempt to login to locked account: {}", loginRequestDto.username());
+//            throw new RuntimeException("Account is locked");
+//        }
+//    }
 
     @Override
     public AuthenticatedUserResponseDto login(LoginRequestDto loginRequestDto) {
-        UserEntity user = userRepository.findByEmail(loginRequestDto.username());
-
-        if (user != null && user.isAccountLocked()) {
-            if (isLockTimeExpired(user)) {
-                user.resetFailedAttempt();
-                userRepository.save(user);
-            } else {
-                log.warn("Attempt to login to locked account: {}", loginRequestDto.username());
-                throw new RuntimeException("Account is locked. Try again later");
-            }
-        }
+        System.out.println("=== DETAILED AUTH DEBUG ===");
+        System.out.println("Login attempt for: " + loginRequestDto.username());
 
         try {
+            UserEntity user = userRepository.findByEmail(loginRequestDto.username());
+            System.out.println("User found in DB: " + (user != null));
+
+            if (user != null) {
+                System.out.println("User details:");
+                System.out.println("  - Email: " + user.getEmail());
+                System.out.println("  - Password in DB: " + user.getPassword());
+                System.out.println("  - Role: " + user.getRole());
+
+                boolean passwordMatches = passwordEncoder.matches(loginRequestDto.password(), user.getPassword());
+                System.out.println("Manual password check: " + passwordMatches);
+
+                if (!passwordMatches) {
+                    System.out.println("PASSWORD MISMATCH!");
+                    System.out.println("Input password: " + loginRequestDto.password());
+                    System.out.println("DB password: " + user.getPassword());
+                }
+            } else {
+                System.out.println("USER NOT FOUND IN DATABASE!");
+            }
+
+            System.out.println("Attempting Spring Security authentication...");
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             loginRequestDto.username(),
@@ -49,33 +116,20 @@ public class AuthServiceImpl implements AuthService {
                     )
             );
 
-            if (user != null) {
-                user.resetFailedAttempt();
-                userRepository.save(user);
-            }
-
+            System.out.println("AUTHENTICATION SUCCESSFUL!");
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
             String token = jwtUtils.generateToken(userDetails);
 
-            log.info("Successful login for user: {}", loginRequestDto.username());
             return new AuthenticatedUserResponseDto(userDetails.getUsername(), token);
 
         } catch (BadCredentialsException e) {
-            if (user != null) {
-                user.incrementFailedAttempt();
-                if (user.getFailedAttempt() >= 5) {
-                    user.lockAccount();
-                    log.warn("Account locked due to 5 failed attempts: {}", loginRequestDto.username());
-                }
-                userRepository.save(user);
-            }
-
-            log.warn("Failed login attempt for user: {}", loginRequestDto.username());
-
+            System.out.println("BAD CREDENTIALS EXCEPTION: Username or password is incorrect");
             throw new RuntimeException("Invalid username or password");
-        } catch (LockedException e) {
-            log.warn("Attempt to login to locked account: {}", loginRequestDto.username());
-            throw new RuntimeException("Account is locked");
+        } catch (Exception e) {
+            System.out.println("OTHER EXCEPTION: " + e.getClass().getSimpleName());
+            System.out.println("Exception message: " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException("Authentication failed: " + e.getMessage());
         }
     }
 

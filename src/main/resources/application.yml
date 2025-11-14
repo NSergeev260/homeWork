@@ -1,6 +1,8 @@
 logging:
   level:
     root: INFO
+    com.example.objectMapper: DEBUG
+    org.springframework.security: DEBUG
   file:
     name: ${user.dir}/logs/java.log
 server:
@@ -23,6 +25,8 @@ spring:
   liquibase:
     change-log: db/changelog/changelog.yaml
     enabled: true
+    parameters:
+      override-checksum: true
   output:
     ansi:
       enabled: always
