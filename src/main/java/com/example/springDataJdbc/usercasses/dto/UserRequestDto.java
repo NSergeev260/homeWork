@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 
+import java.util.UUID;
+
 @Builder(setterPrefix = "with")
 public record UserRequestDto(
         @NotBlank(message = "The name can not be empty or null")
@@ -14,6 +16,8 @@ public record UserRequestDto(
         String email,
         @NotBlank(message = "The provider can not be empty or null")
         String provider,
+        @NotNull(message = "The providerId can not be null")
+        UUID providerId,
         @NotNull(message = "The role can not be null")
         UserRole role
 ) {

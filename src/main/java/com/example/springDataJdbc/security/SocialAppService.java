@@ -35,22 +35,19 @@ public class SocialAppService implements OAuth2UserService<OAuth2UserRequest, OA
         String login = oAuth2User.getAttribute("login");
         String providerId = oAuth2User.getAttribute("id").toString();
 
-        UserData user = userRepository.findByEmail(email);
-
-        if (user == null) {
-            user = UserData.builder()
-                    .withEmail(email)
-                    .withName(login)
-                    .withProvider("github")
-                    .withProviderId(providerId)
-                    .withRole(UserRole.USER)
-                    .build();
-            user = userRepository.save(user);
+        if (userRepository.findByEmail(email).isEmpty()) {
+            UserData userData = new UserData();
+            userData.setEmail(email);
+            userData.setName(login);
+            userData.setProvider("github");
+            userData.setProviderId(providerId);
+            userData.setRole(UserRole.USER);
+            userRepository.insertUser(userData);
             logger.info("New user saved: {}", email);
         }
 
         List<SimpleGrantedAuthority> authorities =
-                List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()));
+                List.of(new SimpleGrantedAuthority("ROLE_" + userData.getRole()));
 
         return new DefaultOAuth2User(authorities,
                 oAuth2User.getAttributes(),

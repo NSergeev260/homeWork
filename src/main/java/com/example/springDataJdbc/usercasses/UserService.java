@@ -9,6 +9,8 @@ public interface UserService {
 
     UserResponseDto insertUser(UserRequestDto userRequestDto);
 
+    UserResponseDto findUserById(UUID id);
+
     UserResponseDto findUserByEmail(String email);
 
     UserResponseDto updateUser(UUID id, UserRequestDto userRequestDto);

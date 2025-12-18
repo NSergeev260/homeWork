@@ -11,7 +11,7 @@ public record UserResponseDto(
         String name,
         String email,
         String provider,
-        String providerId,
+        UUID providerId,
         UserRole role
 ) {
 }
