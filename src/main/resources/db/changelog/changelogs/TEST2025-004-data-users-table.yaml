@@ -1,0 +1,70 @@
+databaseChangeLog:
+  - changeSet:
+      id: TEST2025-004-data-users-table
+      author: nsergeev
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"
+              - column:
+                  name: name
+                  value: "Admin"
+              - column:
+                  name: email
+                  value: "admin@itk.ru"
+              - column:
+                  name: provider
+                  value: "manual"
+              - column:
+                  name: provider_id
+                  value: "admin-001"
+              - column:
+                  name: role
+                  value: "ADMIN"
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: "b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a12"
+              - column:
+                  name: name
+                  value: "Nikita"
+              - column:
+                  name: email
+                  value: "nik@gmail.com"
+              - column:
+                  name: provider
+                  value: "github"
+              - column:
+                  name: provider_id
+                  value: "github-001"
+              - column:
+                  name: role
+                  value: "USER"
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: "e4eebc99-9c0b-4ef8-bb6d-6bb9bd380a15"
+              - column:
+                  name: name
+                  value: "GitHub OAuth User"
+              - column:
+                  name: email
+                  value: "github-oauth@gmail.com"
+              - column:
+                  name: provider
+                  value: "github"
+              - column:
+                  name: provider_id
+                  value: "github-oauth-001"
+              - column:
+                  name: role
+                  value: "USER"

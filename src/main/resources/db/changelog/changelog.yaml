@@ -3,3 +3,7 @@ databaseChangeLog:
       file: db/changelog/changelogs/TEST2025-001-init-books-table.yaml
   - include:
       file: db/changelog/changelogs/TEST2025-002-data-books-table.yaml
+  - include:
+      file: db/changelog/changelogs/TEST2025-003-init-users-table.yaml
+  - include:
+      file: db/changelog/changelogs/TEST2025-004-data-users-table.yaml

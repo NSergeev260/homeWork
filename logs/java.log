@@ -1,36 +1,67 @@
-2025-12-18T19:18:26.483+03:00  INFO 72961 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 72961 (/home/nik/projects/springDataJdbc/target/classes started by nik in /home/nik/projects/springDataJdbc)
-2025-12-18T19:18:26.500+03:00  INFO 72961 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
-2025-12-18T19:18:28.486+03:00  INFO 72961 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-18T19:18:28.489+03:00  INFO 72961 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-12-18T19:18:28.521+03:00  INFO 72961 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 JDBC repository interfaces.
-2025-12-18T19:18:28.539+03:00  INFO 72961 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-18T19:18:28.542+03:00  INFO 72961 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-18T19:18:28.557+03:00  INFO 72961 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
-2025-12-18T19:18:29.388+03:00  INFO 72961 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-12-18T19:18:29.404+03:00  INFO 72961 --- [springDataJdbc] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-12-18T19:18:29.405+03:00  INFO 72961 --- [springDataJdbc] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
-2025-12-18T19:18:29.473+03:00  INFO 72961 --- [springDataJdbc] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-12-18T19:18:29.474+03:00  INFO 72961 --- [springDataJdbc] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2862 ms
-2025-12-18T19:18:29.738+03:00  INFO 72961 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-18T19:18:29.996+03:00  INFO 72961 --- [springDataJdbc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@14c99bf6
-2025-12-18T19:18:29.998+03:00  INFO 72961 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-18T19:18:30.223+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.database                       : Set default schema name to public
-2025-12-18T19:18:30.906+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-12-18T19:18:30.997+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2025-12-18T19:18:31.001+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-12-18T19:18:31.014+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.util                           : UPDATE SUMMARY
-2025-12-18T19:18:31.014+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.util                           : Run:                          0
-2025-12-18T19:18:31.014+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.util                           : Previously run:               2
-2025-12-18T19:18:31.015+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.util                           : Filtered out:                 0
-2025-12-18T19:18:31.015+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.util                           : -------------------------------
-2025-12-18T19:18:31.015+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.util                           : Total change sets:            2
-2025-12-18T19:18:31.016+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.util                           : Update summary generated
-2025-12-18T19:18:31.019+03:00  INFO 72961 --- [springDataJdbc] [main] liquibase.command                        : Command execution complete
-2025-12-18T19:18:32.015+03:00  INFO 72961 --- [springDataJdbc] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-18T19:18:32.085+03:00  INFO 72961 --- [springDataJdbc] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
-2025-12-18T19:18:32.138+03:00  INFO 72961 --- [springDataJdbc] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-18T19:18:32.607+03:00  INFO 72961 --- [springDataJdbc] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-18T19:18:32.742+03:00  INFO 72961 --- [springDataJdbc] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-12-19T14:29:58.360+03:00  INFO 101749 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 101749 (/home/nik/projects/springDataJdbc/target/classes started by nik in /home/nik/projects/springDataJdbc)
+2025-12-19T14:29:58.376+03:00  INFO 101749 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-12-19T14:30:00.609+03:00  INFO 101749 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-19T14:30:00.612+03:00  INFO 101749 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-12-19T14:30:00.663+03:00  INFO 101749 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 0 JDBC repository interfaces.
+2025-12-19T14:30:00.743+03:00  INFO 101749 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-19T14:30:00.749+03:00  INFO 101749 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-19T14:30:00.783+03:00  INFO 101749 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2025-12-19T14:30:01.308+03:00  WARN 101749 --- [springDataJdbc] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2025-12-19T14:30:01.340+03:00  INFO 101749 --- [springDataJdbc] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-12-19T14:30:01.383+03:00 ERROR 101749 --- [springDataJdbc] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'server.port' to java.lang.Integer:
+
+    Property: server.port
+    Value: "${SERVER_PORT}"
+    Origin: class path resource [application.yml] - 7:9
+    Reason: failed to convert java.lang.String to java.lang.Integer (caused by java.lang.NumberFormatException: For input string: "${SERVER_PORT}")
+
+Action:
+
+Update your application's configuration
+
+2025-12-19T14:38:18.792+03:00  INFO 103245 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 103245 (/home/nik/projects/springDataJdbc/target/classes started by nik in /home/nik/projects/springDataJdbc)
+2025-12-19T14:38:18.800+03:00  INFO 103245 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-12-19T14:38:21.037+03:00  INFO 103245 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-19T14:38:21.040+03:00  INFO 103245 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-12-19T14:38:21.078+03:00  INFO 103245 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 0 JDBC repository interfaces.
+2025-12-19T14:38:21.095+03:00  INFO 103245 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-19T14:38:21.097+03:00  INFO 103245 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-19T14:38:21.112+03:00  INFO 103245 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2025-12-19T14:38:22.028+03:00  INFO 103245 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-19T14:38:22.065+03:00  INFO 103245 --- [springDataJdbc] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-19T14:38:22.066+03:00  INFO 103245 --- [springDataJdbc] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-19T14:38:22.179+03:00  INFO 103245 --- [springDataJdbc] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-19T14:38:22.181+03:00  INFO 103245 --- [springDataJdbc] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3196 ms
+2025-12-19T14:38:22.755+03:00  INFO 103245 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-19T14:38:23.077+03:00  INFO 103245 --- [springDataJdbc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6e0d16a4
+2025-12-19T14:38:23.080+03:00  INFO 103245 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-19T14:38:23.295+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.database                       : Set default schema name to public
+2025-12-19T14:38:23.971+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-12-19T14:38:24.168+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2025-12-19T14:38:24.177+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-12-19T14:38:24.215+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.util                           : UPDATE SUMMARY
+2025-12-19T14:38:24.216+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.util                           : Run:                          0
+2025-12-19T14:38:24.217+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.util                           : Previously run:               2
+2025-12-19T14:38:24.218+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.util                           : Filtered out:                 0
+2025-12-19T14:38:24.218+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.util                           : -------------------------------
+2025-12-19T14:38:24.219+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.util                           : Total change sets:            2
+2025-12-19T14:38:24.224+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.util                           : Update summary generated
+2025-12-19T14:38:24.228+03:00  INFO 103245 --- [springDataJdbc] [main] liquibase.command                        : Command execution complete
+2025-12-19T14:38:25.129+03:00  INFO 103245 --- [springDataJdbc] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-19T14:38:25.222+03:00  INFO 103245 --- [springDataJdbc] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-12-19T14:38:25.283+03:00  INFO 103245 --- [springDataJdbc] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-19T14:38:25.822+03:00  INFO 103245 --- [springDataJdbc] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-19T14:38:25.980+03:00  INFO 103245 --- [springDataJdbc] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.11
@@ -38,67 +69,65 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-12-18T19:18:33.390+03:00  INFO 72961 --- [springDataJdbc] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-18T19:18:33.396+03:00  INFO 72961 --- [springDataJdbc] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-18T19:18:33.677+03:00  WARN 72961 --- [springDataJdbc] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-18T19:18:34.996+03:00  INFO 72961 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-12-18T19:18:35.021+03:00  INFO 72961 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Started SpringDataJdbcApplication in 9.803 seconds (process running for 11.287)
-2025-12-18T19:18:45.736+03:00  INFO 72961 --- [springDataJdbc] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-12-18T19:18:45.742+03:00  INFO 72961 --- [springDataJdbc] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-12-18T19:18:45.750+03:00  INFO 72961 --- [springDataJdbc] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-18T19:18:45.755+03:00  INFO 72961 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-12-18T19:18:45.768+03:00  INFO 72961 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-12-18T19:29:23.174+03:00  INFO 75036 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 75036 (/home/nik/projects/springDataJdbc/target/classes started by nik in /home/nik/projects/springDataJdbc)
-2025-12-18T19:29:23.185+03:00  INFO 75036 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
-2025-12-18T19:29:24.988+03:00  INFO 75036 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-18T19:29:24.990+03:00  INFO 75036 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-12-18T19:29:25.046+03:00  INFO 75036 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 0 JDBC repository interfaces.
-2025-12-18T19:29:25.083+03:00  INFO 75036 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-18T19:29:25.086+03:00  INFO 75036 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-18T19:29:25.105+03:00  INFO 75036 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
-2025-12-18T19:29:26.399+03:00  INFO 75036 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-12-18T19:29:26.429+03:00  INFO 75036 --- [springDataJdbc] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-12-18T19:29:26.431+03:00  INFO 75036 --- [springDataJdbc] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
-2025-12-18T19:29:26.577+03:00  INFO 75036 --- [springDataJdbc] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-12-18T19:29:26.578+03:00  INFO 75036 --- [springDataJdbc] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3243 ms
-2025-12-18T19:29:27.037+03:00  INFO 75036 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-18T19:29:27.320+03:00  INFO 75036 --- [springDataJdbc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@21a46ff1
-2025-12-18T19:29:27.324+03:00  INFO 75036 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-18T19:29:27.868+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.database                       : Set default schema name to public
-2025-12-18T19:29:28.669+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
-2025-12-18T19:29:28.731+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-12-18T19:29:28.800+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.snapshot                       : Creating snapshot
-2025-12-18T19:29:29.063+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.lockservice                    : Successfully acquired change log lock
-2025-12-18T19:29:29.066+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.command                        : Using deploymentId: 6075367014
-2025-12-18T19:29:29.073+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2025-12-18T19:29:29.146+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.ui                             : Running Changeset: db/changelog/changelogs/TEST2025-001-init-books-table.yaml::TEST2025-001-init-books-table::nsergeev
-2025-12-18T19:29:29.190+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : Table books created
-2025-12-18T19:29:29.194+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : ChangeSet db/changelog/changelogs/TEST2025-001-init-books-table.yaml::TEST2025-001-init-books-table::nsergeev ran successfully in 45ms
-2025-12-18T19:29:29.230+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.ui                             : Running Changeset: db/changelog/changelogs/TEST2025-002-data-books-table.yaml::TEST2025-002-data-books-table::nsergeev
-2025-12-18T19:29:29.241+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
-2025-12-18T19:29:29.247+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
-2025-12-18T19:29:29.252+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
-2025-12-18T19:29:29.256+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
-2025-12-18T19:29:29.259+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
-2025-12-18T19:29:29.263+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
-2025-12-18T19:29:29.267+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
-2025-12-18T19:29:29.269+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.changelog                      : ChangeSet db/changelog/changelogs/TEST2025-002-data-books-table.yaml::TEST2025-002-data-books-table::nsergeev ran successfully in 38ms
-2025-12-18T19:29:29.295+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.util                           : UPDATE SUMMARY
-2025-12-18T19:29:29.296+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.util                           : Run:                          2
-2025-12-18T19:29:29.298+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.util                           : Previously run:               0
-2025-12-18T19:29:29.300+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.util                           : Filtered out:                 0
-2025-12-18T19:29:29.301+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.util                           : -------------------------------
-2025-12-18T19:29:29.302+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.util                           : Total change sets:            2
-2025-12-18T19:29:29.304+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.util                           : Update summary generated
-2025-12-18T19:29:29.311+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.command                        : Update command completed successfully.
-2025-12-18T19:29:29.312+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 9
-2025-12-18T19:29:29.323+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.lockservice                    : Successfully released change log lock
-2025-12-18T19:29:29.335+03:00  INFO 75036 --- [springDataJdbc] [main] liquibase.command                        : Command execution complete
-2025-12-18T19:29:30.404+03:00  INFO 75036 --- [springDataJdbc] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-18T19:29:30.586+03:00  INFO 75036 --- [springDataJdbc] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
-2025-12-18T19:29:30.715+03:00  INFO 75036 --- [springDataJdbc] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-18T19:29:31.210+03:00  INFO 75036 --- [springDataJdbc] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-18T19:29:31.327+03:00  INFO 75036 --- [springDataJdbc] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-12-19T14:38:26.660+03:00  INFO 103245 --- [springDataJdbc] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-19T14:38:26.668+03:00  INFO 103245 --- [springDataJdbc] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-19T14:38:27.206+03:00  WARN 103245 --- [springDataJdbc] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-19T14:38:28.083+03:00  INFO 103245 --- [springDataJdbc] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-19T14:38:29.220+03:00  INFO 103245 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-19T14:38:29.243+03:00  INFO 103245 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Started SpringDataJdbcApplication in 11.752 seconds (process running for 12.895)
+2025-12-19T14:46:33.004+03:00  INFO 103245 --- [springDataJdbc] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-19T14:46:33.005+03:00  INFO 103245 --- [springDataJdbc] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-19T14:46:33.009+03:00  INFO 103245 --- [springDataJdbc] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-12-19T14:53:53.373+03:00  INFO 103245 --- [springDataJdbc] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-19T14:53:53.376+03:00  INFO 103245 --- [springDataJdbc] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-19T14:53:53.389+03:00  INFO 103245 --- [springDataJdbc] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-19T14:53:53.398+03:00  INFO 103245 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-19T14:53:53.410+03:00  INFO 103245 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-19T15:06:04.022+03:00  INFO 107149 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 107149 (/home/nik/projects/springDataJdbc/target/classes started by nik in /home/nik/projects/springDataJdbc)
+2025-12-19T15:06:04.029+03:00  INFO 107149 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-12-19T15:06:06.259+03:00  INFO 107149 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-19T15:06:06.261+03:00  INFO 107149 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-12-19T15:06:06.292+03:00  INFO 107149 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2025-12-19T15:06:06.314+03:00  INFO 107149 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-19T15:06:06.317+03:00  INFO 107149 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-19T15:06:06.333+03:00  INFO 107149 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-12-19T15:06:07.626+03:00  INFO 107149 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-19T15:06:07.645+03:00  INFO 107149 --- [springDataJdbc] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-19T15:06:07.646+03:00  INFO 107149 --- [springDataJdbc] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-19T15:06:07.717+03:00  INFO 107149 --- [springDataJdbc] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-19T15:06:07.718+03:00  INFO 107149 --- [springDataJdbc] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3459 ms
+2025-12-19T15:06:08.083+03:00  INFO 107149 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-19T15:06:08.302+03:00  INFO 107149 --- [springDataJdbc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@d108406
+2025-12-19T15:06:08.305+03:00  INFO 107149 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-19T15:06:08.489+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.database                       : Set default schema name to public
+2025-12-19T15:06:09.051+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-12-19T15:06:09.256+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.lockservice                    : Successfully acquired change log lock
+2025-12-19T15:06:09.260+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.command                        : Using deploymentId: 6145968042
+2025-12-19T15:06:09.265+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-12-19T15:06:09.297+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.ui                             : Running Changeset: db/changelog/changelogs/TEST2025-003-init-users-table.yaml::TEST2025-003-init-users-table::nsergeev
+2025-12-19T15:06:09.353+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.changelog                      : Table users created
+2025-12-19T15:06:09.359+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.changelog                      : ChangeSet db/changelog/changelogs/TEST2025-003-init-users-table.yaml::TEST2025-003-init-users-table::nsergeev ran successfully in 60ms
+2025-12-19T15:06:09.379+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.ui                             : Running Changeset: db/changelog/changelogs/TEST2025-004-data-users-table.yaml::TEST2025-004-data-users-table::nsergeev
+2025-12-19T15:06:09.384+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into users
+2025-12-19T15:06:09.388+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into users
+2025-12-19T15:06:09.391+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into users
+2025-12-19T15:06:09.393+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.changelog                      : ChangeSet db/changelog/changelogs/TEST2025-004-data-users-table.yaml::TEST2025-004-data-users-table::nsergeev ran successfully in 13ms
+2025-12-19T15:06:09.405+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.util                           : UPDATE SUMMARY
+2025-12-19T15:06:09.406+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.util                           : Run:                          2
+2025-12-19T15:06:09.406+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.util                           : Previously run:               2
+2025-12-19T15:06:09.407+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.util                           : Filtered out:                 0
+2025-12-19T15:06:09.407+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.util                           : -------------------------------
+2025-12-19T15:06:09.407+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.util                           : Total change sets:            4
+2025-12-19T15:06:09.408+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.util                           : Update summary generated
+2025-12-19T15:06:09.413+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.command                        : Update command completed successfully.
+2025-12-19T15:06:09.413+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 5
+2025-12-19T15:06:09.418+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.lockservice                    : Successfully released change log lock
+2025-12-19T15:06:09.420+03:00  INFO 107149 --- [springDataJdbc] [main] liquibase.command                        : Command execution complete
+2025-12-19T15:06:10.187+03:00  INFO 107149 --- [springDataJdbc] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-19T15:06:10.248+03:00  INFO 107149 --- [springDataJdbc] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-12-19T15:06:10.292+03:00  INFO 107149 --- [springDataJdbc] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-19T15:06:10.681+03:00  INFO 107149 --- [springDataJdbc] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-19T15:06:10.806+03:00  INFO 107149 --- [springDataJdbc] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.11
@@ -106,16 +135,86 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-12-18T19:29:31.943+03:00  INFO 75036 --- [springDataJdbc] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-18T19:29:31.952+03:00  INFO 75036 --- [springDataJdbc] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-18T19:29:32.292+03:00  WARN 75036 --- [springDataJdbc] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-18T19:29:33.239+03:00  INFO 75036 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-12-18T19:29:33.257+03:00  INFO 75036 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Started SpringDataJdbcApplication in 11.235 seconds (process running for 12.318)
-2025-12-18T19:39:48.697+03:00  INFO 75036 --- [springDataJdbc] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-12-18T19:39:48.698+03:00  INFO 75036 --- [springDataJdbc] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-12-18T19:39:48.702+03:00  INFO 75036 --- [springDataJdbc] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2025-12-18T21:45:54.641+03:00  INFO 75036 --- [springDataJdbc] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-12-18T21:45:54.647+03:00  INFO 75036 --- [springDataJdbc] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-12-18T21:45:54.675+03:00  INFO 75036 --- [springDataJdbc] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-18T21:45:54.681+03:00  INFO 75036 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-12-18T21:45:54.691+03:00  INFO 75036 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-19T15:06:11.269+03:00  INFO 107149 --- [springDataJdbc] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-19T15:06:11.277+03:00  INFO 107149 --- [springDataJdbc] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-19T15:06:11.584+03:00  WARN 107149 --- [springDataJdbc] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-19T15:06:11.933+03:00  INFO 107149 --- [springDataJdbc] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-19T15:06:12.773+03:00  INFO 107149 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-19T15:06:12.791+03:00  INFO 107149 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Started SpringDataJdbcApplication in 9.767 seconds (process running for 10.549)
+2025-12-19T15:07:44.767+03:00  INFO 107149 --- [springDataJdbc] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-19T15:07:44.773+03:00  INFO 107149 --- [springDataJdbc] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-19T15:07:44.783+03:00  INFO 107149 --- [springDataJdbc] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-19T15:07:44.788+03:00  INFO 107149 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-19T15:07:44.792+03:00  INFO 107149 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-19T15:10:56.667+03:00  INFO 108457 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 108457 (/home/nik/projects/springDataJdbc/target/classes started by nik in /home/nik/projects/springDataJdbc)
+2025-12-19T15:10:56.678+03:00  INFO 108457 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-12-19T15:10:58.590+03:00  INFO 108457 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-19T15:10:58.592+03:00  INFO 108457 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-12-19T15:10:58.616+03:00  INFO 108457 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 JDBC repository interfaces.
+2025-12-19T15:10:58.628+03:00  INFO 108457 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-19T15:10:58.630+03:00  INFO 108457 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-19T15:10:58.640+03:00  INFO 108457 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-12-19T15:10:59.381+03:00  INFO 108457 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-19T15:10:59.399+03:00  INFO 108457 --- [springDataJdbc] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-19T15:10:59.400+03:00  INFO 108457 --- [springDataJdbc] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-19T15:10:59.460+03:00  INFO 108457 --- [springDataJdbc] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-19T15:10:59.461+03:00  INFO 108457 --- [springDataJdbc] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2600 ms
+2025-12-19T15:10:59.810+03:00  INFO 108457 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-19T15:11:00.034+03:00  INFO 108457 --- [springDataJdbc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@55adcf9e
+2025-12-19T15:11:00.037+03:00  INFO 108457 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-19T15:11:00.188+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.database                       : Set default schema name to public
+2025-12-19T15:11:00.667+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2025-12-19T15:11:00.744+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-12-19T15:11:00.813+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.snapshot                       : Creating snapshot
+2025-12-19T15:11:00.974+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.lockservice                    : Successfully acquired change log lock
+2025-12-19T15:11:00.976+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.command                        : Using deploymentId: 6146259768
+2025-12-19T15:11:00.979+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2025-12-19T15:11:01.032+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.ui                             : Running Changeset: db/changelog/changelogs/TEST2025-001-init-books-table.yaml::TEST2025-001-init-books-table::nsergeev
+2025-12-19T15:11:01.051+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : Table books created
+2025-12-19T15:11:01.056+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : ChangeSet db/changelog/changelogs/TEST2025-001-init-books-table.yaml::TEST2025-001-init-books-table::nsergeev ran successfully in 21ms
+2025-12-19T15:11:01.080+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.ui                             : Running Changeset: db/changelog/changelogs/TEST2025-002-data-books-table.yaml::TEST2025-002-data-books-table::nsergeev
+2025-12-19T15:11:01.087+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
+2025-12-19T15:11:01.091+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
+2025-12-19T15:11:01.095+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
+2025-12-19T15:11:01.100+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
+2025-12-19T15:11:01.103+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
+2025-12-19T15:11:01.107+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
+2025-12-19T15:11:01.110+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into books
+2025-12-19T15:11:01.112+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : ChangeSet db/changelog/changelogs/TEST2025-002-data-books-table.yaml::TEST2025-002-data-books-table::nsergeev ran successfully in 31ms
+2025-12-19T15:11:01.118+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.ui                             : Running Changeset: db/changelog/changelogs/TEST2025-003-init-users-table.yaml::TEST2025-003-init-users-table::nsergeev
+2025-12-19T15:11:01.130+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : Table users created
+2025-12-19T15:11:01.132+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : ChangeSet db/changelog/changelogs/TEST2025-003-init-users-table.yaml::TEST2025-003-init-users-table::nsergeev ran successfully in 14ms
+2025-12-19T15:11:01.140+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.ui                             : Running Changeset: db/changelog/changelogs/TEST2025-004-data-users-table.yaml::TEST2025-004-data-users-table::nsergeev
+2025-12-19T15:11:01.144+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into users
+2025-12-19T15:11:01.147+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into users
+2025-12-19T15:11:01.149+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : New row inserted into users
+2025-12-19T15:11:01.156+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.changelog                      : ChangeSet db/changelog/changelogs/TEST2025-004-data-users-table.yaml::TEST2025-004-data-users-table::nsergeev ran successfully in 14ms
+2025-12-19T15:11:01.166+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.util                           : UPDATE SUMMARY
+2025-12-19T15:11:01.167+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.util                           : Run:                          4
+2025-12-19T15:11:01.167+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.util                           : Previously run:               0
+2025-12-19T15:11:01.167+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.util                           : Filtered out:                 0
+2025-12-19T15:11:01.168+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.util                           : -------------------------------
+2025-12-19T15:11:01.168+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.util                           : Total change sets:            4
+2025-12-19T15:11:01.169+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.util                           : Update summary generated
+2025-12-19T15:11:01.174+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.command                        : Update command completed successfully.
+2025-12-19T15:11:01.174+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 14
+2025-12-19T15:11:01.184+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.lockservice                    : Successfully released change log lock
+2025-12-19T15:11:01.187+03:00  INFO 108457 --- [springDataJdbc] [main] liquibase.command                        : Command execution complete
+2025-12-19T15:11:01.852+03:00  INFO 108457 --- [springDataJdbc] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-19T15:11:01.902+03:00  INFO 108457 --- [springDataJdbc] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-12-19T15:11:01.938+03:00  INFO 108457 --- [springDataJdbc] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-19T15:11:02.292+03:00  INFO 108457 --- [springDataJdbc] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-19T15:11:02.376+03:00  INFO 108457 --- [springDataJdbc] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.11
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-19T15:11:02.810+03:00  INFO 108457 --- [springDataJdbc] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-19T15:11:02.816+03:00  INFO 108457 --- [springDataJdbc] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-19T15:11:03.103+03:00  WARN 108457 --- [springDataJdbc] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-19T15:11:03.517+03:00  INFO 108457 --- [springDataJdbc] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-19T15:11:04.408+03:00  INFO 108457 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-19T15:11:04.438+03:00  INFO 108457 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Started SpringDataJdbcApplication in 9.198 seconds (process running for 10.05)
