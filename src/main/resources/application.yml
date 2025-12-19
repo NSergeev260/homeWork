@@ -33,7 +33,7 @@ spring:
           github:
             client-id: ${GITHUB_CLIENT_ID}
             client-secret: ${GITHUB_CLIENT_SECRET}
-            scope: user:email, read:user
+            scope: user, user:email
             redirect-uri: "http://localhost:8080/login/oauth2/code/github"
             client-name: GitHub
         provider:

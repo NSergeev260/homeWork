@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Types;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -19,8 +20,8 @@ import java.util.UUID;
 public class UserRepositoryJdbc implements UserRepository {
 
     private static final String INSERT_USER =
-            "INSERT INTO users(id, name, email, provider, providerId, role) " +
-                    "VALUES (:id, :name, :email, :provider, :providerId, :role)";
+            "INSERT INTO users(id, name, email, provider, provider_id, role) " +
+                    "VALUES (:id, :name, :email, :provider, :provider_id, :role)";
 
     private static final String GET_USER_BY_ID =
             "SELECT * FROM users WHERE id = :id";
@@ -30,7 +31,7 @@ public class UserRepositoryJdbc implements UserRepository {
 
     private static final String UPDATE_USER =
             "UPDATE users SET name = :name, email = :email, provider = :provider, " +
-                    "providerId = :providerId, role = :role WHERE id = :id";
+                    "provider_id = :provider_id, role = :role WHERE id = :id";
 
     private static final String DELETE_USER =
             "DELETE FROM users WHERE id = :id";
@@ -46,8 +47,8 @@ public class UserRepositoryJdbc implements UserRepository {
                 .addValue("name", userData.getName())
                 .addValue("email", userData.getEmail())
                 .addValue("provider", userData.getProvider())
-                .addValue("providerId", userData.getProviderId())
-                .addValue("role", userData.getRole());
+                .addValue("provider_id", userData.getProviderId())
+                .addValue("role", userData.getRole().name().toString());
         namedParameterJdbcTemplate.update(INSERT_USER, insertParameters);
         userData.setId(newId);
 
@@ -94,8 +95,8 @@ public class UserRepositoryJdbc implements UserRepository {
                 .addValue("name", userData.getName())
                 .addValue("email", userData.getEmail())
                 .addValue("provider", userData.getProvider())
-                .addValue("providerId", userData.getProviderId())
-                .addValue("role", userData.getRole());
+                .addValue("provider_id", userData.getProviderId())
+                .addValue("role", userData.getRole().name().toString());
         namedParameterJdbcTemplate.update(UPDATE_USER, updateParameters);
 
         return userData;

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+<h1>GitHub User Profile</h1>
+
+<div th:if="${name != null}">
+    <p><strong>Name:</strong> <span th:text="${name}"></span></p>
+    <p><strong>Login:</strong> <span th:text="${login}"></span></p>
+    <p><strong>ID:</strong> <span th:text="${id}"></span></p>
+    <p><strong>Email:</strong> <span th:text="${email}"></span></p>
+</div>
+
+<div th:if="${name == null}">
+    <p>No user information available</p>
+</div>
+
+<a href="/api/books/public">View Books</a> |
+<a href="/logout">Logout</a>
+</body>
+</html>
