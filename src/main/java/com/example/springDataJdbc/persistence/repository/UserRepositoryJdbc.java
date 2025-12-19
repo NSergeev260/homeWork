@@ -71,7 +71,7 @@ public class UserRepositoryJdbc implements UserRepository {
         }
     }
 
-    public Optional<UserData> findByEmail(String email) {
+    public Optional<UserData> findUserByEmail(String email) {
         try {
             SqlParameterSource findParameters = new MapSqlParameterSource()
                     .addValue("email", email);
@@ -90,6 +90,7 @@ public class UserRepositoryJdbc implements UserRepository {
     @Override
     public UserData updateUser(UserData userData) {
         SqlParameterSource updateParameters = new MapSqlParameterSource()
+                .addValue("id", userData.getId())
                 .addValue("name", userData.getName())
                 .addValue("email", userData.getEmail())
                 .addValue("provider", userData.getProvider())

@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -35,15 +36,20 @@ public class SocialAppService implements OAuth2UserService<OAuth2UserRequest, OA
         String login = oAuth2User.getAttribute("login");
         String providerId = oAuth2User.getAttribute("id").toString();
 
-        if (userRepository.findByEmail(email).isEmpty()) {
-            UserData userData = new UserData();
+        Optional<UserData> optionalUser = userRepository.findUserByEmail(email);
+        UserData userData;
+
+        if (optionalUser.isEmpty()) {
+            userData = new UserData();
             userData.setEmail(email);
             userData.setName(login);
             userData.setProvider("github");
             userData.setProviderId(providerId);
             userData.setRole(UserRole.USER);
-            userRepository.insertUser(userData);
-            logger.info("New user saved: {}", email);
+            userData = userRepository.insertUser(userData);
+            logger.info("New user saved. email: {}", email);
+        } else {
+            userData = optionalUser.get();
         }
 
         List<SimpleGrantedAuthority> authorities =

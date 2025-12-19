@@ -51,7 +51,8 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookResponseDto getBookByTitle(String title) {
         BookData bookData = bookRepo.findBookByTitle(title)
-                .orElseThrow(() -> new RuntimeException("Book not found. FAIL! title: " + title));
+                .orElseThrow(() ->
+                        new RuntimeException("Book not found. FAIL! title: " + title));
 
         log.info("The book with the title {} FOUND. Time: {}"
                 , title, LocalDateTime.now());
@@ -98,6 +99,7 @@ public class BookServiceImpl implements BookService {
     private BookData getByID(UUID id) {
 
         return bookRepo.findBookById(id)
-                .orElseThrow(() -> new RuntimeException("Book not found. FAIL! id: " + id));
+                .orElseThrow(() ->
+                        new RuntimeException("Book not found. FAIL! id: " + id));
     }
 }

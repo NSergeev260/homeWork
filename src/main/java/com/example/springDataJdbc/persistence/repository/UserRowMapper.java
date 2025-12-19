@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.UUID;
 
 @Component
 public class UserRowMapper implements RowMapper<UserData> {
@@ -14,12 +15,12 @@ public class UserRowMapper implements RowMapper<UserData> {
     @Override
     public UserData mapRow(ResultSet rs, int rowNum) throws SQLException {
         UserData userData = new UserData();
-        userData.setId(Long.valueOf(rs.getString("id")));
+        userData.setId(UUID.fromString(rs.getString("id")));
         userData.setName(rs.getString("name"));
         userData.setEmail(rs.getString("email"));
         userData.setProvider(rs.getString("provider"));
         userData.setProviderId(rs.getString("providerId"));
-        userData.setRole(UserRole.valueOf(rs.getString("USER")));
+        userData.setRole(UserRole.valueOf(rs.getString("role")));
         return userData;
     }
 }

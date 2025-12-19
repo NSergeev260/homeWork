@@ -4,23 +4,27 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 
 @Component
 public class OidcLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {
 
+    private static final Logger logger = LoggerFactory.getLogger(OidcLogoutSuccessHandler.class);
+
     @Override
     public void onLogoutSuccess(HttpServletRequest request,
                                 HttpServletResponse response,
                                 Authentication authentication) throws IOException, ServletException {
+
+        if (authentication != null) {
+            logger.info("User logged out: {}", authentication.getName());
+        }
 
         HttpSession session = request.getSession(false);
         if (session != null) {
@@ -29,21 +33,5 @@ public class OidcLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {
 
         setDefaultTargetUrl("/");
         super.onLogoutSuccess(request, response, authentication);
-    }
-
-    private void revokeGithubToken(String token) {
-        RestTemplate rt = new RestTemplate();
-        HttpHeaders headers = new HttpHeaders();
-        headers.setBasicAuth(System.getenv("GITHUB_CLIENT_ID"),
-                System.getenv("GITHUB_CLIENT_SECRET"));
-        headers.setContentType(MediaType.APPLICATION_JSON);
-
-        String body = "{\"access_token\":\"" + token + "\"}";
-        HttpEntity<String> entity = new HttpEntity<>(body, headers);
-
-        try {
-            rt.postForObject("https://api.github.com/applications/{clientId}/token",
-                    entity, String.class, System.getenv("GITHUB_CLIENT_ID"));
-        } catch (Exception ignore) { /* не критично */ }
     }
 }

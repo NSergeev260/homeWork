@@ -43,7 +43,8 @@ public class SecurityConfig {
                 .oauth2Login(oauth2Login -> oauth2Login
                         .loginPage("/")
                         .userInfoEndpoint(
-                                userInfoEndpoint -> userInfoEndpoint .userService(socialAppService))
+                                userInfoEndpoint ->
+                                        userInfoEndpoint .userService(socialAppService))
                         .defaultSuccessUrl("/api/books/public", true)
                 )
                 .logout(logout -> logout
@@ -53,7 +54,8 @@ public class SecurityConfig {
                         .deleteCookies("JSESSIONID")
                 );
 
-        http.headers(h -> h.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable));
+        http.headers(h ->
+                h.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable));
 
         return http.build();
     }

@@ -12,12 +12,13 @@ import java.util.UUID;
 public record UserRequestDto(
         @NotBlank(message = "The name can not be empty or null")
         String name,
-        @Email(message = "The email can not be empty or null")
+        @Email(message = "Invalid email format")
+        @NotBlank(message = "Email cannot be empty")
         String email,
         @NotBlank(message = "The provider can not be empty or null")
         String provider,
-        @NotNull(message = "The providerId can not be null")
-        UUID providerId,
+        @NotBlank(message = "The providerId can not be empty or null")
+        String providerId,
         @NotNull(message = "The role can not be null")
         UserRole role
 ) {

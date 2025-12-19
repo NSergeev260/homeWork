@@ -48,8 +48,9 @@ public class UserServiceImpl implements UserService {
     @Transactional(readOnly = true)
     @Override
     public UserResponseDto findUserByEmail(String email) {
-        UserData userData = userRepo.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("Email not found. FAIL! email: " + email));
+        UserData userData = userRepo.findUserByEmail(email)
+                .orElseThrow(() ->
+                        new RuntimeException("Email not found. FAIL! email: " + email));
 
         log.info("The user with the email {} FOUND. Time: {}"
                 , email, LocalDateTime.now());
@@ -87,6 +88,7 @@ public class UserServiceImpl implements UserService {
     private UserData getByID(UUID id) {
 
         return userRepo.findUserById(id)
-                .orElseThrow(() -> new RuntimeException("Book not found. FAIL! id: " + id));
+                .orElseThrow(() ->
+                        new RuntimeException("The user not found. FAIL! id: " + id));
     }
 }

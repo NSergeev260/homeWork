@@ -15,6 +15,6 @@ public class UserData {
     private String name;
     private String email;
     private String provider;
-    private UUID providerId;
+    private String providerId;
     private UserRole role;
 }

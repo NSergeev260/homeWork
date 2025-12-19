@@ -12,7 +12,7 @@ public interface UserRepository {
 
     Optional<UserData> findUserById(UUID id);
 
-    Optional<UserData> findByEmail(String email);
+    Optional<UserData> findUserByEmail(String email);
 
     UserData updateUser(UserData userData);
 
