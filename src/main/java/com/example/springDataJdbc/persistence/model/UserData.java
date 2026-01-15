@@ -8,7 +8,7 @@ import org.springframework.data.relational.core.mapping.Table;
 import java.util.UUID;
 
 @Data
-@Table(name = "users")
+@Table("users")
 public class UserData {
 
     @Id

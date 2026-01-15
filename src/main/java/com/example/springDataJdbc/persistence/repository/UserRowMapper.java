@@ -19,7 +19,7 @@ public class UserRowMapper implements RowMapper<UserData> {
         userData.setName(rs.getString("name"));
         userData.setEmail(rs.getString("email"));
         userData.setProvider(rs.getString("provider"));
-        userData.setProviderId(rs.getString("providerId"));
+        userData.setProviderId(rs.getString("provider_id"));
         userData.setRole(UserRole.valueOf(rs.getString("role")));
         return userData;
     }

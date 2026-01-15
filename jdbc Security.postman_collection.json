@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "e752c38e-ebc8-4488-9084-f3f013957bcf",
-		"name": "jdbc Security",
+		"_postman_id": "c7864b84-b6f7-4b22-855c-4e603265d9c3",
+		"name": "jdbc Security Oauth2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "32463335",
-		"_collection_link": "https://myteam-2759.postman.co/workspace/JavaGuru.by~3c7b1147-7aa1-4626-939b-ef2b2750c6b7/collection/32463335-e752c38e-ebc8-4488-9084-f3f013957bcf?action=share&source=collection_link&creator=32463335"
+		"_collection_link": "https://myteam-2759.postman.co/workspace/JavaGuru.by~3c7b1147-7aa1-4626-939b-ef2b2750c6b7/collection/32463335-c7864b84-b6f7-4b22-855c-4e603265d9c3?action=share&source=collection_link&creator=32463335"
 	},
 	"item": [
 		{
@@ -44,9 +44,32 @@
 						},
 						{
 							"name": "getBookById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": " application/json",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": " JSESSIONID={{jsession}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "http://localhost:8080/api/books/:id",
 									"protocol": "http",
@@ -180,6 +203,244 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "addUser",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": " application/json",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": " JSESSIONID={{jsession}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Иван Иванов\",\n  \"email\": \"ivan@example.com\",\n  \"provider\": \"github\",\n  \"providerId\": \"1234567\",\n  \"role\": \"USER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getUserById",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": " application/json",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": " JSESSIONID={{jsession}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/users/:userId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getUserByEmail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": " application/json",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": " JSESSIONID={{jsession}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/users/search?email=nik@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"search"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "nik@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateUser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/users/{userId}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"{userId}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": " application/json",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": " JSESSIONID={{jsession}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/users/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "916720ab-bd8d-442d-b919-806a1558da83"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "USER addUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=BBF34B08E38F34172EBD49FECC40539C",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/books/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUBLIC getAllBook",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/books/public",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"public"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
@@ -221,6 +482,12 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "jsession",
+			"value": ""
 		}
 	]
 }
