@@ -1,338 +1,78 @@
-2026-01-15T10:49:32.916+03:00  INFO 14157 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 14157 (/home/nik/projects/springDataJdbc/target/classes started by nik in /home/nik/projects/springDataJdbc)
-2026-01-15T10:49:32.957+03:00  INFO 14157 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
-2026-01-15T10:49:39.092+03:00  INFO 14157 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2026-01-15T10:49:39.223+03:00  INFO 14157 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 0 JDBC repository interfaces.
-2026-01-15T10:49:42.327+03:00  INFO 14157 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-01-15T10:49:42.381+03:00  INFO 14157 --- [springDataJdbc] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-01-15T10:49:42.385+03:00  INFO 14157 --- [springDataJdbc] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
-2026-01-15T10:49:42.677+03:00  INFO 14157 --- [springDataJdbc] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-01-15T10:49:42.682+03:00  INFO 14157 --- [springDataJdbc] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9532 ms
-2026-01-15T10:49:43.730+03:00  INFO 14157 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-01-15T10:49:44.226+03:00  INFO 14157 --- [springDataJdbc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4861cca9
-2026-01-15T10:49:44.232+03:00  INFO 14157 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-01-15T10:49:44.759+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.database                       : Set default schema name to public
-2026-01-15T10:49:47.290+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2026-01-15T10:49:47.765+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2026-01-15T10:49:47.775+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2026-01-15T10:49:47.812+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.util                           : UPDATE SUMMARY
-2026-01-15T10:49:47.813+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.util                           : Run:                          0
-2026-01-15T10:49:47.816+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.util                           : Previously run:               4
-2026-01-15T10:49:47.816+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.util                           : Filtered out:                 0
-2026-01-15T10:49:47.816+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.util                           : -------------------------------
-2026-01-15T10:49:47.817+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.util                           : Total change sets:            4
-2026-01-15T10:49:47.820+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.util                           : Update summary generated
-2026-01-15T10:49:47.823+03:00  INFO 14157 --- [springDataJdbc] [main] liquibase.command                        : Command execution complete
-2026-01-15T10:49:50.090+03:00  INFO 14157 --- [springDataJdbc] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2026-01-15T10:49:51.781+03:00  INFO 14157 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2026-01-15T10:49:51.816+03:00  INFO 14157 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Started SpringDataJdbcApplication in 20.29 seconds (process running for 21.417)
-2026-01-15T12:08:09.994+03:00  INFO 14157 --- [springDataJdbc] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-01-15T12:08:09.997+03:00  INFO 14157 --- [springDataJdbc] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-01-15T12:08:10.010+03:00  INFO 14157 --- [springDataJdbc] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2026-01-15T12:09:31.346+03:00  INFO 14157 --- [springDataJdbc] [http-nio-8080-exec-3] c.e.s.security.SocialAppService          : New user saved. email: null
-2026-01-15T12:09:31.602+03:00  INFO 14157 --- [springDataJdbc] [http-nio-8080-exec-4] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-15T12:09:31.602713316
-2026-01-15T12:09:44.120+03:00  INFO 14157 --- [springDataJdbc] [http-nio-8080-exec-6] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-15T12:09:44.120594450
-2026-01-15T12:09:47.269+03:00  INFO 14157 --- [springDataJdbc] [http-nio-8080-exec-7] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-15T12:09:47.269234400
-2026-01-15T12:10:27.833+03:00  INFO 14157 --- [springDataJdbc] [http-nio-8080-exec-10] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-15T12:10:27.833520593
-2026-01-15T12:10:34.224+03:00  INFO 14157 --- [springDataJdbc] [http-nio-8080-exec-2] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-15T12:10:34.224948548
-2026-01-15T12:11:36.845+03:00  INFO 14157 --- [springDataJdbc] [http-nio-8080-exec-7] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-15T12:11:36.845726481
-2026-01-15T12:29:06.022+03:00 ERROR 14157 --- [springDataJdbc] [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [SELECT * FROM users WHERE id = ?]] with root cause
-
-org.postgresql.util.PSQLException: Колонки providerId не найдено в этом ResultSet’’е.
-	at org.postgresql.jdbc.PgResultSet.findColumn(PgResultSet.java:3208) ~[postgresql-42.7.8.jar:42.7.8]
-	at org.postgresql.jdbc.PgResultSet.getString(PgResultSet.java:3044) ~[postgresql-42.7.8.jar:42.7.8]
-	at com.zaxxer.hikari.pool.HikariProxyResultSet.getString(HikariProxyResultSet.java) ~[HikariCP-6.3.3.jar:na]
-	at com.example.springDataJdbc.persistence.repository.UserRowMapper.mapRow(UserRowMapper.java:22) ~[classes/:na]
-	at com.example.springDataJdbc.persistence.repository.UserRowMapper.mapRow(UserRowMapper.java:12) ~[classes/:na]
-	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94) ~[spring-jdbc-6.2.12.jar:6.2.12]
-	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61) ~[spring-jdbc-6.2.12.jar:6.2.12]
-	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:733) ~[spring-jdbc-6.2.12.jar:6.2.12]
-	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658) ~[spring-jdbc-6.2.12.jar:6.2.12]
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:723) ~[spring-jdbc-6.2.12.jar:6.2.12]
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:748) ~[spring-jdbc-6.2.12.jar:6.2.12]
-	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:804) ~[spring-jdbc-6.2.12.jar:6.2.12]
-	at org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate.queryForObject(NamedParameterJdbcTemplate.java:252) ~[spring-jdbc-6.2.12.jar:6.2.12]
-	at com.example.springDataJdbc.persistence.repository.UserRepositoryJdbc.findUserById(UserRepositoryJdbc.java:63) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.12.jar:6.2.12]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.12.jar:6.2.12]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.12.jar:6.2.12]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.12.jar:6.2.12]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.12.jar:6.2.12]
-	at com.example.springDataJdbc.persistence.repository.UserRepositoryJdbc$$SpringCGLIB$$0.findUserById(<generated>) ~[classes/:na]
-	at com.example.springDataJdbc.usercasses.impl.UserServiceImpl.getByID(UserServiceImpl.java:90) ~[classes/:na]
-	at com.example.springDataJdbc.usercasses.impl.UserServiceImpl.findUserById(UserServiceImpl.java:40) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360) ~[spring-aop-6.2.12.jar:6.2.12]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.12.jar:6.2.12]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.12.jar:6.2.12]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.12.jar:6.2.12]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.12.jar:6.2.12]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.12.jar:6.2.12]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728) ~[spring-aop-6.2.12.jar:6.2.12]
-	at com.example.springDataJdbc.usercasses.impl.UserServiceImpl$$SpringCGLIB$$0.findUserById(<generated>) ~[classes/:na]
-	at com.example.springDataJdbc.api.controllers.UserController.getUserById(UserController.java:34) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.12.jar:6.2.12]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.12.jar:6.2.12]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.12.jar:6.2.12]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.12.jar:6.2.12]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.12.jar:6.2.12]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.12.jar:6.2.12]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.12.jar:6.2.12]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.12.jar:6.2.12]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.48.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.12.jar:6.2.12]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.48.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:490) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:351) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:83) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:129) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:235) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:229) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:198) ~[spring-security-oauth2-client-6.5.6.jar:6.5.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:228) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:241) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:334) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:225) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:138) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.5.6.jar:6.5.6]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319) ~[spring-security-config-6.5.6.jar:6.5.6]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267) ~[spring-webmvc-6.2.12.jar:6.2.12]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240) ~[spring-security-config-6.5.6.jar:6.5.6]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.12.jar:6.2.12]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
-	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
-
-2026-01-15T12:39:45.069+03:00  INFO 14157 --- [springDataJdbc] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-01-15T12:39:45.074+03:00  INFO 14157 --- [springDataJdbc] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-01-15T12:39:45.098+03:00  INFO 14157 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-01-15T12:39:45.126+03:00  INFO 14157 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-01-15T13:35:07.387+03:00  INFO 18671 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 18671 (/home/nik/projects/springDataJdbc/target/classes started by nik in /home/nik/projects/springDataJdbc)
-2026-01-15T13:35:07.399+03:00  INFO 18671 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
-2026-01-15T13:35:11.472+03:00  INFO 18671 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2026-01-15T13:35:11.533+03:00  INFO 18671 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JDBC repository interfaces.
-2026-01-15T13:35:13.020+03:00  INFO 18671 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-01-15T13:35:13.051+03:00  INFO 18671 --- [springDataJdbc] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-01-15T13:35:13.053+03:00  INFO 18671 --- [springDataJdbc] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
-2026-01-15T13:35:13.200+03:00  INFO 18671 --- [springDataJdbc] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-01-15T13:35:13.201+03:00  INFO 18671 --- [springDataJdbc] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5398 ms
-2026-01-15T13:35:13.890+03:00  INFO 18671 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-01-15T13:35:14.383+03:00  INFO 18671 --- [springDataJdbc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6cdbe5ec
-2026-01-15T13:35:14.386+03:00  INFO 18671 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-01-15T13:35:14.904+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.database                       : Set default schema name to public
-2026-01-15T13:35:15.968+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2026-01-15T13:35:16.250+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2026-01-15T13:35:16.256+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2026-01-15T13:35:16.290+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.util                           : UPDATE SUMMARY
-2026-01-15T13:35:16.290+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.util                           : Run:                          0
-2026-01-15T13:35:16.291+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.util                           : Previously run:               4
-2026-01-15T13:35:16.291+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.util                           : Filtered out:                 0
-2026-01-15T13:35:16.291+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.util                           : -------------------------------
-2026-01-15T13:35:16.292+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.util                           : Total change sets:            4
-2026-01-15T13:35:16.297+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.util                           : Update summary generated
-2026-01-15T13:35:16.301+03:00  INFO 18671 --- [springDataJdbc] [main] liquibase.command                        : Command execution complete
-2026-01-15T13:35:18.859+03:00  INFO 18671 --- [springDataJdbc] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2026-01-15T13:35:20.791+03:00  INFO 18671 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2026-01-15T13:35:20.861+03:00  INFO 18671 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Started SpringDataJdbcApplication in 16.096 seconds (process running for 17.677)
-2026-01-15T13:35:49.882+03:00  INFO 18671 --- [springDataJdbc] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-01-15T13:35:49.885+03:00  INFO 18671 --- [springDataJdbc] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-01-15T13:35:49.890+03:00  INFO 18671 --- [springDataJdbc] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2026-01-15T13:36:15.316+03:00  INFO 18671 --- [springDataJdbc] [http-nio-8080-exec-5] c.e.s.security.SocialAppService          : New user saved. email: null
-2026-01-15T13:36:15.405+03:00  INFO 18671 --- [springDataJdbc] [http-nio-8080-exec-7] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-15T13:36:15.405391860
-2026-01-15T13:36:40.058+03:00  INFO 18671 --- [springDataJdbc] [http-nio-8080-exec-9] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-15T13:36:40.058559038
-2026-01-15T13:41:54.351+03:00  INFO 18671 --- [springDataJdbc] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-01-15T13:41:54.366+03:00  INFO 18671 --- [springDataJdbc] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-01-15T13:41:54.395+03:00  INFO 18671 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-01-15T13:41:54.407+03:00  INFO 18671 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-01-15T13:42:16.254+03:00  INFO 19005 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 19005 (/home/nik/projects/springDataJdbc/target/classes started by nik in /home/nik/projects/springDataJdbc)
-2026-01-15T13:42:16.283+03:00  INFO 19005 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
-2026-01-15T13:42:21.369+03:00  INFO 19005 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2026-01-15T13:42:21.457+03:00  INFO 19005 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 0 JDBC repository interfaces.
-2026-01-15T13:42:23.159+03:00  INFO 19005 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-01-15T13:42:23.208+03:00  INFO 19005 --- [springDataJdbc] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-01-15T13:42:23.209+03:00  INFO 19005 --- [springDataJdbc] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
-2026-01-15T13:42:23.384+03:00  INFO 19005 --- [springDataJdbc] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-01-15T13:42:23.386+03:00  INFO 19005 --- [springDataJdbc] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6557 ms
-2026-01-15T13:42:24.294+03:00  INFO 19005 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-01-15T13:42:24.954+03:00  INFO 19005 --- [springDataJdbc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5fb8dc01
-2026-01-15T13:42:24.958+03:00  INFO 19005 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-01-15T13:42:25.474+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.database                       : Set default schema name to public
-2026-01-15T13:42:26.922+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2026-01-15T13:42:27.359+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2026-01-15T13:42:27.363+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2026-01-15T13:42:27.403+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.util                           : UPDATE SUMMARY
-2026-01-15T13:42:27.408+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.util                           : Run:                          0
-2026-01-15T13:42:27.409+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.util                           : Previously run:               4
-2026-01-15T13:42:27.411+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.util                           : Filtered out:                 0
-2026-01-15T13:42:27.411+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.util                           : -------------------------------
-2026-01-15T13:42:27.412+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.util                           : Total change sets:            4
-2026-01-15T13:42:27.415+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.util                           : Update summary generated
-2026-01-15T13:42:27.424+03:00  INFO 19005 --- [springDataJdbc] [main] liquibase.command                        : Command execution complete
-2026-01-15T13:42:30.395+03:00  INFO 19005 --- [springDataJdbc] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2026-01-15T13:42:32.794+03:00  INFO 19005 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2026-01-15T13:42:32.895+03:00  INFO 19005 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Started SpringDataJdbcApplication in 20.144 seconds (process running for 22.813)
-2026-01-15T13:42:44.200+03:00  INFO 19005 --- [springDataJdbc] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-01-15T13:42:44.205+03:00  INFO 19005 --- [springDataJdbc] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-01-15T13:42:44.220+03:00  INFO 19005 --- [springDataJdbc] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
-2026-01-15T13:43:01.200+03:00  INFO 19005 --- [springDataJdbc] [http-nio-8080-exec-3] c.e.s.security.SocialAppService          : New user saved. email: null
-2026-01-15T13:43:01.333+03:00  INFO 19005 --- [springDataJdbc] [http-nio-8080-exec-4] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-15T13:43:01.333186116
-2026-01-15T13:45:12.524+03:00  INFO 19005 --- [springDataJdbc] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-01-15T13:45:12.532+03:00  INFO 19005 --- [springDataJdbc] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-01-15T13:45:12.553+03:00  INFO 19005 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-01-15T13:45:12.586+03:00  INFO 19005 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2026-01-15T13:55:33.366+03:00  INFO 19627 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 19627 (/home/nik/projects/springDataJdbc/target/classes started by nik in /home/nik/projects/springDataJdbc)
-2026-01-15T13:55:33.396+03:00  INFO 19627 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
-2026-01-15T13:55:39.241+03:00  INFO 19627 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2026-01-15T13:55:39.327+03:00  INFO 19627 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 0 JDBC repository interfaces.
-2026-01-15T13:55:41.581+03:00  INFO 19627 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-01-15T13:55:41.617+03:00  INFO 19627 --- [springDataJdbc] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-01-15T13:55:41.621+03:00  INFO 19627 --- [springDataJdbc] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
-2026-01-15T13:55:41.812+03:00  INFO 19627 --- [springDataJdbc] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-01-15T13:55:41.814+03:00  INFO 19627 --- [springDataJdbc] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7927 ms
-2026-01-15T13:55:42.675+03:00  INFO 19627 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-01-15T13:55:43.247+03:00  INFO 19627 --- [springDataJdbc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1b17d8ab
-2026-01-15T13:55:43.250+03:00  INFO 19627 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-01-15T13:55:43.712+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.database                       : Set default schema name to public
-2026-01-15T13:55:45.048+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2026-01-15T13:55:45.646+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.ui                             : Database is up to date, no changesets to execute
-2026-01-15T13:55:45.661+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
-2026-01-15T13:55:45.690+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.util                           : UPDATE SUMMARY
-2026-01-15T13:55:45.692+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.util                           : Run:                          0
-2026-01-15T13:55:45.693+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.util                           : Previously run:               4
-2026-01-15T13:55:45.697+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.util                           : Filtered out:                 0
-2026-01-15T13:55:45.697+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.util                           : -------------------------------
-2026-01-15T13:55:45.697+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.util                           : Total change sets:            4
-2026-01-15T13:55:45.699+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.util                           : Update summary generated
-2026-01-15T13:55:45.701+03:00  INFO 19627 --- [springDataJdbc] [main] liquibase.command                        : Command execution complete
-2026-01-15T13:55:48.418+03:00  INFO 19627 --- [springDataJdbc] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2026-01-15T13:55:50.939+03:00  INFO 19627 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2026-01-15T13:55:51.025+03:00  INFO 19627 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Started SpringDataJdbcApplication in 20.98 seconds (process running for 22.912)
-2026-01-15T13:56:17.280+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-01-15T13:56:17.285+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-01-15T13:56:17.297+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
-2026-01-15T13:56:20.452+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-2] c.e.s.security.SocialAppService          : New user saved. email: null
-2026-01-15T13:56:20.676+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-3] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-15T13:56:20.675682846
-2026-01-15T13:56:51.260+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-6] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-15T13:56:51.260828644
-2026-01-15T13:57:50.191+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-8] c.e.s.usercasses.impl.UserServiceImpl    : The user with the id 52b0ef72-e93c-40c0-83c3-0132608a3d3f has been DELETED, Date 2026-01-15T13:57:50.191021346
-2026-01-15T13:58:09.958+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-9] c.e.s.usercasses.impl.UserServiceImpl    : The user with the id 8099432f-2f4f-47b2-a694-4ee5109ee51b has been DELETED, Date 2026-01-15T13:58:09.958333622
-2026-01-15T13:58:24.653+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-10] c.e.s.usercasses.impl.UserServiceImpl    : The user with the id 91eb93c3-17e8-4e6a-aa3b-a63e247edd3d has been DELETED, Date 2026-01-15T13:58:24.653491270
-2026-01-15T13:58:38.702+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-1] c.e.s.usercasses.impl.UserServiceImpl    : The user with the id 916720ab-bd8d-442d-b919-806a1558da83 has been DELETED, Date 2026-01-15T13:58:38.702560709
-2026-01-15T13:59:00.661+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-2] c.e.s.usercasses.impl.UserServiceImpl    : The user with the email ivan@example.com FOUND. Time: 2026-01-15T13:59:00.661617726
-2026-01-15T13:59:21.206+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-3] c.e.s.usercasses.impl.UserServiceImpl    : The user with the email github-oauth@gmail.com FOUND. Time: 2026-01-15T13:59:21.206822291
-2026-01-15T13:59:38.817+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-5] c.e.s.usercasses.impl.UserServiceImpl    : The user with the email nik@gmail.com FOUND. Time: 2026-01-15T13:59:38.816937577
-2026-01-15T14:00:18.977+03:00  INFO 19627 --- [springDataJdbc] [http-nio-8080-exec-6] c.e.s.usercasses.impl.UserServiceImpl    : The user with id b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a12 FOUND. Time: 2026-01-15T14:00:18.977720280
-2026-01-15T14:05:49.824+03:00  INFO 19627 --- [springDataJdbc] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2026-01-15T14:05:49.828+03:00  INFO 19627 --- [springDataJdbc] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2026-01-15T14:05:49.849+03:00  INFO 19627 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2026-01-15T14:05:49.866+03:00  INFO 19627 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-21T12:46:26.397+03:00  INFO 5004 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 5004 (/home/nik/Project/springDataJdbc/target/classes started by nik in /home/nik/Project/springDataJdbc)
+2026-01-21T12:46:26.401+03:00  INFO 5004 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-01-21T12:46:26.883+03:00  INFO 5004 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-01-21T12:46:26.901+03:00  INFO 5004 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+2026-01-21T12:46:27.166+03:00  INFO 5004 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-01-21T12:46:27.172+03:00  INFO 5004 --- [springDataJdbc] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-21T12:46:27.173+03:00  INFO 5004 --- [springDataJdbc] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-01-21T12:46:27.198+03:00  INFO 5004 --- [springDataJdbc] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-21T12:46:27.198+03:00  INFO 5004 --- [springDataJdbc] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 767 ms
+2026-01-21T12:46:27.356+03:00  INFO 5004 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-21T12:46:27.476+03:00  INFO 5004 --- [springDataJdbc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6615237
+2026-01-21T12:46:27.477+03:00  INFO 5004 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-21T12:46:27.546+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.database                       : Set default schema name to public
+2026-01-21T12:46:27.721+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2026-01-21T12:46:27.767+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2026-01-21T12:46:27.768+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2026-01-21T12:46:27.773+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.util                           : UPDATE SUMMARY
+2026-01-21T12:46:27.773+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.util                           : Run:                          0
+2026-01-21T12:46:27.773+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.util                           : Previously run:               4
+2026-01-21T12:46:27.773+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.util                           : Filtered out:                 0
+2026-01-21T12:46:27.773+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.util                           : -------------------------------
+2026-01-21T12:46:27.773+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.util                           : Total change sets:            4
+2026-01-21T12:46:27.773+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.util                           : Update summary generated
+2026-01-21T12:46:27.774+03:00  INFO 5004 --- [springDataJdbc] [main] liquibase.command                        : Command execution complete
+2026-01-21T12:46:29.579+03:00  INFO 5004 --- [springDataJdbc] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-01-21T12:46:29.922+03:00  INFO 5004 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-01-21T12:46:29.931+03:00  INFO 5004 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Started SpringDataJdbcApplication in 3.842 seconds (process running for 4.046)
+2026-01-21T12:46:35.622+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-21T12:46:35.622+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-21T12:46:35.623+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-21T12:47:36.712+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-9] c.e.s.security.SocialAppService          : New user saved. email: null
+2026-01-21T12:47:36.730+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-10] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-21T12:47:36.730893685
+2026-01-21T12:55:15.891+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-6] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-21T12:55:15.891397518
+2026-01-21T12:55:18.324+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-7] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-21T12:55:18.324714693
+2026-01-21T12:56:15.178+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-9] c.e.s.usercasses.impl.BookServiceImpl    : Book with id 789abcde-f012-4956-7890-123456789012 FOUND. Time: 2026-01-21T12:56:15.178548723
+2026-01-21T12:56:48.154+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-2] c.e.s.usercasses.impl.UserServiceImpl    : The user with id b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a12 FOUND. Time: 2026-01-21T12:56:48.154701509
+2026-01-21T13:01:25.637+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-5] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-21T13:01:25.637653297
+2026-01-21T13:01:26.949+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-6] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-21T13:01:26.948994252
+2026-01-21T13:01:27.929+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-7] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-21T13:01:27.929334226
+2026-01-21T13:01:42.514+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-9] c.e.s.security.SocialAppService          : New user saved. email: null
+2026-01-21T13:01:42.522+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-10] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-21T13:01:42.522531797
+2026-01-21T13:01:50.758+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-1] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-21T13:01:50.758898529
+2026-01-21T13:01:53.737+03:00  INFO 5004 --- [springDataJdbc] [http-nio-8080-exec-2] c.e.s.usercasses.impl.BookServiceImpl    : Method `getAllBooks` was run. Date 2026-01-21T13:01:53.737933916
+2026-01-21T13:16:09.667+03:00  INFO 5004 --- [springDataJdbc] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-21T13:16:09.668+03:00  INFO 5004 --- [springDataJdbc] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-01-21T13:16:09.672+03:00  INFO 5004 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-21T13:16:09.673+03:00  INFO 5004 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-01-21T13:16:13.327+03:00  INFO 8071 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Starting SpringDataJdbcApplication using Java 17.0.17 with PID 8071 (/home/nik/Project/springDataJdbc/target/classes started by nik in /home/nik/Project/springDataJdbc)
+2026-01-21T13:16:13.329+03:00  INFO 8071 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-01-21T13:16:13.769+03:00  INFO 8071 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-01-21T13:16:13.780+03:00  INFO 8071 --- [springDataJdbc] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2026-01-21T13:16:14.035+03:00  INFO 8071 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-01-21T13:16:14.042+03:00  INFO 8071 --- [springDataJdbc] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-21T13:16:14.043+03:00  INFO 8071 --- [springDataJdbc] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-01-21T13:16:14.068+03:00  INFO 8071 --- [springDataJdbc] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-21T13:16:14.068+03:00  INFO 8071 --- [springDataJdbc] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 718 ms
+2026-01-21T13:16:14.205+03:00  INFO 8071 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-21T13:16:14.300+03:00  INFO 8071 --- [springDataJdbc] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7d66a126
+2026-01-21T13:16:14.301+03:00  INFO 8071 --- [springDataJdbc] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-21T13:16:14.358+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.database                       : Set default schema name to public
+2026-01-21T13:16:14.515+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2026-01-21T13:16:14.562+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.ui                             : Database is up to date, no changesets to execute
+2026-01-21T13:16:14.564+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.changelog                      : Reading from public.databasechangelog
+2026-01-21T13:16:14.568+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.util                           : UPDATE SUMMARY
+2026-01-21T13:16:14.568+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.util                           : Run:                          0
+2026-01-21T13:16:14.568+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.util                           : Previously run:               4
+2026-01-21T13:16:14.568+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.util                           : Filtered out:                 0
+2026-01-21T13:16:14.568+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.util                           : -------------------------------
+2026-01-21T13:16:14.569+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.util                           : Total change sets:            4
+2026-01-21T13:16:14.569+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.util                           : Update summary generated
+2026-01-21T13:16:14.569+03:00  INFO 8071 --- [springDataJdbc] [main] liquibase.command                        : Command execution complete
+2026-01-21T13:16:16.349+03:00  INFO 8071 --- [springDataJdbc] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-01-21T13:16:16.706+03:00  INFO 8071 --- [springDataJdbc] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-01-21T13:16:16.715+03:00  INFO 8071 --- [springDataJdbc] [main] c.e.s.SpringDataJdbcApplication          : Started SpringDataJdbcApplication in 3.719 seconds (process running for 3.922)
+2026-01-21T13:16:22.655+03:00  INFO 8071 --- [springDataJdbc] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-21T13:16:22.658+03:00  INFO 8071 --- [springDataJdbc] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-01-21T13:16:22.663+03:00  INFO 8071 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-21T13:16:22.664+03:00  INFO 8071 --- [springDataJdbc] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
