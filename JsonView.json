@@ -1,0 +1,327 @@
+{
+  "info": {
+    "name": "JsonView",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "users",
+          "item": [
+            {
+              "name": "addUser",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "auth": {
+                  "type": "noauth"
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8080/api/users",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8080"
+                  ],
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"userName\": \"Иван\",\n    \"userSurname\": \"Петров\",\n    \"userEmail\": \"ivan@example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "deleteUser",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "auth": {
+                  "type": "noauth"
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8080/api/users/:userId",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8080"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    ":userId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "21598706-6a41-4eac-a494-60262293280a"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "getAllUsers",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "auth": {
+                  "type": "noauth"
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8080/api/users",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8080"
+                  ],
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              }
+            },
+            {
+              "name": "getUser",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "auth": {
+                  "type": "noauth"
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8080/api/users/:Id",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8080"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    ":Id"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "Id",
+                      "value": "b7bddb0d-4b2f-42be-865c-13067a4ac2b0"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "updateUser",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "auth": {
+                  "type": "noauth"
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8080/api/users/:userId",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8080"
+                  ],
+                  "path": [
+                    "api",
+                    "users",
+                    ":userId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "b7bddb0d-4b2f-42be-865c-13067a4ac2b0"
+                    }
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"userId\": \"b7bddb0d-4b2f-42be-865c-13067a4ac2b0\",\n    \"userName\": \"Ван\",\n    \"userSurname\": \"Петров\",\n    \"userEmail\": \"ivan@example.com\"\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "order",
+          "item": [
+            {
+              "name": "addOrder",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "auth": {
+                  "type": "noauth"
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8080/api/orders",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8080"
+                  ],
+                  "path": [
+                    "api",
+                    "orders"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              }
+            },
+            {
+              "name": "getOrder",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "auth": {
+                  "type": "noauth"
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8080/api/orders/:orderId",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8080"
+                  ],
+                  "path": [
+                    "api",
+                    "orders",
+                    ":orderId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "orderId",
+                      "value": "c2eebc99-9c0b-4ef8-bb6d-6bb9bd380a13"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "getOrdersByUser",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "auth": {
+                  "type": "noauth"
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8080/api/orders/user/:userId",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8080"
+                  ],
+                  "path": [
+                    "api",
+                    "orders",
+                    "user",
+                    ":userId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "b1ffcc99-9c0b-4ef8-bb6d-6bb9bd380a12"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "updateOrderStatus",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "auth": {
+                  "type": "noauth"
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8080/api/orders/:orders/status",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8080"
+                  ],
+                  "path": [
+                    "api",
+                    "orders",
+                    ":orders",
+                    "status"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "orders",
+                      "value": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "deleteOrder",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "auth": {
+                  "type": "noauth"
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8080/api/orders/:orderId",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8080"
+                  ],
+                  "path": [
+                    "api",
+                    "orders",
+                    ":orderId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "orderId",
+                      "value": ""
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": []
+}
