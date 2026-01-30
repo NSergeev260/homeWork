@@ -12,19 +12,19 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
-  app:
-    build: .
-    container_name: jsonview-app
-    depends_on:
-      - postgres
-    environment:
-      DATABASE_URL: ${DATABASE_URL}
-      DATABASE_USERNAME: ${DATABASE_USERNAME}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      SERVER_PORT: ${SERVER_PORT}
-      CLIENT_URL: ${CLIENT_URL}
-    ports:
-      - "8080:${SERVER_PORT}"
+#  app:
+#    build: .
+#    container_name: jsonview-app
+#    depends_on:
+#      - postgres
+#    environment:
+#      DATABASE_URL: ${DATABASE_URL}
+#      DATABASE_USERNAME: ${DATABASE_USERNAME}
+#      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+#      SERVER_PORT: ${SERVER_PORT}
+#      CLIENT_URL: ${CLIENT_URL}
+#    ports:
+#      - "8080:${SERVER_PORT}"
 
 volumes:
   postgres-data:

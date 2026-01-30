@@ -10,7 +10,7 @@ spring:
   application:
     name: jsonView
   datasource:
-    url: ${DATABASE_URL}
+    url: ${LOCAL_DATABASE_URL}
     username: ${DATABASE_USERNAME}
     password: ${DATABASE_PASSWORD}
   jpa:
