@@ -29,58 +29,6 @@ public class AuthServiceImpl implements AuthService {
     private final static long LOCK_DURATION = 30 * 60 * 1000;
     private final PasswordEncoder passwordEncoder;
 
-//    @Override
-//    public AuthenticatedUserResponseDto login(LoginRequestDto loginRequestDto) {
-//        UserEntity user = userRepository.findByEmail(loginRequestDto.username());
-//
-//        if (user != null && user.isAccountLocked()) {
-//            if (isLockTimeExpired(user)) {
-//                user.resetFailedAttempt();
-//                userRepository.save(user);
-//            } else {
-//                log.warn("Attempt to login to locked account: {}", loginRequestDto.username());
-//                throw new RuntimeException("Account is locked. Try again later");
-//            }
-//        }
-//
-//        try {
-//            Authentication authentication = authenticationManager.authenticate(
-//                    new UsernamePasswordAuthenticationToken(
-//                            loginRequestDto.username(),
-//                            loginRequestDto.password()
-//                    )
-//            );
-//
-//            if (user != null) {
-//                user.resetFailedAttempt();
-//                userRepository.save(user);
-//            }
-//
-//            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-//            String token = jwtUtils.generateToken(userDetails);
-//
-//            log.info("Successful login for user: {}", loginRequestDto.username());
-//            return new AuthenticatedUserResponseDto(userDetails.getUsername(), token);
-//
-//        } catch (BadCredentialsException e) {
-//            if (user != null) {
-//                user.incrementFailedAttempt();
-//                if (user.getFailedAttempt() >= 5) {
-//                    user.lockAccount();
-//                    log.warn("Account locked due to 5 failed attempts: {}", loginRequestDto.username());
-//                }
-//                userRepository.save(user);
-//            }
-//
-//            log.warn("Failed login attempt for user: {}", loginRequestDto.username());
-//
-//            throw new RuntimeException("Invalid username or password");
-//        } catch (LockedException e) {
-//            log.warn("Attempt to login to locked account: {}", loginRequestDto.username());
-//            throw new RuntimeException("Account is locked");
-//        }
-//    }
-
     @Override
     public AuthenticatedUserResponseDto login(LoginRequestDto loginRequestDto) {
         System.out.println("=== DETAILED AUTH DEBUG ===");
